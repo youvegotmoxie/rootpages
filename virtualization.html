@@ -1,0 +1,1077 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Virtualization &mdash; Root Pages 2018.01.26 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Root Pages 2018.01.26 documentation" href="index.html"/>
+        <link rel="next" title="Wine" href="wine.html"/>
+        <link rel="prev" title="SQL" href="sql.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Root Pages
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2018.01.26
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ansible.html">Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bootloaders.html">Bootloaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="c_and_c++.html">C and C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clustering.html">Clustering and High Availability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns_servers.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_systems.html">File Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http_servers.html">HTTP Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mail_servers.html">Mail Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="networking.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nosql.html">NoSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openstack.html">OpenStack Ocata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operating_systems.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages.html">Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sql.html">SQL</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Virtualization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#libvirt">libvirt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hardware-virtualization">Hardware Virtualization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#kvm">KVM</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#performance-tuning">Performance Tuning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nested-virtualization">Nested Virtualization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gpu-passthrough">GPU Passthrough</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#xen">Xen</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Nested Virtualization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#software-virtualization">Software Virtualization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#containers">Containers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#docker">docker</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lxc">LXC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#orchestration">Orchestration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#vagrant">Vagrant</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#vagrantfile">Vagrantfile</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gui">GUI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="wine.html">Wine</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Root Pages</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Virtualization</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/virtualization.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="virtualization">
+<h1><a class="toc-backref" href="#id3">Virtualization</a><a class="headerlink" href="#virtualization" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#virtualization" id="id3">Virtualization</a><ul>
+<li><a class="reference internal" href="#libvirt" id="id4">libvirt</a></li>
+<li><a class="reference internal" href="#hardware-virtualization" id="id5">Hardware Virtualization</a><ul>
+<li><a class="reference internal" href="#kvm" id="id6">KVM</a><ul>
+<li><a class="reference internal" href="#performance-tuning" id="id7">Performance Tuning</a></li>
+<li><a class="reference internal" href="#nested-virtualization" id="id8">Nested Virtualization</a></li>
+<li><a class="reference internal" href="#gpu-passthrough" id="id9">GPU Passthrough</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#xen" id="id10">Xen</a><ul>
+<li><a class="reference internal" href="#id1" id="id11">Nested Virtualization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software-virtualization" id="id12">Software Virtualization</a><ul>
+<li><a class="reference internal" href="#containers" id="id13">Containers</a><ul>
+<li><a class="reference internal" href="#docker" id="id14">docker</a><ul>
+<li><a class="reference internal" href="#networking" id="id15">Networking</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lxc" id="id16">LXC</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#orchestration" id="id17">Orchestration</a><ul>
+<li><a class="reference internal" href="#vagrant" id="id18">Vagrant</a><ul>
+<li><a class="reference internal" href="#vagrantfile" id="id19">Vagrantfile</a><ul>
+<li><a class="reference internal" href="#networks" id="id20">Networks</a><ul>
+<li><a class="reference internal" href="#id2" id="id21">libvirt</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#provisioning" id="id22">Provisioning</a></li>
+<li><a class="reference internal" href="#multiple-machines" id="id23">Multiple Machines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#gui" id="id24">GUI</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="libvirt">
+<h2><a class="toc-backref" href="#id4">libvirt</a><a class="headerlink" href="#libvirt" title="Permalink to this headline">¶</a></h2>
+<p>“libvirt” provides a framework and API for accessing and controlling
+different virtualization hypervisors. This Root Pages’ guide assumes
+that libvirt is used for managing Quick Emulator (QEMU) virtual
+machines. [1]</p>
+<p>Source:</p>
+<ol class="arabic simple">
+<li>“libvirt Introduction.” libvirt VIRTUALIZATION API. Accessed December
+22, 2017. <a class="reference external" href="https://libvirt.org/index.html">https://libvirt.org/index.html</a></li>
+</ol>
+</div>
+<div class="section" id="hardware-virtualization">
+<h2><a class="toc-backref" href="#id5">Hardware Virtualization</a><a class="headerlink" href="#hardware-virtualization" title="Permalink to this headline">¶</a></h2>
+<p>Hardware virtualization uses specially supported processors to speed up
+and isolate virtualized environments. Most newer CPUs support this.
+There is “Intel VT (Virtualization Techonology)” and “AMD SVM (Secure
+Virtual Machine)” for x86 processors. [1]</p>
+<p>Intel has three subtypes of virtualization:</p>
+<ul class="simple">
+<li>VT-x = Basic hardware virtualization and host separation support.</li>
+<li>VT-d = I/O passthrough support.</li>
+<li>VT-c = Improved network I/O passthrough support.</li>
+</ul>
+<p>[2]</p>
+<p>AMD has two subtypes of virtualization:</p>
+<ul class="simple">
+<li>AMD-V = Basic hardware virtualization and host separation support.</li>
+<li>AMD-Vi = I/O passthrough support.</li>
+</ul>
+<p>Check for Intel or AMD virtualization support:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ grep vmx /proc/cpuinfo # Intel
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ grep svm /proc/cpuinfo # AMD
+</pre></div>
+</div>
+<p>Verify the exact subtype of virtualization:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ lscpu | grep ^Virtualization # Intel or AMD
+</pre></div>
+</div>
+<p>Hardware virtualization must be supported by both the motherboard and
+processor. It should also be enabled in the BIOS. [1]</p>
+<p>Sources:</p>
+<ol class="arabic simple">
+<li>“Linux: Find Out If CPU Support Intel VT and AMD-V Virtualization
+Support.” February 11, 2015. nixCraft. Accessed December 18, 2016.
+<a class="reference external" href="https://www.cyberciti.biz/faq/linux-xen-vmware-kvm-intel-vt-amd-v-support/">https://www.cyberciti.biz/faq/linux-xen-vmware-kvm-intel-vt-amd-v-support/</a></li>
+<li>“Intel VT (Virtualization Technology) Definition.” TechTarget.
+October, 2009. Accessed December 18, 2016.
+<a class="reference external" href="http://searchservervirtualization.techtarget.com/definition/Intel-VT">http://searchservervirtualization.techtarget.com/definition/Intel-VT</a></li>
+</ol>
+<div class="section" id="kvm">
+<h3><a class="toc-backref" href="#id6">KVM</a><a class="headerlink" href="#kvm" title="Permalink to this headline">¶</a></h3>
+<p>The “Kernel-based Virtual Machine (KVM)” is the default kernel module
+for handling hardware virtualization in Linux since the 2.6.20 kernel.
+[1] It is used to accelerate the QEMU hypervisor. [2]</p>
+<p>Sources:</p>
+<ol class="arabic simple">
+<li>“Kernel Virtual Machine.” KVM. Accessed December 18, 2016.
+<a class="reference external" href="http://www.linux-kvm.org/page/Main_Page">http://www.linux-kvm.org/page/Main_Page</a></li>
+<li>“KVM vs QEMU vs Libvirt.” The Geeky Way. February 14, 2014. Accessed
+December 22, 2017. <a class="reference external" href="http://thegeekyway.com/kvm-vs-qemu-vs-libvirt/">http://thegeekyway.com/kvm-vs-qemu-vs-libvirt/</a></li>
+</ol>
+<div class="section" id="performance-tuning">
+<h4><a class="toc-backref" href="#id7">Performance Tuning</a><a class="headerlink" href="#performance-tuning" title="Permalink to this headline">¶</a></h4>
+<p>Configuration details for virtual machines can be modified to provide
+better performance. For processors, it is recommended to use the same
+CPU settings so that all of it’s features are available to the guest.
+[1]</p>
+<p>QEMU:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># qemu -cpu host ...</span>
+</pre></div>
+</div>
+<p>libvirt:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># virsh edit &lt;VIRTUAL_MACHINE&gt;</span>
+<span class="o">&lt;</span><span class="n">cpu</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;host-passthrough&#39;</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>The network driver that provides the best performance is “virtio.” Some
+guests may not support this feature and require additional drivers.</p>
+<p>QEMU:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># qemu -net nic,model=virtio ...</span>
+</pre></div>
+</div>
+<p>libvirt:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># virsh edit &lt;VIRTUAL_MACHINE&gt;</span>
+<span class="o">&lt;</span><span class="n">interface</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;network&#39;</span><span class="o">&gt;</span>
+  <span class="o">...</span>
+  <span class="o">&lt;</span><span class="n">model</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;virtio&#39;</span> <span class="o">/&gt;</span>
+<span class="o">&lt;/</span><span class="n">interface</span><span class="o">&gt;****</span>
+</pre></div>
+</div>
+<p>Using a tap device (that will be assigned to an existing interface) or a
+bridge will speed up network connections.</p>
+<p>QEMU:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">...</span> <span class="o">-</span><span class="n">net</span> <span class="n">tap</span><span class="p">,</span><span class="n">ifname</span><span class="o">=&lt;</span><span class="n">NETWORK_DEVICE</span><span class="o">&gt;</span> <span class="o">...</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">...</span> <span class="o">-</span><span class="n">net</span> <span class="n">bridge</span><span class="p">,</span><span class="n">br</span><span class="o">=&lt;</span><span class="n">NETWORK_BRIDGE_DEVICE</span><span class="o">&gt;</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>libvirt:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># virsh edit &lt;VIRTUAL_MACHINE&gt;</span>
+    <span class="o">&lt;</span><span class="n">interface</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;bridge&#39;</span><span class="o">&gt;</span>
+<span class="o">...</span>
+      <span class="o">&lt;</span><span class="n">source</span> <span class="n">bridge</span><span class="o">=</span><span class="s1">&#39;&lt;BRDIGE_DEVICE&gt;&#39;</span><span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="n">model</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;virtio&#39;</span><span class="o">/&gt;</span>
+    <span class="o">&lt;/</span><span class="n">interface</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>If possible, PCI passthrough provides the best performance as there is
+no virtualization overhead.</p>
+<p>QEMU:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># qemu -net none -device vfio-pci,host=&lt;PCI_DEVICE_ADDRESS&gt; ...</span>
+</pre></div>
+</div>
+<p>Raw disk partitions have the greatest speeds with the “virtio” driver
+and cache disabled.</p>
+<p>QEMU:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># qemu -drive file=&lt;PATH_TO_STORAGE_DEVICE&gt;,cache=none,if=virtio ...</span>
+</pre></div>
+</div>
+<p>libvirt:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># virsh edit &lt;VIRTUAL_MACHINE&gt;</span>
+<span class="o">&lt;</span><span class="n">disk</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;...&#39;</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;disk&#39;</span><span class="o">&gt;</span>
+  <span class="o">...</span>
+  <span class="o">&lt;</span><span class="n">target</span> <span class="n">dev</span><span class="o">=</span><span class="s1">&#39;&lt;DEVICE_NAME&gt;&#39;</span> <span class="n">bus</span><span class="o">=</span><span class="s1">&#39;virtio&#39;</span><span class="o">/&gt;</span>
+<span class="o">&lt;/</span><span class="n">disk</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>[1][2]</p>
+<p>When using the QCOW2 image format, create the image using metadata
+preallocation or else there could be up to a x5 performance penalty. [3]</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># qemu-img create -f qcow2 -o size=&lt;SIZE&gt;G,preallocation=metadata &lt;NEW_IMAGE_NAME&gt;</span>
+</pre></div>
+</div>
+<p>Sources:</p>
+<ol class="arabic simple">
+<li>“Tuning KVM.” KVM. Accessed January 7, 2016.
+<a class="reference external" href="http://www.linux-kvm.org/page/Tuning_KVM">http://www.linux-kvm.org/page/Tuning_KVM</a></li>
+<li>“Virtio.” libvirt Wiki. October 3, 2013. Accessed January 7, 2016.
+<a class="reference external" href="https://wiki.libvirt.org/page/Virtio">https://wiki.libvirt.org/page/Virtio</a></li>
+<li>“KVM I/O slowness on RHEL 6.” March 11, 2011. Accessed August 30,
+2017.
+<a class="reference external" href="http://www.ilsistemista.net/index.php/virtualization/11-kvm-io-slowness-on-rhel-6.html">http://www.ilsistemista.net/index.php/virtualization/11-kvm-io-slowness-on-rhel-6.html</a></li>
+</ol>
+</div>
+<div class="section" id="nested-virtualization">
+<h4><a class="toc-backref" href="#id8">Nested Virtualization</a><a class="headerlink" href="#nested-virtualization" title="Permalink to this headline">¶</a></h4>
+<p>KVM supports nested virtualization. This allows a virtual machine full
+access to the processor to run another virtual machine in itself. This
+is disabled by default.</p>
+<p>Verify that the computer’s processor supports nested KVM virtualization.
+[3]</p>
+<ul>
+<li><p class="first">Intel:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ cat /sys/module/kvm_intel/parameters/nested
+Y
+</pre></div>
+</div>
+</li>
+<li><p class="first">AMD:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ cat /sys/module/kvm_amd/parameters/nested
+Y
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Option #1 - Modprobe</p>
+<ul>
+<li><p class="first">Intel</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vim /etc/modprobe.d/nested_virtualization.conf</span>
+<span class="n">options</span> <span class="n">kvm</span><span class="o">-</span><span class="n">intel</span> <span class="n">nested</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># modprobe -r kvm-intel</span>
+<span class="c1"># modprobe kvm-intel</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">AMD</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vim /etc/modprobe.d/nested_virtualization.conf</span>
+<span class="n">options</span> <span class="n">kvm</span><span class="o">-</span><span class="n">amd</span> <span class="n">nested</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># modprobe -r kvm-amd</span>
+<span class="c1"># modprobe kvm-amd</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Option #2 - GRUB2</p>
+<p>Append this option to the already existing “GRUB_CMDLINE_LINUX”
+options.</p>
+<ul>
+<li><p class="first">Intel</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vim /etc/default/grub</span>
+<span class="n">GRUB_CMDLINE_LINUX</span><span class="o">=</span><span class="s2">&quot;kvm-intel.nested=1&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">AMD</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vim /etc/default/grub</span>
+<span class="n">GRUB_CMDLINE_LINUX</span><span class="o">=</span><span class="s2">&quot;kvm-amd.nested=1&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Then rebuild the GRUB 2 configuration.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># grub-mkconfig -o /boot/grub/grub.cfg</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>[1]</p>
+<p>Edit the virtual machine’s XML configuration to change the CPU mode to
+be “host-passthrough.”</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># virsh edit &lt;VIRTUAL_MACHINE&gt;</span>
+<span class="o">&lt;</span><span class="n">cpu</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;host-passthrough&#39;</span><span class="o">/&gt;</span>
+</pre></div>
+</div>
+<p>[2]</p>
+<p>Reboot the virtual machine and verify that the hypervisor and the
+virtual machine both report the same capabilities and processor
+information.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># virsh capabilities</span>
+</pre></div>
+</div>
+<p>Finally verify that, in the virtual machine, it has full hardware
+virtualization support.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># virt-host-validate</span>
+</pre></div>
+</div>
+<p>[3]</p>
+<p>Sources:</p>
+<ol class="arabic simple">
+<li>“How to Enable Nested KVM.” Rhys Oxenhams’ Cloud Technology Blog.
+June 26, 2012. Accessed December 1, 2017.
+<a class="reference external" href="http://www.rdoxenham.com/?p=275">http://www.rdoxenham.com/?p=275</a></li>
+<li>“Configure DevStack with KVM-based Nested Virtualization.” December
+18, 2016. Accessed December 18, 2016.
+<a class="reference external" href="http://docs.openstack.org/developer/devstack/guides/devstack-with-nested-kvm.html">http://docs.openstack.org/developer/devstack/guides/devstack-with-nested-kvm.html</a></li>
+<li>“How to enable nested virtualization in KVM.” Fedora Project Wiki.
+June 19, 2015. Accessed August 30, 2017.
+<a class="reference external" href="https://fedoraproject.org/wiki/How_to_enable_nested_virtualization_in_KVM">https://fedoraproject.org/wiki/How_to_enable_nested_virtualization_in_KVM</a></li>
+</ol>
+</div>
+<div class="section" id="gpu-passthrough">
+<h4><a class="toc-backref" href="#id9">GPU Passthrough</a><a class="headerlink" href="#gpu-passthrough" title="Permalink to this headline">¶</a></h4>
+<p>GPU passthrough is useful for running a Windows virtual machine guest
+for gaming inside of Linux. It is recommended to have two video cards,
+one for Linux and one for the guest virtual machine. [1]</p>
+<p>Nvidia cards have a detection in the driver to see if the operating
+system has a hypervisor running. This can lead to a “Code: 43” error in
+the driver as it false-positively reports none. This affects Nvidia
+drivers starting with version 337.88. A work-a-round for this is to set
+a random “vendor_id” to a alphanumeric 12 character value and forcing
+KVM’s emulation to be hidden. This does not affect ATI/AMD graphics
+cards. [2]</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># virsh edit &lt;VIRTUAL_MACHINE&gt;</span>
+<span class="o">&lt;</span><span class="n">features</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">hyperv</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">vendor_id</span> <span class="n">state</span><span class="o">=</span><span class="s1">&#39;on&#39;</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;123456abcdef&#39;</span><span class="o">/&gt;</span>
+    <span class="o">&lt;/</span><span class="n">hyperv</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">kvm</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">hidden</span> <span class="n">state</span><span class="o">=</span><span class="s1">&#39;on&#39;</span><span class="o">/&gt;</span>
+    <span class="o">&lt;/</span><span class="n">kvm</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">features</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>[2]</p>
+<p>Sources:</p>
+<ol class="arabic simple">
+<li>“GPU Passthrough with KVM and Debian Linux.” scottlinux.com Linux
+Blog. August 28, 2016. Accessed December 18, 2016.
+<a class="reference external" href="https://scottlinux.com/2016/08/28/gpu-passthrough-with-kvm-and-debian-linux/">https://scottlinux.com/2016/08/28/gpu-passthrough-with-kvm-and-debian-linux/</a></li>
+<li>“PCI passthrough via OVMF.” Arch Linux Wiki. December 18, 2016.
+Accessed December 18, 2016.
+<a class="reference external" href="https://wiki.archlinux.org/index.php/PCI_passthrough_via_OVMF">https://wiki.archlinux.org/index.php/PCI_passthrough_via_OVMF</a></li>
+</ol>
+</div>
+</div>
+<div class="section" id="xen">
+<h3><a class="toc-backref" href="#id10">Xen</a><a class="headerlink" href="#xen" title="Permalink to this headline">¶</a></h3>
+<p>Xen is a free and open source software hypervisor under the GNU General
+Public License (GPL). It was originally designed to be a competitor of
+VMWare. It is currently owned by Citrix and offers a paid support
+package for it’s virtual machine hypervisor/manager XenServer. [1] By
+itself it can be used as a basic hypervisor, similar to QEMU. It can
+also be used with QEMU to provide accelerated hardware virtualization.</p>
+<p>Source:</p>
+<ol class="arabic simple">
+<li>“Xen Definition.” TechTarget. March, 2009. Accessed December 18,
+2016. <a class="reference external" href="http://searchservervirtualization.techtarget.com/definition/Xen">http://searchservervirtualization.techtarget.com/definition/Xen</a></li>
+</ol>
+<div class="section" id="id1">
+<h4><a class="toc-backref" href="#id11">Nested Virtualization</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>Since Xen 4.4, experimental support was added for nested virtualization.
+A few settings need to be added to the Xen virtual machine’s file,
+typically located in the “/etc/xen/” directory. Turn “nestedhvm” on for
+nested virtualization support. The “hap” feature also needs to be
+enabled for faster performance. Lastly, the CPU’s ID needs to be
+modified to hide the original virtualization ID.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">nestedhvm</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">hap</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">cpuid</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;0x1:ecx=0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>[1]</p>
+<p>Source:</p>
+<ol class="arabic simple">
+<li>“Nested Virtualization in Xen.” Xen Project Wiki. November 2, 2017.
+Accessed December 22, 2017.
+<a class="reference external" href="https://wiki.xenproject.org/wiki/Nested_Virtualization_in_Xen">https://wiki.xenproject.org/wiki/Nested_Virtualization_in_Xen</a></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="software-virtualization">
+<h2><a class="toc-backref" href="#id12">Software Virtualization</a><a class="headerlink" href="#software-virtualization" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="containers">
+<h3><a class="toc-backref" href="#id13">Containers</a><a class="headerlink" href="#containers" title="Permalink to this headline">¶</a></h3>
+<p>Containers are a type of software virtualization. Using a directory
+structure that contains an entire operating system (typically referred
+to as a chroot), containers can easily spin up and utilize system
+resources without the overhead of full hardware allocation. It is not
+possible to use separate kernels with this approach.</p>
+<div class="section" id="docker">
+<h4><a class="toc-backref" href="#id14">docker</a><a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h4>
+<p>The docker software (with a lowercase “d”) was created by the Docker
+company to manage and create containers using the LXC kernel module on
+Linux.</p>
+<p>A command is run to start a daemon in the container. As long as that
+process is still running in the foreground, the container will remain
+active. Some processes may spawn in the background. A workaround for
+this is to append <code class="docutils literal"><span class="pre">&amp;&amp;</span> <span class="pre">tail</span> <span class="pre">-f</span> <span class="pre">/dev/null</span></code> to the command. If the daemon
+successfully starts, then a never-ending task can be run instead (such
+as viewing the never ending file of /dev/null). [1]</p>
+<p>Source:</p>
+<ol class="arabic simple">
+<li>“Get started with Docker.” Docker. Accessed November 19, 2016.
+<a class="reference external" href="https://docs.docker.com/engine/getstarted">https://docs.docker.com/engine/getstarted</a></li>
+</ol>
+<div class="section" id="networking">
+<h5><a class="toc-backref" href="#id15">Networking</a><a class="headerlink" href="#networking" title="Permalink to this headline">¶</a></h5>
+<p>Networking is automatically bridged to the public interface and set up
+with a NAT. This allows full communication to/from the container,
+provided that the necessary ports are open in the firewall and
+configured in the docker image.</p>
+<p>Networking issues from within a container are commonly due to network
+packet size (MTU) issues. There are a few work-a-rounds.</p>
+<ol class="arabic">
+<li><p class="first">Configure the default MTU size for docker deployments by modifying
+the daemon’s process settings. This value should generally be below
+the default of 1500.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vim /etc/sysconfig/docker</span>
+<span class="n">OPTIONS</span><span class="o">=</span><span class="s1">&#39;--selinux-enabled --log-driver=journald --mtu 1400&#39;</span>
+<span class="c1"># systemctl restart docker</span>
+</pre></div>
+</div>
+<p>OR</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span># vim /usr/lib/systemd/system/docker.service
+ExecStart=/usr/bin/docker-current daemon \
+      --exec-opt native.cgroupdriver=systemd --mtu 1400 \
+      $OPTIONS \
+      $DOCKER_STORAGE_OPTIONS \
+      $DOCKER_NETWORK_OPTIONS \
+      $ADD_REGISTRY \
+      $BLOCK_REGISTRY \
+      $INSECURE_REGISTRY
+# systemctl daemon-reload
+# systemctl restart docker
+</pre></div>
+</div>
+</li>
+<li><p class="first">Forward all packets between the docker link through the physical
+link.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># iptables -I FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>[1]</p>
+<p>In rare cases, the bridge networking will not be working properly. An
+error message similar to this may appear during creation.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>ERROR: for &lt;CONTAINER_NAME&gt; failed to create endpoint &lt;NETWORK_ENDPOINT&gt; on network bridge: iptables failed: iptables --wait -t nat -A DOCKER -p tcp -d 0/0 --dport &lt;DESTINATION_PORT_HOST&gt; -j DNAT --to-destination &lt;IP_ADDRESS&gt;:&lt;DESTINATION_PORT_CONTAINER&gt; ! -i docker0: iptables: No chain/target/match by that name.
+</pre></div>
+</div>
+<p>The solution is to delete the virtual “docker0” interface and then
+restart the docker service for it to be properly recreated.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ip link delete docker0</span>
+<span class="c1"># systemctl restart docker</span>
+</pre></div>
+</div>
+<p>[2]</p>
+<p>Sources:</p>
+<ol class="arabic simple">
+<li>“containers in docker 1.11 does not get same MTU as host #22297.”
+Docker GitHub. September 26, 2016. Accessed November 19, 2016.
+<a class="reference external" href="https://github.com/docker/docker/issues/22297">https://github.com/docker/docker/issues/22297</a></li>
+<li>“iptables failed - No chain/target/match by that name #16816.” Docker
+GitHub. November 10, 2016. Accessed December 17, 2016.
+<a class="reference external" href="https://github.com/docker/docker/issues/16816">https://github.com/docker/docker/issues/16816</a></li>
+</ol>
+</div>
+</div>
+<div class="section" id="lxc">
+<h4><a class="toc-backref" href="#id16">LXC</a><a class="headerlink" href="#lxc" title="Permalink to this headline">¶</a></h4>
+<p>Linux Containers (LXC) utilizes the Linux kernel to natively run
+containers.</p>
+<p>Debian install [1]:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># apt-get install lxc</span>
+</pre></div>
+</div>
+<p>RHEL install [2] requires the Extra Packages for Enterprise Linux (EPEL)
+repository:</p>
+<ul>
+<li><p class="first">RHEL:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># yum install epel-release</span>
+<span class="c1"># yum install lxc lxc-templates libvirt</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>On RHEL family systems the <code class="docutils literal"><span class="pre">lxcbr0</span></code> interface is not created or used.
+Alternatively, the libvirt interface <code class="docutils literal"><span class="pre">virbr0</span></code> should be used.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vim /etc/lxc/default.conf</span>
+<span class="n">lxc</span><span class="o">.</span><span class="n">network</span><span class="o">.</span><span class="n">link</span> <span class="o">=</span> <span class="n">virbr0</span>
+</pre></div>
+</div>
+<p>The required services need to be started before LXC containers will be
+able to run.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># systemctl start libvirtd</span>
+<span class="c1"># systemctl start lxc</span>
+</pre></div>
+</div>
+<p>Templates that can be referenced for LXC container creation can be found
+in the <code class="docutils literal"><span class="pre">/usr/share/lxc/templates/</span></code> directory.</p>
+<p>Sources:</p>
+<ol class="arabic simple">
+<li>“LXC.” Ubuntu Documentation. Accessed August 8, 2017.
+<a class="reference external" href="https://help.ubuntu.com/lts/serverguide/lxc.html">https://help.ubuntu.com/lts/serverguide/lxc.html</a></li>
+<li>“How to install and setup LXC (Linux Container) on Fedora Linux 26.”
+nixCraft. July 13, 2017. Accessed August 8, 2017.
+<a class="reference external" href="https://www.cyberciti.biz/faq/how-to-install-and-setup-lxc-linux-container-on-fedora-linux-26/">https://www.cyberciti.biz/faq/how-to-install-and-setup-lxc-linux-container-on-fedora-linux-26/</a></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="orchestration">
+<h2><a class="toc-backref" href="#id17">Orchestration</a><a class="headerlink" href="#orchestration" title="Permalink to this headline">¶</a></h2>
+<p>Virtual machine provisioning can be automated through the use of
+different tools.</p>
+<div class="section" id="vagrant">
+<h3><a class="toc-backref" href="#id18">Vagrant</a><a class="headerlink" href="#vagrant" title="Permalink to this headline">¶</a></h3>
+<p>Vagrant is programmed in Ruby to help automate virtual machine (VM)
+deployment. It uses a single file called “Vagrantfile” to describe the
+virtual machines to create. By default, Vagrant will use VirtualBox as
+the hypervisor but other technologies can be used.</p>
+<ul class="simple">
+<li>Officially supported hypervisors [1]:<ul>
+<li>docker</li>
+<li>hyperv</li>
+<li>virtualbox</li>
+<li>vmware_desktop</li>
+<li>vmware_fusion</li>
+</ul>
+</li>
+<li>Unofficial hypervisors [2]:<ul>
+<li>aws</li>
+<li>azure</li>
+<li>google</li>
+<li>libvirt (KVM or Xen)</li>
+<li>lxc</li>
+<li>managed-servers (physical bare metal servers)</li>
+<li>parallels</li>
+<li>vsphere</li>
+</ul>
+</li>
+</ul>
+<p>Most unoffocial hypervisor providers can be automatically installed as a
+plugin from the command line.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ vagrant plugin install vagrant-&lt;HYPERVISOR&gt;
+</pre></div>
+</div>
+<p>Deploy VMs using a Vagrant file:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ vagrant up
+</pre></div>
+</div>
+<p>OR</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ vagrant up --provider &lt;HYPERVISOR&gt;
+</pre></div>
+</div>
+<p>Destroy VMs using a Vagrant file:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ vagrant destroy
+</pre></div>
+</div>
+<p>The default username and password should be <code class="docutils literal"><span class="pre">vagrant</span></code>.</p>
+<p>This guide can be followed for creating custom Vagrant boxes:
+<a class="reference external" href="https://www.vagrantup.com/docs/boxes/base.html">https://www.vagrantup.com/docs/boxes/base.html</a>.</p>
+<p>Sources:</p>
+<ol class="arabic simple">
+<li>“Introduction to Vagrant.” Vagrant Documentation. April 24, 2017.
+Accessed May 9, 2017.
+<a class="reference external" href="https://www.vagrantup.com/intro/getting-started/index.html">https://www.vagrantup.com/intro/getting-started/index.html</a></li>
+<li>“Available Vagrant Plugins.” mitchell/vagrant GitHub. November 9,
+2016. Accessed May 8, 2017.
+<a class="reference external" href="https://github.com/mitchellh/vagrant/wiki/Available-Vagrant-Plugins">https://github.com/mitchellh/vagrant/wiki/Available-Vagrant-Plugins</a></li>
+</ol>
+<div class="section" id="vagrantfile">
+<h4><a class="toc-backref" href="#id19">Vagrantfile</a><a class="headerlink" href="#vagrantfile" title="Permalink to this headline">¶</a></h4>
+<p>A default Vagrantfile can be created to start customizing with.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ vagrant init
+</pre></div>
+</div>
+<p>All of the settings should be defined within the <code class="docutils literal"><span class="pre">Vagrant.configure()</span></code>
+block.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Vagrant</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">)</span> <span class="n">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+    <span class="c1"># Define VM settings here.</span>
+<span class="n">end</span>
+</pre></div>
+</div>
+<p>Define the virtual machine template to use. This will be downloaded, by
+default (if the <code class="docutils literal"><span class="pre">box_url</span></code> is not changed) from the HashiCorp website.</p>
+<ul class="simple">
+<li>box = Required. The name of the virtual machine to download. A list
+of official virtual machines can be found at
+<code class="docutils literal"><span class="pre">https://atlas.hashicorp.com/boxes/search</span></code>.</li>
+<li>box_version = The version of the virtual machine to use.</li>
+<li>box_url = The URL to the virtual machine details.</li>
+</ul>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Vagrant</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">)</span> <span class="n">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">box</span> <span class="o">=</span> <span class="s2">&quot;ubuntu/xenial64&quot;</span>
+  <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">box_version</span> <span class="o">=</span> <span class="s2">&quot;v20170508.0.0&quot;</span>
+  <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">box_url</span> <span class="o">=</span> <span class="s2">&quot;https://cloud-images.ubuntu.com/xenial/current/xenial-server-cloudimg-amd64-vagrant.box&quot;</span>
+<span class="n">end</span>
+</pre></div>
+</div>
+<p>[1]</p>
+<p>Source:</p>
+<ol class="arabic simple">
+<li>“[Vagrant] Boxes.” Vagrant Documentation. April 24, 2017. Accessed
+May 9, 2017. <a class="reference external" href="https://www.vagrantup.com/docs/boxes.html">https://www.vagrantup.com/docs/boxes.html</a></li>
+</ol>
+<div class="section" id="networks">
+<h5><a class="toc-backref" href="#id20">Networks</a><a class="headerlink" href="#networks" title="Permalink to this headline">¶</a></h5>
+<p>Networks are either <code class="docutils literal"><span class="pre">private</span></code> or <code class="docutils literal"><span class="pre">public</span></code>. <code class="docutils literal"><span class="pre">private</span></code> networks use
+host-only networking and use network address translation (NAT) to
+communicate out to the Internet. Virtual machines (VMs) can communicate
+with each other but they cannot be reached from the outside world. Port
+forwarding can also be configured to allow access to specific ports from
+the hypervisor node. <code class="docutils literal"><span class="pre">public</span></code> networks allow a virtual machine to
+attach to a bridge device for full connectivity with the external
+network. This section covers VirtualBox networks since it is the default
+virtualization provider.</p>
+<p>With a <code class="docutils literal"><span class="pre">private</span></code> network, the IP address can either be a random
+address assigned by DHCP or a static IP that is defined.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Vagrant</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">)</span> <span class="n">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">network</span> <span class="s2">&quot;private_network&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">:</span> <span class="s2">&quot;dhcp&quot;</span>
+<span class="n">end</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Vagrant</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">)</span> <span class="n">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">network</span> <span class="s2">&quot;private_network&quot;</span><span class="p">,</span> <span class="n">ip</span><span class="p">:</span> <span class="s2">&quot;&lt;IP4_OR_IP6_ADDRESS&gt;&quot;</span><span class="p">,</span> <span class="n">netmask</span><span class="p">:</span> <span class="s2">&quot;&lt;SUBNET_MASK&gt;&quot;</span>
+<span class="n">end</span>
+</pre></div>
+</div>
+<p>The same rules apply to <code class="docutils literal"><span class="pre">public</span></code> networks except it uses the external
+DHCP server on the network (if it exists).</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Vagrant</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">)</span> <span class="n">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">network</span> <span class="s2">&quot;public_network&quot;</span><span class="p">,</span> <span class="n">use_dhcp_assigned_default_route</span><span class="p">:</span> <span class="n">true</span>
+<span class="n">end</span>
+</pre></div>
+</div>
+<p>When a <code class="docutils literal"><span class="pre">public</span></code> network is defined and no interface is given, the
+end-user is prompted to pick a physical network interface device to
+bridge onto for public network access. This bridge device can also be
+specified manually.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Vagrant</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">)</span> <span class="n">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+  <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">network</span> <span class="s2">&quot;public_network&quot;</span><span class="p">,</span> <span class="n">bridge</span><span class="p">:</span> <span class="s2">&quot;eth0: First NIC&quot;</span>
+<span class="n">end</span>
+</pre></div>
+</div>
+<p>In this example, port 2222 on the localhost (127.0.0.1) of the
+hypervisor will forward to port 22 of the VM.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">...</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">network</span> <span class="s2">&quot;forwarded_port&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="s2">&quot;ssh&quot;</span><span class="p">,</span> <span class="n">guest</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span> <span class="n">host</span><span class="p">:</span> <span class="mi">2222</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>Source:</p>
+<ol class="arabic simple">
+<li>“[Vagrant] Networking.” Vagrant Documentation. April 24, 2017.
+Accessed May 9, 2017. <a class="reference external" href="https://www.vagrantup.com/docs/networking/">https://www.vagrantup.com/docs/networking/</a></li>
+</ol>
+<div class="section" id="id2">
+<h6><a class="toc-backref" href="#id21">libvirt</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h6>
+<p>The options and syntax for public networks with the “libvirt” provider
+are slightly different.</p>
+<p>Options:</p>
+<ul class="simple">
+<li>dev = The bridge device name.</li>
+<li>mode = The libvirt mode to use. Default: <code class="docutils literal"><span class="pre">bridge</span></code>.</li>
+<li>type = The libvirt interface type. This is normally set to
+<code class="docutils literal"><span class="pre">bridge</span></code>.</li>
+<li>network_name = The name of a network to use.</li>
+<li>portgroup = The libvirt portgroup to use.</li>
+<li>ovs = Instead of using a Linux bridge, use Open vSwitch instead.
+Default: <code class="docutils literal"><span class="pre">false</span></code>.</li>
+<li>trust_guest_rx_filters = Enable the <code class="docutils literal"><span class="pre">trustGuestRxFilters</span></code>
+setting. Default: <code class="docutils literal"><span class="pre">false</span></code>.</li>
+</ul>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">define</span> <span class="s2">&quot;controller&quot;</span> <span class="n">do</span> <span class="o">|</span><span class="n">controller</span><span class="o">|</span>
+    <span class="n">controller</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">network</span> <span class="s2">&quot;public_network&quot;</span><span class="p">,</span> <span class="n">ip</span><span class="p">:</span> <span class="s2">&quot;10.0.0.205&quot;</span><span class="p">,</span> <span class="n">dev</span><span class="p">:</span> <span class="s2">&quot;br0&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="p">:</span> <span class="s2">&quot;bridge&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">:</span> <span class="s2">&quot;bridge&quot;</span>
+<span class="n">end</span>
+</pre></div>
+</div>
+<p>Source:</p>
+<ol class="arabic simple">
+<li>“Vagrant Libvirt Provider [README].” vagrant-libvirt GitHub. May 8,
+2017. Accessed June 17, 2017.
+<a class="reference external" href="https://github.com/vagrant-libvirt/vagrant-libvirt">https://github.com/vagrant-libvirt/vagrant-libvirt</a></li>
+</ol>
+</div>
+</div>
+<div class="section" id="provisioning">
+<h5><a class="toc-backref" href="#id22">Provisioning</a><a class="headerlink" href="#provisioning" title="Permalink to this headline">¶</a></h5>
+<p>After a virtual machine (VM) has been created, additional commands can
+be run to configure the guest VMs. This is referred to as
+“provisioning.”</p>
+<ul class="simple">
+<li>Provisioners [1]:<ul>
+<li><a class="reference external" href="https://www.vagrantup.com/docs/provisioning/ansible_intro.html">ansible</a>
+= Run a Ansible Playbook from the hypervisor node.</li>
+<li>ansible_local = Run a Ansible Playbook from within the VM.</li>
+<li>cfengine = Use CFEngine to configure the VM.</li>
+<li>chef_solo = Run a Chef Cookbook from inside the VM using
+<code class="docutils literal"><span class="pre">chef-solo</span></code>.</li>
+<li>chef_zero = Run a Chef Cookbook, but use <code class="docutils literal"><span class="pre">chef-zero</span></code> to emulate
+a Chef server inside of the VM.</li>
+<li>chef_client = Use a remote Chef server to run a Cookbook inside
+the VM.</li>
+<li>chef_apply = Run a Chef recipe with <code class="docutils literal"><span class="pre">chef-apply</span></code>.</li>
+<li>docker = Install and configure docker inside of the VM.</li>
+<li>file = Copy files from the hypervisor to the VM. Note that the
+directory that the <code class="docutils literal"><span class="pre">Vagrantfile</span></code> is in will be mounted as the
+directory <code class="docutils literal"><span class="pre">/vagrant/</span></code> inside of the VM.</li>
+<li>puppet = Run single Puppet manifests with <code class="docutils literal"><span class="pre">puppet</span> <span class="pre">apply</span></code>.</li>
+<li>puppet_server = Run a Puppet manifest inside of the VM using an
+external Puppet server.</li>
+<li>salt = Run Salt states inside of the VM.</li>
+<li>shell = Run CLI shell commands.</li>
+</ul>
+</li>
+</ul>
+<p>Source:</p>
+<ol class="arabic simple">
+<li>“[Vagrant] Provisioning.” Vagrant Documentation. April 24, 2017.
+Accessed May 9, 2017. <a class="reference external" href="https://www.vagrantup.com/docs/provisioning/">https://www.vagrantup.com/docs/provisioning/</a></li>
+</ol>
+</div>
+<div class="section" id="multiple-machines">
+<h5><a class="toc-backref" href="#id23">Multiple Machines</a><a class="headerlink" href="#multiple-machines" title="Permalink to this headline">¶</a></h5>
+<p>A <code class="docutils literal"><span class="pre">Vagrantfile</span></code> can specify more than one virtual machine.</p>
+<p>The recommended way to provision multiple VMs is to statically define
+each individual VM to create as shown here. [1]</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Vagrant</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">)</span> <span class="n">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+
+  <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">define</span> <span class="s2">&quot;web&quot;</span> <span class="n">do</span> <span class="o">|</span><span class="n">web</span><span class="o">|</span>
+    <span class="n">web</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">box</span> <span class="o">=</span> <span class="s2">&quot;nginx&quot;</span>
+  <span class="n">end</span>
+
+  <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">define</span> <span class="s2">&quot;php&quot;</span> <span class="n">do</span> <span class="o">|</span><span class="n">php</span><span class="o">|</span>
+    <span class="n">php</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">box</span> <span class="o">=</span> <span class="s2">&quot;phpfpm&quot;</span>
+  <span class="n">end</span>
+
+  <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">define</span> <span class="s2">&quot;db&quot;</span> <span class="n">do</span> <span class="o">|</span><span class="n">db</span><span class="o">|</span>
+    <span class="n">db</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">box</span> <span class="o">=</span> <span class="s2">&quot;mariadb&quot;</span>
+  <span class="n">end</span>
+
+<span class="n">end</span>
+</pre></div>
+</div>
+<p>However, it is possible to use Ruby to dynamically define and create
+VMs. This will work for creating the VMs but using the <code class="docutils literal"><span class="pre">vagrant</span></code>
+command to manage the VMs will not work properly [2]:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">servers</span><span class="o">=</span><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="p">:</span><span class="n">hostname</span> <span class="o">=&gt;</span> <span class="s2">&quot;web&quot;</span><span class="p">,</span>
+    <span class="p">:</span><span class="n">ip</span> <span class="o">=&gt;</span> <span class="s2">&quot;10.0.0.10&quot;</span><span class="p">,</span>
+    <span class="p">:</span><span class="n">box</span> <span class="o">=&gt;</span> <span class="s2">&quot;xenial&quot;</span><span class="p">,</span>
+    <span class="p">:</span><span class="n">ram</span> <span class="o">=&gt;</span> <span class="mi">1024</span><span class="p">,</span>
+    <span class="p">:</span><span class="n">cpu</span> <span class="o">=&gt;</span> <span class="mi">2</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="p">:</span><span class="n">hostname</span> <span class="o">=&gt;</span> <span class="s2">&quot;db&quot;</span><span class="p">,</span>
+    <span class="p">:</span><span class="n">ip</span> <span class="o">=&gt;</span> <span class="s2">&quot;10.10.10.11&quot;</span><span class="p">,</span>
+    <span class="p">:</span><span class="n">box</span> <span class="o">=&gt;</span> <span class="s2">&quot;saucy&quot;</span><span class="p">,</span>
+    <span class="p">:</span><span class="n">ram</span> <span class="o">=&gt;</span> <span class="n">xenial</span><span class="p">,</span>
+    <span class="p">:</span><span class="n">cpu</span> <span class="o">=&gt;</span> <span class="mi">4</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+
+<span class="n">Vagrant</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">do</span> <span class="o">|</span><span class="n">config</span><span class="o">|</span>
+    <span class="n">servers</span><span class="o">.</span><span class="n">each</span> <span class="n">do</span> <span class="o">|</span><span class="n">machine</span><span class="o">|</span>
+        <span class="n">config</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">define</span> <span class="n">machine</span><span class="p">[:</span><span class="n">hostname</span><span class="p">]</span> <span class="n">do</span> <span class="o">|</span><span class="n">node</span><span class="o">|</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">box</span> <span class="o">=</span> <span class="n">machine</span><span class="p">[:</span><span class="n">box</span><span class="p">]</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">hostname</span> <span class="o">=</span> <span class="n">machine</span><span class="p">[:</span><span class="n">hostname</span><span class="p">]</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">network</span> <span class="s2">&quot;private_network&quot;</span><span class="p">,</span> <span class="n">ip</span><span class="p">:</span> <span class="n">machine</span><span class="p">[:</span><span class="n">ip</span><span class="p">]</span>
+            <span class="n">node</span><span class="o">.</span><span class="n">vm</span><span class="o">.</span><span class="n">provider</span> <span class="s2">&quot;virtualbox&quot;</span> <span class="n">do</span> <span class="o">|</span><span class="n">vb</span><span class="o">|</span>
+                <span class="n">vb</span><span class="o">.</span><span class="n">customize</span> <span class="p">[</span><span class="s2">&quot;modifyvm&quot;</span><span class="p">,</span> <span class="p">:</span><span class="nb">id</span><span class="p">,</span> <span class="s2">&quot;--memory&quot;</span><span class="p">,</span> <span class="n">machine</span><span class="p">[:</span><span class="n">ram</span><span class="p">]]</span>
+            <span class="n">end</span>
+        <span class="n">end</span>
+    <span class="n">end</span>
+<span class="n">end</span>
+</pre></div>
+</div>
+<p>Sources:</p>
+<ol class="arabic simple">
+<li>“[Vagrant] Multi-Machine.” Vagrant Documentation. April 24, 2017.
+Accessed May 9, 2017. <a class="reference external" href="https://www.vagrantup.com/docs/multi-machine/">https://www.vagrantup.com/docs/multi-machine/</a></li>
+<li>“Vagrantfile.” Linux system administration and monitoring / Windows
+servers and CDN video. May 9, 2017. Accessed May 9, 2017.
+<a class="reference external" href="http://sysadm.pp.ua/linux/sistemy-virtualizacii/vagrantfile.html">http://sysadm.pp.ua/linux/sistemy-virtualizacii/vagrantfile.html</a></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="gui">
+<h2><a class="toc-backref" href="#id24">GUI</a><a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h2>
+<p>There are many programs for managing virtualization from a graphical user interface (GUI).</p>
+<p>Common GUIs:</p>
+<ul class="simple">
+<li>oVirt</li>
+<li>virt-manager</li>
+<li>XenServer</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="wine.html" class="btn btn-neutral float-right" title="Wine" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sql.html" class="btn btn-neutral" title="SQL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Luke Short.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2018.01.26',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,858 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Networking &mdash; Root Pages 2018.01.26 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Root Pages 2018.01.26 documentation" href="index.html"/>
+        <link rel="next" title="NoSQL" href="nosql.html"/>
+        <link rel="prev" title="Monitoring" href="monitoring.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Root Pages
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2018.01.26
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ansible.html">Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bootloaders.html">Bootloaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="c_and_c++.html">C and C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clustering.html">Clustering and High Availability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns_servers.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_systems.html">File Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http_servers.html">HTTP Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mail_servers.html">Mail Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring.html">Monitoring</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Networking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#generic">Generic</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#generic-systemd">Generic - systemd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generic-open-vswitch">Generic - Open vSwitch</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#generic-open-vswitch-bridging">Generic - Open vSwitch - Bridging</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#operating-system-specific">Operating System Specific</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#operating-system-specific-debian">Operating System Specific - Debian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operating-system-specific-rhel">Operating System Specific - RHEL</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#operating-system-specific-rhel-routes">Operating System Specific - RHEL - Routes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#operating-system-specific-rhel-bridging">Operating System Specific - RHEL - Bridging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#operating-system-specific-rhel-bridging-open-vswitch">Operating System Specific - RHEL - Bridging - Open vSwitch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#operating-system-specific-rhel-bonding">Operating System Specific - RHEL - Bonding</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="nosql.html">NoSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openstack.html">OpenStack Ocata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operating_systems.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages.html">Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sql.html">SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization.html">Virtualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wine.html">Wine</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Root Pages</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Networking</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/networking.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="networking">
+<h1>Networking<a class="headerlink" href="#networking" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="#generic">Generic</a><ul>
+<li>iproute2</li>
+<li>Network Manager</li>
+<li><a class="reference external" href="#generic---systemd">systemd</a></li>
+<li><a class="reference external" href="#generic---open-vswitch">Open vSwitch</a><ul>
+<li><a class="reference external" href="#generic---open-vswitch---bridging">Bridging</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference external" href="#operating-system-specific">Operating System Specific</a><ul>
+<li>Arch</li>
+<li><a class="reference external" href="#operating-system-specific---debian">Debian</a></li>
+<li><a class="reference external" href="#operating-system-specific---rhel">RHEL</a><ul>
+<li><a class="reference external" href="#operating-system-specific---rhel---routes">Routes</a></li>
+<li><a class="reference external" href="#operating-system-specific---rhel---bridging">Bridging</a><ul>
+<li><a class="reference external" href="#operating-system-specific---rhel---bridging---open-vswitch">Open
+vSwitch</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#operating-system-specific---rhel---bonding">Bonding</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="generic">
+<h2>Generic<a class="headerlink" href="#generic" title="Permalink to this headline">¶</a></h2>
+<p>The generic section will cover networking utilities that are platform
+agnostic.</p>
+<div class="section" id="generic-systemd">
+<h3>Generic - systemd<a class="headerlink" href="#generic-systemd" title="Permalink to this headline">¶</a></h3>
+<p>The systemd init suite provides both “systemd-networkd” and
+systemd-resolved” to control networking devices. These services have
+been included in systemd since version 210. [1]</p>
+<p>All systemd network settings should be configured in the directory
+“/etc/systemd/network/.” Network files should have the “.network”
+extension and NetDev files will use “.netdev.” Common options are listed
+below. [2][3]</p>
+<p>Network Settings:</p>
+<ul class="simple">
+<li>[Match] = Select the device to use.<ul>
+<li>Name = The device name.</li>
+<li>MACAddress = The MAC address for the device.</li>
+</ul>
+</li>
+<li>[Network] = Network settings.<ul>
+<li>DHCP = Use DHCP.<ul>
+<li>yes, no, ipv4, or ipv6</li>
+</ul>
+</li>
+<li>DHCPServer = Become a DHCP server.<ul>
+<li>yes, no</li>
+</ul>
+</li>
+<li>Address = The IP address to use on the interface.</li>
+<li>Gateway = The default gateway.</li>
+<li>DNS = A list of DNS servers.</li>
+<li>NTP = A list of NTP servers.</li>
+<li>IPForward = Allow IP addresses to be routed based on the netfilter
+routing table.<ul>
+<li>yes, no, ipv4, ipv6</li>
+</ul>
+</li>
+<li>IPMasquerade = Allow IPv4 addresses to be set up for source
+network address translation (SNAT).<ul>
+<li>yes, no, ipv4</li>
+</ul>
+</li>
+<li>Bond = The name of the bond interface to use.</li>
+<li>VLAN = The name of the VLAN interface to use.</li>
+<li>VXLAN = The name of the VXLAN interface to use.</li>
+<li>Tunnel = The name of the tunnel interface to use.</li>
+</ul>
+</li>
+<li>[Link]<ul>
+<li>MACAddress = Override the MAC address with a custom address.</li>
+<li>MTUBytes = The MTU size for packets.</li>
+</ul>
+</li>
+<li>[DHCPServer] = Configure DHCP server settings.<ul>
+<li>PoolOffset = The offset count (not including network or broadcast
+addresses) to start the IP allocation pool from.</li>
+<li>PoolSize = The number of IP addresses that can be allocated.</li>
+<li>DNS = A list of DNS servers to provide.</li>
+<li>EmitRouter = The default gateway to provide.</li>
+<li>NTP = The NTP server to provide.</li>
+<li>Timezone = The timezone to provide. [2]</li>
+</ul>
+</li>
+</ul>
+<p>NetDev settings:</p>
+<ul class="simple">
+<li>[NetDev] = Virtual network devices.<ul>
+<li>Name = Create a name for the device.</li>
+<li>MACAddress = Create a MAC address for the device. A randomly
+generated address will be created if this option is not specified.</li>
+<li>MTUBytes = The MTU size for packets.</li>
+<li>Kind = The type of virtual network device.<ul>
+<li>bond = A combination of multiple NICs.</li>
+<li>bridge = Allow guests to have full passthrough access to the
+NIC.</li>
+<li>dummy = Drop all packets.</li>
+<li>gretap = GRE layer 2 tunnel.</li>
+<li>gre = GRE layer 3 tunnel.</li>
+<li>tap = Layer 2 tunnel.</li>
+<li>tun = Layer 3 tunnel.</li>
+<li>vlan = VLAN tagging.</li>
+<li>vxlan = VXLAN tunnel.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>[Bond]<ul>
+<li>Mode = The bond mode to use for clustering NICs.<ul>
+<li>balance-rr</li>
+<li>active-backup</li>
+<li>balance-xor</li>
+<li>broadcast</li>
+<li>802.3ad</li>
+<li>balance-tlb</li>
+<li>balance-alb</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>[Tunnel] = Tunnel configurations<ul>
+<li>Local = The static IP address that should already be configured on
+another NIC. This is used to connect to the remote tunnel IP
+address.</li>
+<li>Remote = The remote IP address to create a tunnel connection
+between.</li>
+</ul>
+</li>
+<li>[VLAN]<ul>
+<li>Id = The VLAN ID.</li>
+</ul>
+</li>
+<li>[VLAN]<ul>
+<li>Id = The VXLAN ID. [3]</li>
+</ul>
+</li>
+</ul>
+<p>Static networking syntax:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Match</span><span class="p">]</span>
+<span class="n">name</span><span class="o">=&lt;</span><span class="n">NIC</span><span class="o">&gt;</span>
+
+<span class="p">[</span><span class="n">Network</span><span class="p">]</span>
+<span class="n">Address</span><span class="o">=&lt;</span><span class="n">IP_ADDRESS</span><span class="o">&gt;/&lt;</span><span class="n">CIDR</span><span class="o">&gt;</span>
+<span class="n">Gateway</span><span class="o">=&lt;</span><span class="n">GATEWAY_IP_ADDRESS</span><span class="o">&gt;</span>
+<span class="n">DNS</span><span class="o">=&lt;</span><span class="n">DNS_SERVER_IP_ADDRESS</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Static networking example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Match</span><span class="p">]</span>
+<span class="n">name</span><span class="o">=</span><span class="n">eth0</span>
+
+<span class="p">[</span><span class="n">Network</span><span class="p">]</span>
+<span class="n">Address</span><span class="o">=</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">1.10</span><span class="o">/</span><span class="mi">24</span>
+<span class="n">Address</span><span class="o">=</span><span class="mf">10.0</span><span class="o">.</span><span class="mf">0.2</span><span class="o">/</span><span class="mi">30</span>
+<span class="n">Gateway</span><span class="o">=</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">1.1</span>
+<span class="n">DNS</span><span class="o">=</span><span class="mf">8.8</span><span class="o">.</span><span class="mf">4.4</span>
+</pre></div>
+</div>
+<p>[2]</p>
+<p>A Network configuration can be created for a WiFi interface. Using the
+“wpa_supplicant” service, the WiFi password can be securely saved in a
+different file and will automatically be used by systemd-network.</p>
+<p>WiFi syntax:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># wpa_passphrase &lt;SSID&gt; &lt;PASSWORD&gt; &gt; /etc/wpa_supplicant/wpa_supplicant-&lt;NIC&gt;.conf</span>
+<span class="c1"># systemctl enable wpa_supplicant@&lt;NIC&gt;.conf</span>
+<span class="c1"># systemctl start wpa_supplicant@&lt;NIC&gt;.conf</span>
+</pre></div>
+</div>
+<p>WiFi example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># wpa_passphrase Guest5G password123 &gt; /etc/wpa_supplicant/wpa_supplicant-wlan0.conf</span>
+<span class="c1"># systemctl enable wpa_supplicant@wlan0.conf</span>
+<span class="c1"># systemctl start wpa_supplicant@wlan0.conf</span>
+</pre></div>
+</div>
+<p>[4]</p>
+<p>Sources:</p>
+<ol class="arabic simple">
+<li>“How to switch from NetworkManager to systemd-networkd on Linux.”
+Xmodulo. August 31, 2015. Accessed November 27, 2016.
+<a class="reference external" href="http://xmodulo.com/switch-from-networkmanager-to-systemd-networkd.html">http://xmodulo.com/switch-from-networkmanager-to-systemd-networkd.html</a></li>
+<li>“systemd.network — Network configuration.” freedesktop.org. Accessed
+November 27, 2016.
+<a class="reference external" href="https://www.freedesktop.org/software/systemd/man/systemd.network.html">https://www.freedesktop.org/software/systemd/man/systemd.network.html</a></li>
+<li>“systemd.netdev — Virtual Network Device configuration.”
+freedesktop.org. Accessed November 27, 2016.
+<a class="reference external" href="https://www.freedesktop.org/software/systemd/man/systemd.netdev.html">https://www.freedesktop.org/software/systemd/man/systemd.netdev.html</a></li>
+<li>“Managing WPA wireless with systemd-networkd ?” Arch Linux Wiki -
+Networking, Server, and Protection. March 13, 2014. Accessed November
+27, 2016. <a class="reference external" href="https://bbs.archlinux.org/viewtopic.php?id=178625">https://bbs.archlinux.org/viewtopic.php?id=178625</a></li>
+</ol>
+</div>
+<div class="section" id="generic-open-vswitch">
+<h3>Generic - Open vSwitch<a class="headerlink" href="#generic-open-vswitch" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="generic-open-vswitch-bridging">
+<h4>Generic - Open vSwitch - Bridging<a class="headerlink" href="#generic-open-vswitch-bridging" title="Permalink to this headline">¶</a></h4>
+<p>Any physical network interface can be turned into a bridge. This allows
+multiple devices to be able to utilize the bridge for straight
+connectivity to the physical network. In this example, <code class="docutils literal"><span class="pre">eth0</span></code> is
+converted into the <code class="docutils literal"><span class="pre">br0</span></code> bridge.</p>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ovs-vsctl add-br br0</span>
+<span class="c1"># ovs-vsctl add-port br0 eth0</span>
+</pre></div>
+</div>
+<p>Syntax:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ovs-vsctl add-br &lt;NEW_BRIDGE&gt;</span>
+<span class="c1"># ovs-vsctl add-port &lt;NEW_BRIDGE&gt; &lt;PHYSICAL_INTERFACE&gt;</span>
+</pre></div>
+</div>
+<p>It is possible to create multiple bridges from one physical interface.
+This official example from the Open vSwitch documentation shows how to
+use the physical interface <code class="docutils literal"><span class="pre">eth0</span></code> to create the virtual bridges
+<code class="docutils literal"><span class="pre">br0</span></code> and <code class="docutils literal"><span class="pre">br1</span></code>. Patch ports are used to connect the tap interfaces.</p>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ovs-vsctl add-br br0</span>
+<span class="c1"># ovs-vsctl add-port br0 eth0</span>
+<span class="c1"># ovs-vsctl add-port br0 tap0</span>
+<span class="c1"># ovs-vsctl add-br br1</span>
+<span class="c1"># ovs-vsctl add-port br1 tap1</span>
+<span class="c1"># ovs-vsctl \</span>
+       <span class="o">--</span> <span class="n">add</span><span class="o">-</span><span class="n">port</span> <span class="n">br0</span> <span class="n">patch0</span> \
+       <span class="o">--</span> <span class="nb">set</span> <span class="n">interface</span> <span class="n">patch0</span> <span class="nb">type</span><span class="o">=</span><span class="n">patch</span> <span class="n">options</span><span class="p">:</span><span class="n">peer</span><span class="o">=</span><span class="n">patch1</span> \
+       <span class="o">--</span> <span class="n">add</span><span class="o">-</span><span class="n">port</span> <span class="n">br1</span> <span class="n">patch1</span> \
+       <span class="o">--</span> <span class="nb">set</span> <span class="n">interface</span> <span class="n">patch1</span> <span class="nb">type</span><span class="o">=</span><span class="n">patch</span> <span class="n">options</span><span class="p">:</span><span class="n">peer</span><span class="o">=</span><span class="n">patch0</span>
+</pre></div>
+</div>
+<p>Open vSwitch uses virtual <code class="docutils literal"><span class="pre">tap</span></code> interfaces to connect virtual machines
+to a bridge instead of providing striaght access to a bridge device.
+This makes it easier to manage interfaces for many virtual machines and
+it helps to isolate and track down traffic. Tools such as <code class="docutils literal"><span class="pre">tcpdump</span></code>
+can be used to analyze specific <code class="docutils literal"><span class="pre">tap</span></code> traffic. [1]</p>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ovs-vsctl add-br br0</span>
+<span class="c1"># ovs-vsctl add-port br0 eth0</span>
+<span class="c1"># ovs-vsctl add-port br0 tap0</span>
+<span class="c1"># ovs-vsctl add-port br0 tap1</span>
+<span class="c1"># ovs-vsctl add-port br0 tap2</span>
+</pre></div>
+</div>
+<p>Syntax:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ovs-vsctl add-br &lt;NEW_BRIDGE&gt;</span>
+<span class="c1"># ovs-vsctl add-port &lt;NEW_BRIDGE&gt; &lt;PHYSICAL_INTERFACE&gt;</span>
+<span class="c1"># ovs-vsctl add-port &lt;NEW_BRIDGE&gt; &lt;NEW_TAP_INTERFACE&gt;</span>
+</pre></div>
+</div>
+<p>Source:</p>
+<ol class="arabic simple">
+<li>“Frequently Asked Questions Open vSwitch.” Open vSwitch Suppport.
+March 30, 2017. April 9, 2017.
+<a class="reference external" href="http://openvswitch.org/support/dist-docs-2.5/FAQ.md.html">http://openvswitch.org/support/dist-docs-2.5/FAQ.md.html</a></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="operating-system-specific">
+<h2>Operating System Specific<a class="headerlink" href="#operating-system-specific" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="operating-system-specific-debian">
+<h3>Operating System Specific - Debian<a class="headerlink" href="#operating-system-specific-debian" title="Permalink to this headline">¶</a></h3>
+<p>The Debian network configuration file is located at
+<code class="docutils literal"><span class="pre">/etc/networks/interfaces</span></code>. Run <code class="docutils literal"><span class="pre">ifup</span></code> or <code class="docutils literal"><span class="pre">ifdown</span></code> to add or
+remove the IP address configurations for a particular interface</p>
+<p>Static example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vim /etc/network/interfaces</span>
+<span class="n">auto</span> <span class="n">eth0</span>
+<span class="n">iface</span> <span class="n">eth0</span> <span class="n">inet</span> <span class="n">static</span>
+    <span class="n">address</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">1.11</span>
+    <span class="n">netmask</span> <span class="mf">255.255</span><span class="o">.</span><span class="mf">255.0</span>
+    <span class="n">gateway</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">1.1</span>
+    <span class="n">dns</span><span class="o">-</span><span class="n">nameservers</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">3.45</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">8.10</span>
+<span class="n">iface</span> <span class="n">eth0</span> <span class="n">inet</span> <span class="n">static</span>
+    <span class="n">address</span> <span class="mf">10.0</span><span class="o">.</span><span class="mf">0.200</span>
+    <span class="n">netmask</span> <span class="mf">255.255</span><span class="o">.</span><span class="mf">0.0</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ifup eth0</span>
+</pre></div>
+</div>
+<p>DHCP example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vim /etc/network/interfaces</span>
+<span class="n">auto</span> <span class="n">eth0</span>
+<span class="n">iface</span> <span class="n">eth0</span> <span class="n">inet</span> <span class="n">dhcp</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ifup eth0</span>
+</pre></div>
+</div>
+<p>Common:</p>
+<ul class="simple">
+<li>auto <code class="docutils literal"><span class="pre">&lt;INTERFACE&gt;</span></code> = Start the interface on boot.</li>
+<li>iface <code class="docutils literal"><span class="pre">&lt;INTERFACE&gt;</span></code> inet <code class="docutils literal"><span class="pre">{static|dhcp}</span></code> = Specify if the IP
+address should be static or dynamic. Define this again for every IP
+address that will be used.<ul>
+<li>address = The IP address to add.</li>
+<li>netmask = The subnet mask for the IP address.</li>
+<li>gateway = The default gateway.</li>
+<li>dns-nameservers = A list of DNS resolvers to use, separated by a
+space.</li>
+</ul>
+</li>
+</ul>
+<p>[1]</p>
+<p>Source:</p>
+<ol class="arabic simple">
+<li>“[Ubuntu 16.04] Network Configuration.” Ubuntu Documentation. June
+23, 2017. Accessed July 2, 2017.
+<a class="reference external" href="https://help.ubuntu.com/lts/serverguide/network-configuration.html">https://help.ubuntu.com/lts/serverguide/network-configuration.html</a></li>
+</ol>
+</div>
+<div class="section" id="operating-system-specific-rhel">
+<h3>Operating System Specific - RHEL<a class="headerlink" href="#operating-system-specific-rhel" title="Permalink to this headline">¶</a></h3>
+<p>Red Hat Enterprise Linux uses their own “network” service. Although
+Network Manager has started taking it’s place, the network service is
+less intrusive and better supported by most programs that rely on
+managing network settings.</p>
+<p>There are two udev modules that manage new device naming schemes:
+“net.ifnames” and “biosdevname.” Only “net.ifnames” is installed by
+default on RHEL. Set these both to 0 in the kernel/boot options to
+revert back to eth* and wlan* naming. Otherwise, devices will be named
+based on their physical location and connection to the motherboard. [1]</p>
+<p>Network configurations are saved in <code class="docutils literal"><span class="pre">/etc/sysconfig/network-scripts/</span></code>.
+The ethernet device names start with “ifcfg-eth” when ifnames is
+disabled or “ifcfg-e” if not.</p>
+<p>Options:</p>
+<ul class="simple">
+<li>{NAME|DEVICE} = The name of the network interface. The first device
+is generally “eth0” for ethernet or “wlan0” for wireless devices.</li>
+<li>ONBOOT = {yes|no}. Enable or disable this interface on startup of
+the system.</li>
+<li>HWADDR = The MAC address of the device.</li>
+<li>BOOTPROTO = The boot protocol to use for obtaining an IP address.<ul>
+<li>{none|static} = Static IP addressing. Do not use any protocol.</li>
+<li>dhcp = Dynamic IP addressing. Use DHCP to obtain IP addressing
+information.</li>
+<li>bootp = Dynamic IP addressing. Use BOOTP to obtain IP addressing
+information.</li>
+</ul>
+</li>
+<li>DHCP_HOSTNAME = If a DHCP server requires a hostname, specify the
+hostname for the system.</li>
+<li>DHCPV6C = {yes|no}. Enable or disable the ability to obtain an IPv6
+address via DHCP.</li>
+<li>DHCPV6C = Specify DHCP options for IPv6.<ul>
+<li>-P = Prefix delegation.</li>
+<li>-S = Obtain a stateless address.</li>
+<li>-N = Revert to normal operation after using -P or -T.</li>
+<li>-T = Temporarily obtain an IPv6 address.</li>
+<li>-D = Specify a new value for the DHCP Unique Identifier (DUID).</li>
+</ul>
+</li>
+<li>IPV6_AUTOCONF = {yes|no}. Enable or disable autoconf configuration.</li>
+<li>DNS{1,2} = The DNS nameservers to use for /etc/resolv.conf.</li>
+<li>PEERDNS = {yes|no}. Enable or disable the ability to get DNS
+information for /etc/resolv.conf from DHCP or IPCP.</li>
+<li>ETHTOOL_OPTS = Provide special ethtool options for the interface.</li>
+<li>IPADDR = An IPv4 address. This option’s name can have a number
+appended to it (starting at 0) to specify multiple IP addresses.</li>
+<li>NETMASK = The IPv4 address’s netmask.</li>
+<li>PREFIX = Instead of specifying a netmask, the CIDR prefix can be
+used.</li>
+<li>GATEWAY = The IPv4 default gateway to use. All IPv4 traffic will
+route out to this IP.</li>
+<li>MTU = The size of packets to use, in bytes. The default is 1500 and
+the maximum is 9000.</li>
+<li>IPV6INIT = {yes|no}. Enable or disable IPv6 on this interface.</li>
+<li>IPV6ADDR6 = An IPv6 address with it’s CIDR prefix.</li>
+<li>IPV6ADDR_SECONDARIES = Other IPv6 addresses, comma separated, to add
+tot his interface.</li>
+<li>IPV6_PRIVACY=rfc3041 = Use the RFC 3041 standard to create a
+stateless IPv6 address using the interface’s MAC address. By default,
+if this option is not defined, it is turned off for security
+concerns.</li>
+<li>IP6MTU = The size of packets to use, in bytes.</li>
+<li>MASTER = The master device for bonds.</li>
+<li>BONDING_OPTS = Additional bonding driver options.</li>
+<li>HOTPLUG = Default: yes. Activate his device if it is hot plugged into
+the system.</li>
+<li>LINKDELAY = The number of seconds to wait before loading up the
+network interface’s configuration.</li>
+<li>SRCADDR = The primary source address for outgoing traffic.</li>
+<li>USERCTL = Enable or disable the ability to allow non-privileged users
+to manage the interface.</li>
+<li>NM_CONTROLLED = {yes|no}. Enable or disable Network Manager control
+over this interface.</li>
+</ul>
+<p>[2]</p>
+<p>Sources:</p>
+<ol class="arabic simple">
+<li>“Disable consistent network device naming in RHEL7.” Red Hat
+Community Discussions. June 11, 2014. Accessed January 7, 2016.
+<a class="reference external" href="https://access.redhat.com/discussions/916973">https://access.redhat.com/discussions/916973</a></li>
+<li>“Interface Configuration Files.” Accessed January 7, 2016.
+<a class="reference external" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/s1-networkscripts-interfaces.html">https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/s1-networkscripts-interfaces.html</a></li>
+</ol>
+<div class="section" id="operating-system-specific-rhel-routes">
+<h4>Operating System Specific - RHEL - Routes<a class="headerlink" href="#operating-system-specific-rhel-routes" title="Permalink to this headline">¶</a></h4>
+<p>In RHEL 7, static routes now use the <code class="docutils literal"><span class="pre">iproute2</span></code> syntax. A new
+<code class="docutils literal"><span class="pre">route-&lt;INTERFACE&gt;</span></code> file defines the route. Only one default
+<code class="docutils literal"><span class="pre">GATEWAY</span></code> can be set in the original <code class="docutils literal"><span class="pre">ifcfg-</span></code> configuration files.</p>
+<p>Syntax:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vim /etc/sysconfig/network-scripts/route-&lt;INTERFACE&gt;</span>
+<span class="o">&lt;</span><span class="n">DESTINATION_NETWORK_CIDR</span><span class="o">&gt;</span> <span class="n">via</span> <span class="o">&lt;</span><span class="n">SOURCE_IP</span><span class="o">&gt;</span> <span class="n">dev</span> <span class="o">&lt;</span><span class="n">INTERFACE</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vim /etc/sysconfig/network-scripts/route-eth0</span>
+<span class="mf">192.168</span><span class="o">.</span><span class="mf">100.0</span><span class="o">/</span><span class="mi">24</span> <span class="n">via</span> <span class="mf">10.0</span><span class="o">.</span><span class="mf">0.1</span> <span class="n">dev</span> <span class="n">eth0</span>
+</pre></div>
+</div>
+<p>[1]</p>
+<p>Sources:</p>
+<ol class="arabic simple">
+<li>“How to add a new static route on RHEL7 Linux.” Linux Config. March
+17, 2015. Accessed April 9, 2017.
+<a class="reference external" href="https://linuxconfig.org/how-to-add-new-static-route-on-rhel7-linux">https://linuxconfig.org/how-to-add-new-static-route-on-rhel7-linux</a></li>
+<li>“Static Routes and the Default Gateway.” Red Hat Documentation. March
+15, 2017. Accessed April 9, 2017.
+<a class="reference external" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/s1-networkscripts-static-routes.html">https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/s1-networkscripts-static-routes.html</a></li>
+</ol>
+</div>
+<div class="section" id="operating-system-specific-rhel-bridging">
+<h4>Operating System Specific - RHEL - Bridging<a class="headerlink" href="#operating-system-specific-rhel-bridging" title="Permalink to this headline">¶</a></h4>
+<p>A simple bridge using the Linux kernel can be configured using this
+basic template. The physical network interface should reference a bridge
+interface. The bridge interface will then contain the IP addressing
+information.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vim ifcfg-&lt;NIC&gt;</span>
+<span class="n">DEVICE</span><span class="o">=</span><span class="s2">&quot;&lt;NIC&gt;&quot;</span>
+<span class="n">TYPE</span><span class="o">=</span><span class="n">Ethernet</span>
+<span class="n">NM_CONTROLLED</span><span class="o">=</span><span class="n">no</span>
+<span class="n">BRIDGE</span><span class="o">=&lt;</span><span class="n">BRIDGE</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vim ifcfg-&lt;BRIDGE&gt;</span>
+<span class="n">DEVICE</span><span class="o">=</span><span class="s2">&quot;&lt;BRIDGE&gt;&quot;</span>
+<span class="n">TYPE</span><span class="o">=</span><span class="n">Bridge</span>
+<span class="n">ONBOOT</span><span class="o">=</span><span class="n">yes</span>
+<span class="n">NM_CONTROLLED</span><span class="o">=</span><span class="n">no</span>
+</pre></div>
+</div>
+<p>[1]</p>
+<p>Source:</p>
+<ol class="arabic simple">
+<li>“Network Bridge.” Red Hat Documentation. May 29, 2016. Accessed
+February 24, 2017.
+<a class="reference external" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/s2-networkscripts-interfaces_network-bridge.html">https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Deployment_Guide/s2-networkscripts-interfaces_network-bridge.html</a></li>
+</ol>
+</div>
+<div class="section" id="operating-system-specific-rhel-bridging-open-vswitch">
+<h4>Operating System Specific - RHEL - Bridging - Open vSwitch<a class="headerlink" href="#operating-system-specific-rhel-bridging-open-vswitch" title="Permalink to this headline">¶</a></h4>
+<p>Various bridge configurations can be made. It is common to use a normal
+bridge for allow virtual machines to have full access to the network or
+use an Open vSwitch bridge for OpenStack’s software defined networking
+(SDN).</p>
+<p>Open vSwitch bridge syntax (CLI):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ovs-vsctl add-port &lt;OVS_BRIDGE&gt; &lt;NIC&gt;</span>
+<span class="c1"># ovs-vsctl add-br &lt;OVS_BRIDGE&gt;</span>
+</pre></div>
+</div>
+<p>[1]</p>
+<p>Open vSwitch bridge syntax (configuration file):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vim ifcfg-&lt;NIC&gt;</span>
+<span class="n">DEVICE</span><span class="o">=</span><span class="s2">&quot;&lt;NIC&gt;&quot;</span>
+<span class="n">TYPE</span><span class="o">=</span><span class="s2">&quot;OVSPort&quot;</span>
+<span class="n">DEVICETYPE</span><span class="o">=</span><span class="s2">&quot;ovs&quot;</span>
+<span class="n">OVS_BRIDGE</span><span class="o">=</span><span class="s2">&quot;&lt;OVS_BRIDGE&gt;&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vim ifcfg-&lt;OVS_BRIDGE&gt;</span>
+<span class="n">DEVICE</span><span class="o">=</span><span class="s2">&quot;&lt;OVS_BRIDGE&gt;&quot;</span>
+<span class="n">TYPE</span><span class="o">=</span><span class="s2">&quot;OVSBridge&quot;</span>
+<span class="n">DEVICETYPE</span><span class="o">=</span><span class="s2">&quot;ovs&quot;</span>
+</pre></div>
+</div>
+<p>Open vSwitch bridge example (configuration file):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vim ifcfg-eth1</span>
+<span class="n">DEVICE</span><span class="o">=</span><span class="s2">&quot;eth1&quot;</span>
+<span class="n">TYPE</span><span class="o">=</span><span class="s2">&quot;OVSPort&quot;</span>
+<span class="n">DEVICETYPE</span><span class="o">=</span><span class="s2">&quot;ovs&quot;</span>
+<span class="n">OVS_BRIDGE</span><span class="o">=</span><span class="s2">&quot;br0-ovs&quot;</span>
+<span class="n">BOOTPROTO</span><span class="o">=</span><span class="s2">&quot;none&quot;</span>
+<span class="n">ONBOOT</span><span class="o">=</span><span class="s2">&quot;yes&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vim ifcfg-br0-ovs</span>
+<span class="n">DEVICE</span><span class="o">=</span><span class="s2">&quot;br0-ovs&quot;</span>
+<span class="n">TYPE</span><span class="o">=</span><span class="s2">&quot;OVSBridge&quot;</span>
+<span class="n">DEVICETYPE</span><span class="o">=</span><span class="s2">&quot;ovs&quot;</span>
+<span class="n">IPADDR0</span><span class="o">=</span><span class="mf">10.10</span><span class="o">.</span><span class="mf">10.201</span>
+<span class="n">PREFIX0</span><span class="o">=</span><span class="mi">24</span>
+<span class="n">GATEWAY</span><span class="o">=</span><span class="mf">10.10</span><span class="o">.</span><span class="mf">10.1</span>
+<span class="n">BOOTPROTO</span><span class="o">=</span><span class="s2">&quot;none&quot;</span>
+<span class="n">ONBOOT</span><span class="o">=</span><span class="s2">&quot;yes&quot;</span>
+</pre></div>
+</div>
+<p>[2]</p>
+<p>Sources:</p>
+<ol class="arabic simple">
+<li>Configuring Libvirt guests with an Open vSwitch bridge.” Kashyap
+Chamarthy. July 13, 2013. Accessed November 27, 2016.
+<a class="reference external" href="https://kashyapc.com/2013/07/13/configuring-libvirt-guests-with-an-open-vswitch-bridge/">https://kashyapc.com/2013/07/13/configuring-libvirt-guests-with-an-open-vswitch-bridge/</a></li>
+<li>“Configure Fedora Server with Open vSwitch and Libvirt.” GitHub Gist
+- jdoss. October 31, 2015. Accessed November 27, 2016.
+<a class="reference external" href="https://gist.github.com/jdoss/64ecd24b74792efaa794">https://gist.github.com/jdoss/64ecd24b74792efaa794</a></li>
+</ol>
+</div>
+<div class="section" id="operating-system-specific-rhel-bonding">
+<h4>Operating System Specific - RHEL - Bonding<a class="headerlink" href="#operating-system-specific-rhel-bonding" title="Permalink to this headline">¶</a></h4>
+<p>Bonding allows for multiple devices to be used as a single virtual
+device. The physical NICs need to be configured as bond slaves. Then a
+new bond configuration can be created for the bond device.</p>
+<p>Bond master syntax:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DEVICE</span><span class="o">=&lt;</span><span class="n">BOND_DEVICE</span><span class="o">&gt;</span>
+<span class="n">BONDING_MASTER</span><span class="o">=</span><span class="n">yes</span>
+<span class="n">BONDING_OPTS</span><span class="o">=</span><span class="s2">&quot;mode=&lt;BONDING_MODE&gt;&quot;</span>
+</pre></div>
+</div>
+<p>Bond master example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">DEVICE</span><span class="o">=</span><span class="n">bond0</span>
+<span class="n">BONDING_MASTER</span><span class="o">=</span><span class="n">yes</span>
+<span class="n">BONDING_OPTS</span><span class="o">=</span><span class="s2">&quot;mode=balance-alb&quot;</span>
+</pre></div>
+</div>
+<p>Bond slave syntax:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">MASTER</span><span class="o">=&lt;</span><span class="n">BOND_DEVICE</span><span class="o">&gt;</span>
+<span class="n">SLAVE</span><span class="o">=</span><span class="n">yes</span>
+</pre></div>
+</div>
+<p>Bond slave example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">NAME</span><span class="o">=</span><span class="n">eth0</span>
+<span class="n">BOOTPROTO</span><span class="o">=</span><span class="n">none</span>
+<span class="n">MASTER</span><span class="o">=</span><span class="n">bond0</span>
+<span class="n">SLAVE</span><span class="o">=</span><span class="n">yes</span>
+</pre></div>
+</div>
+<p>[1]</p>
+<p>A full list of bonding driver options for “bonding_opts” can be found
+here:
+<a class="reference external" href="https://wiki.linuxfoundation.org/networking/bonding#bonding-driver-options">https://wiki.linuxfoundation.org/networking/bonding#bonding-driver-options</a>.</p>
+<p>Common bonding_opts options:</p>
+<ul class="simple">
+<li>mode = The bonding method to use.<ul>
+<li>{0|balance-rr} = Load balance using round robin. Every other
+request goes to/from a different interface.</li>
+<li>{1|active-backup} = Only one interface is used. If it fails, then
+a slave device will take over.</li>
+<li>{2|balancer-xor} = Load balance requests based on the source and
+destination MAC addresses.</li>
+<li>{3|broadcast} = All traffic is sent out through all of the
+network interfaces.</li>
+<li>{4|802.3ad} = All of the network devices use the same speed and
+duplex configuration to follow the 802.3ad bonding standard. This
+requires that the network interfaces are also connected to a
+switch that supports IEEE 802.3ad Dynamic link aggregation. That
+switch must be configured to use it for it’s own switch ports.</li>
+<li>{5|balance-tlb} = Adaptive transmit load balancing. Load balance
+outgoing requests based on the slave usage.</li>
+<li>{6|balance-alb} = Adaptive load balancing. Load balance incoming
+and outgoing requests based on slave usage.</li>
+</ul>
+</li>
+</ul>
+<p>[2]</p>
+<p>Sources:</p>
+<ol class="arabic simple">
+<li>“RHEL: Linux Bond / Team Multiple Network Interfaces (NIC) Into a
+Single Interface.” nixCraft. March 27, 2016. Accessed January 7,
+2016.
+<a class="reference external" href="https://www.cyberciti.biz/tips/linux-bond-or-team-multiple-network-interfaces-nic-into-single-interface.html">https://www.cyberciti.biz/tips/linux-bond-or-team-multiple-network-interfaces-nic-into-single-interface.html</a></li>
+<li>“Bonding Interfaces.” CentOS Tips and Tricks. January 22, 2013.
+Accessed January 7, 2016.
+<a class="reference external" href="https://wiki.centos.org/TipsAndTricks/BondingInterfaces">https://wiki.centos.org/TipsAndTricks/BondingInterfaces</a></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="nosql.html" class="btn btn-neutral float-right" title="NoSQL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="monitoring.html" class="btn btn-neutral" title="Monitoring" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Luke Short.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2018.01.26',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,478 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SQL &mdash; Root Pages 2018.01.26 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Root Pages 2018.01.26 documentation" href="index.html"/>
+        <link rel="next" title="Virtualization" href="virtualization.html"/>
+        <link rel="prev" title="Security" href="security.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Root Pages
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2018.01.26
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ansible.html">Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bootloaders.html">Bootloaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="c_and_c++.html">C and C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clustering.html">Clustering and High Availability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns_servers.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_systems.html">File Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http_servers.html">HTTP Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mail_servers.html">Mail Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="networking.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nosql.html">NoSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openstack.html">OpenStack Ocata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operating_systems.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages.html">Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security.html">Security</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SQL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mariadb">MariaDB</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#maraidb-configuration">MaraiDB - Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mariadb-table-engines">MariaDB - Table Engines</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mariadb-table-engines-cassandrase">MariaDB - Table Engines - CassandraSE</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#mariadb-clustering">MariaDB - Clustering</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mariadb-clustering-maxscale">MariaDB - Clustering - Maxscale</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization.html">Virtualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wine.html">Wine</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Root Pages</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>SQL</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/sql.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sql">
+<h1>SQL<a class="headerlink" href="#sql" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="#mariadb">MariaDB</a><ul>
+<li><a class="reference external" href="#mariadb---configuration">Configuration</a></li>
+<li><a class="reference external" href="#mariadb---table-engines">Table Engines</a><ul>
+<li>InnoDB</li>
+<li>MyISAM</li>
+<li>Aria</li>
+<li><a class="reference external" href="#mariadb---table-engines---cassandrase">CassandraSE</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#mariadb---clustering">Clustering</a><ul>
+<li>Galera</li>
+<li><a class="reference external" href="#mariadb---clustering---maxscale">MaxScale</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="mariadb">
+<h2>MariaDB<a class="headerlink" href="#mariadb" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="maraidb-configuration">
+<h3>MaraiDB - Configuration<a class="headerlink" href="#maraidb-configuration" title="Permalink to this headline">¶</a></h3>
+<p>RHEL Install [1]:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vim /etc/yum.repos.d/mariadb.repo</span>
+<span class="p">[</span><span class="n">mariadb</span><span class="p">]</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">MariaDB</span>
+<span class="n">baseurl</span> <span class="o">=</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">yum</span><span class="o">.</span><span class="n">mariadb</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.1</span><span class="o">/</span><span class="n">centos7</span><span class="o">-</span><span class="n">amd64</span>
+<span class="n">gpgkey</span><span class="o">=</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">yum</span><span class="o">.</span><span class="n">mariadb</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">RPM</span><span class="o">-</span><span class="n">GPG</span><span class="o">-</span><span class="n">KEY</span><span class="o">-</span><span class="n">MariaDB</span>
+<span class="n">gpgcheck</span><span class="o">=</span><span class="mi">1</span>
+<span class="c1"># yum install MariaDB-server MariaDB-client</span>
+</pre></div>
+</div>
+<p>Source:</p>
+<ol class="arabic simple">
+<li>“Installing MariaDB with yum.” MariaDB Knowledgebase. Accessed
+October 16, 2016. <a class="reference external" href="https://mariadb.com/kb/en/mariadb/yum/">https://mariadb.com/kb/en/mariadb/yum/</a></li>
+</ol>
+</div>
+<div class="section" id="mariadb-table-engines">
+<h3>MariaDB - Table Engines<a class="headerlink" href="#mariadb-table-engines" title="Permalink to this headline">¶</a></h3>
+<p>A full list of the available engines are provided at
+<a class="reference external" href="https://mariadb.com/kb/en/mariadb/storage-engines">https://mariadb.com/kb/en/mariadb/storage-engines</a>.</p>
+<div class="section" id="mariadb-table-engines-cassandrase">
+<h4>MariaDB - Table Engines - CassandraSE<a class="headerlink" href="#mariadb-table-engines-cassandrase" title="Permalink to this headline">¶</a></h4>
+<p>The Cassandra Storage Engine (CassandraSE) is used to connect to a NoSQL
+Cassandra cluster. This allows the relational management of MariaDB to
+work with the fast and scalable Cassandra server. [1]</p>
+<p>The Cassandra storage engine is missing from the official RHEL 7
+repositories but can be installed from the RHEL 6 repository. [3]</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># yum install http://yum.mariadb.org/10.1/centos6-amd64/rpms/MariaDB-10.1.18-centos6-x86_64-cassandra-engine.rpm</span>
+</pre></div>
+</div>
+<ul>
+<li><p class="first">As the root MariaDB user, load the Cassandra library.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># mysql</span>
+<span class="o">&gt;</span> <span class="n">install</span> <span class="n">soname</span> <span class="s1">&#39;ha_cassandra.so&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Configure the default Cassandra rpc/client IP to connect to.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">SET</span> <span class="n">GLOBAL</span> <span class="n">cassandra_default_thrift_host</span><span class="o">=</span><span class="s1">&#39;&lt;CASSANDRA_IP&gt;&#39;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">The Cassandra table has to be created with the “COMPACT STORAGE”
+option. Otherwise, MariaDB will be unable to access the table
+properly.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ cqlsh
+&gt; CREATE TABLE &lt;NAME&gt; (&lt;VALUE1&gt; &lt;TYPE&gt; PRIMARY KEY, &lt;VALUE2&gt; &lt;TYPE&gt;) WITH COMPACT STORAGE;
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create a Cassandra table within a database. MariaDB needs to know the
+keyspace and the column/table to map to as well as what IP address to
+use to connect to Cassandra.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">CREATE</span> <span class="n">TABLE</span> <span class="o">&lt;</span><span class="n">NAME</span><span class="o">&gt;</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">cassandra</span> <span class="n">KEYSPACE</span><span class="o">=</span><span class="s2">&quot;&lt;KEYSPACE_NAME&gt;&quot;</span> <span class="n">COLUMN_FAMILY</span><span class="o">=</span><span class="s2">&quot;&lt;COLUMN_FAMILY_NAME&gt;&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>[1][2]</p>
+<p>Sources:</p>
+<ol class="arabic simple">
+<li>“Cassandra Storage Engine Overview.” MariaDB Knowledgebase. Accessed
+October 16, 2016.
+<a class="reference external" href="https://mariadb.com/kb/en/mariadb/cassandra-storage-engine-overview/">https://mariadb.com/kb/en/mariadb/cassandra-storage-engine-overview/</a></li>
+<li>“Cassandra Storage Engine Use Example.” MariaDB Knowledgebase.
+Accessed October 16, 2016.
+<a class="reference external" href="https://mariadb.com/kb/en/mariadb/cassandra-storage-engine-use-example/">https://mariadb.com/kb/en/mariadb/cassandra-storage-engine-use-example/</a></li>
+<li>“Missing CentOS7 RPM:
+MariaDB-10.1.16-centos7-x86_64-cassandra-engine.rpm?” MariaDB
+Knowledgebase. Accessed October 16, 2016.
+<a class="reference external" href="https://mariadb.com/kb/en/mariadb/missing-centos7-rpm-mariadb-10116-centos7-x86_64-cassandra-enginerpm/">https://mariadb.com/kb/en/mariadb/missing-centos7-rpm-mariadb-10116-centos7-x86_64-cassandra-enginerpm/</a></li>
+</ol>
+</div>
+</div>
+<div class="section" id="mariadb-clustering">
+<h3>MariaDB - Clustering<a class="headerlink" href="#mariadb-clustering" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="mariadb-clustering-maxscale">
+<h4>MariaDB - Clustering - Maxscale<a class="headerlink" href="#mariadb-clustering-maxscale" title="Permalink to this headline">¶</a></h4>
+<p>MaxScale is a proxy that can load balance requests in different ways.
+This is useful for specifying reads and writes to specific servers. [1]</p>
+<p>Source:</p>
+<ol class="arabic simple">
+<li>“About MariaDB MaxScale.” MariaDB Knowledgebase. Accessed October 16,
+2016.
+<a class="reference external" href="https://mariadb.com/kb/en/mariadb-enterprise/about-mariadb-maxscale/">https://mariadb.com/kb/en/mariadb-enterprise/about-mariadb-maxscale/</a></li>
+</ol>
+<div class="section" id="mariadb-clustering-maxscale-configuration">
+<h5>MariaDB - Clustering - Maxscale - Configuration<a class="headerlink" href="#mariadb-clustering-maxscale-configuration" title="Permalink to this headline">¶</a></h5>
+<p>The latest version of MariaDB’s MaxScale can be found at
+<a class="reference external" href="https://mariadb.com/downloads/maxscale">https://mariadb.com/downloads/maxscale</a>.</p>
+<p>RHEL Install [1]:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># yum install https://downloads.mariadb.com/MaxScale/2.0.1/rhel/7/x86_64/maxscale-2.0.1-1.rhel.7.x86_64.rpm</span>
+</pre></div>
+</div>
+<p>MaxScale requires the configuration of a listener that is associated
+with a router that serves requests to/from a list of servers.</p>
+<p>Listener options:</p>
+<ul class="simple">
+<li>[NAME]</li>
+<li>type=listener</li>
+<li>service = Specify the back-end service to use. This is usually a
+router.</li>
+<li>protocol=MySQLClient</li>
+<li>address = Specify the address to listen on.</li>
+<li>port=3306</li>
+</ul>
+<p>Listener example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">listener</span><span class="p">]</span>
+<span class="nb">type</span><span class="o">=</span><span class="n">listener</span>
+<span class="n">service</span><span class="o">=</span><span class="s2">&quot;Read Write Service&quot;</span>
+<span class="n">protocol</span><span class="o">=</span><span class="n">MySQLClient</span>
+<span class="n">port</span><span class="o">=</span><span class="mi">3306</span>
+</pre></div>
+</div>
+<p>Router options:</p>
+<ul class="simple">
+<li>[NAME]</li>
+<li>type=service</li>
+<li>router<ul>
+<li>readconnroute = Load balance requests.</li>
+<li>readwritesplit = Send write requests to one node and read queries
+to all nodes.</li>
+<li>schemarouter = Shard databases. Requests to a particular database
+will be routed to a specific server.</li>
+<li>binlogrouter = Copy binary logs from servers other servers. If a
+backend server fails, MaxScale will replace it and serve read
+requests from the available binary log.</li>
+</ul>
+</li>
+<li>router_options<ul>
+<li>master = Write only.</li>
+<li>slave = Read only.</li>
+<li>master,slave = Read and write.</li>
+</ul>
+</li>
+<li>servers = A comma separated list of back-end servers.</li>
+<li>user = Specify a MySQL user to connect as.</li>
+<li>passwd = Specify the password for the MySQL user.</li>
+</ul>
+<p>Example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Read</span> <span class="n">Write</span> <span class="n">Service</span><span class="p">]</span>
+<span class="nb">type</span><span class="o">=</span><span class="n">service</span>
+<span class="n">router</span><span class="o">=</span><span class="n">readwritesplit</span>
+<span class="n">servers</span><span class="o">=</span><span class="n">server1</span><span class="p">,</span><span class="n">server2</span><span class="p">,</span><span class="n">server3</span>
+<span class="n">user</span><span class="o">=</span><span class="n">maxscale</span>
+<span class="n">passwd</span><span class="o">=</span><span class="mi">123456</span>
+</pre></div>
+</div>
+<p>Server options:</p>
+<ul class="simple">
+<li>[NAME]</li>
+<li>type=server</li>
+<li>address = Specify the address of the MySQL server.</li>
+<li>port= Specify the MySQL port (default: 3306).</li>
+<li>protocol=MySQLBackend</li>
+</ul>
+<p>[2]</p>
+<p>For replication, a maxscale MySQL user needs “REPLICATION SET” and
+“SELECT” grants for all databases.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">GRANT</span> <span class="n">REPLICATION</span> <span class="n">SET</span><span class="p">,</span> <span class="n">SELECT</span> <span class="n">ON</span> <span class="o">*.*</span> <span class="n">TO</span> <span class="s1">&#39;maxscale&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span> <span class="n">IDENTIFIED</span> <span class="n">BY</span> <span class="s1">&#39;securepassword123&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>In a master-slave configuration, at least two servers are required to be
+running. This is because MaxScale is unsure if other nodes are present
+and cannot determine if a server is a master or a slave. This will
+prevent it from working properly and this error will occur for all
+connections. [3] It is ideal to follow the quorum theory by having 3
+servers to support a failed host properly.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ERROR</span> <span class="mi">1045</span> <span class="p">(</span><span class="mi">28000</span><span class="p">):</span> <span class="n">failed</span> <span class="n">to</span> <span class="n">create</span> <span class="n">new</span> <span class="n">session</span>
+</pre></div>
+</div>
+<p>Sources:</p>
+<ol class="arabic simple">
+<li>“MariaDB MaxScale Installation Guide.” MariaDB Knowledgebase.
+Accessed October 22, 2016.
+<a class="reference external" href="https://mariadb.com/kb/en/mariadb-enterprise/mariadb-maxscale-14/mariadb-maxscale-installation-guide/">https://mariadb.com/kb/en/mariadb-enterprise/mariadb-maxscale-14/mariadb-maxscale-installation-guide/</a></li>
+<li>“MaxScale Configuration &amp; Usage Scenarios.” MariaDB Knowledgebase.
+Accessed October 22, 2016.
+<a class="reference external" href="https://mariadb.com/kb/en/mariadb-enterprise/mariadb-maxscale-14/maxscale-configuration-usage-scenarios/">https://mariadb.com/kb/en/mariadb-enterprise/mariadb-maxscale-14/maxscale-configuration-usage-scenarios/</a></li>
+<li>“Issue with MaxScale when slaves are broken.” MaxScale Google Groups.
+August 28, 2014. Accessed November 12, 2016.
+<a class="reference external" href="https://groups.google.com/forum/#!topic/maxscale/HK49D15s21s">https://groups.google.com/forum/#!topic/maxscale/HK49D15s21s</a></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="virtualization.html" class="btn btn-neutral float-right" title="Virtualization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="security.html" class="btn btn-neutral" title="Security" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Luke Short.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2018.01.26',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

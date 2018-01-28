@@ -1,0 +1,525 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Bootloaders &mdash; Root Pages 2018.01.26 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Root Pages 2018.01.26 documentation" href="index.html"/>
+        <link rel="next" title="C and C++" href="c_and_c++.html"/>
+        <link rel="prev" title="Authentication" href="authentication.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Root Pages
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2018.01.26
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ansible.html">Ansible</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Bootloaders</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#grub-1">GRUB 1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#grub-1-installation">GRUB 1 - Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#grub-1-recovery">GRUB 1 - Recovery</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#grub-2">GRUB 2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#grub-2-installation">GRUB 2 - Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#grub-2-configuration">GRUB 2 - Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#grub-2-recovery">GRUB 2 - Recovery</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="c_and_c++.html">C and C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clustering.html">Clustering and High Availability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dns_servers.html">DNS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file_systems.html">File Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http_servers.html">HTTP Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linux.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mail_servers.html">Mail Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring.html">Monitoring</a></li>
+<li class="toctree-l1"><a class="reference internal" href="networking.html">Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nosql.html">NoSQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openstack.html">OpenStack Ocata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operating_systems.html">Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages.html">Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sql.html">SQL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="virtualization.html">Virtualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wine.html">Wine</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Root Pages</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Bootloaders</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/bootloaders.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="bootloaders">
+<h1>Bootloaders<a class="headerlink" href="#bootloaders" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="#grub-1">GRUB 1</a><ul>
+<li><a class="reference external" href="#grub-1---installation">Installation</a></li>
+<li><a class="reference external" href="#grub-1---recovery">Recovery</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#grub-2">GRUB 2</a><ul>
+<li><a class="reference external" href="#grub-2---installation">Installation</a></li>
+<li><a class="reference external" href="#grub-2---configuration">Configuration</a></li>
+<li><a class="reference external" href="#grub-2---recovery">Recovery</a></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="grub-1">
+<h2>GRUB 1<a class="headerlink" href="#grub-1" title="Permalink to this headline">¶</a></h2>
+<p>GRUB 1 is a legacy version of GRUB that is no longer supported. The last
+version made available was 0.97 in 2008. GRUB 2 should be used for newer
+Linux distributions.</p>
+<div class="section" id="grub-1-installation">
+<h3>GRUB 1 - Installation<a class="headerlink" href="#grub-1-installation" title="Permalink to this headline">¶</a></h3>
+<p>Install GRUB to the primary drive. This will use the MSDOS partition
+scheme on the first 512 bytes as GPT was not supported until GRUB 2.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># grub-install --root-directory=/ /dev/&lt;DEVICE&gt;</span>
+</pre></div>
+</div>
+<p>A basic boot menu must be configured to specify the boot partition, the
+kernel to use, the root partition to mount, and the initrd/initramfs to
+load.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vim /boot/grub/menu.lst</span>
+<span class="n">root</span>   <span class="p">(</span><span class="n">hd0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">kernel</span> <span class="o">/</span><span class="n">vmlinuz</span><span class="o">-</span><span class="n">linux</span> <span class="n">root</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda2</span> <span class="n">ro</span>
+<span class="n">initrd</span> <span class="o">/</span><span class="n">initramfs</span><span class="o">-</span><span class="n">linux</span><span class="o">.</span><span class="n">img</span>
+</pre></div>
+</div>
+<p>[1]</p>
+<p>Source:</p>
+<ol class="arabic simple">
+<li>“GRUB Legacy.” Arch Linux Wiki. January 11, 2017. Accessed February
+8, 2017. <a class="reference external" href="https://wiki.archlinux.org/index.php/GRUB_Legacy">https://wiki.archlinux.org/index.php/GRUB_Legacy</a></li>
+</ol>
+</div>
+<div class="section" id="grub-1-recovery">
+<h3>GRUB 1 - Recovery<a class="headerlink" href="#grub-1-recovery" title="Permalink to this headline">¶</a></h3>
+<p>When GRUB fails to boot, or if the boot settings need to be modified,
+the GRUB recovery shell can be used.</p>
+<p>Common options:</p>
+<ul class="simple">
+<li>help = Show help messages.</li>
+<li>cat = View the contents of a file.</li>
+<li>find = View the contents of a file or locate a specific file.</li>
+<li>dhcp = Obtain an IP address from DHCP.</li>
+<li>ifconfig = Manually configure IP addressing.</li>
+<li>tftpserver = Specify a TFTP server to PXE boot from.</li>
+<li>module = Load a GRUB module.</li>
+<li>root hd(<code class="docutils literal"><span class="pre">X</span></code>,<code class="docutils literal"><span class="pre">Y</span></code>) = Specify the root drive <code class="docutils literal"><span class="pre">X</span></code> and partition
+<code class="docutils literal"><span class="pre">Y</span></code> (the partition starts at “0” in GRUB 1 and “1” in GRUB 2). Use
+the “Tab” key on the keyboard to auto-complete if the partitions are
+unknown.</li>
+<li>boot = Boot the operating system.</li>
+<li>halt = Turn the computer off.</li>
+<li>reboot = Reboot the computer</li>
+</ul>
+<p>Example of manually booting a server:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">grub</span><span class="o">&gt;</span> <span class="n">root</span> <span class="n">hd</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">grub</span><span class="o">&gt;</span> <span class="n">kernel</span> <span class="o">/</span><span class="n">vmzlinuz</span><span class="o">-</span><span class="mf">4.0</span><span class="o">.</span><span class="n">img</span> <span class="n">root</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda2</span> <span class="n">ro</span>
+<span class="n">grub</span><span class="o">&gt;</span> <span class="n">initrd</span> <span class="o">/</span><span class="n">initramfs</span><span class="o">-</span><span class="mf">4.0</span><span class="o">.</span><span class="n">img</span>
+<span class="n">grub</span><span class="o">&gt;</span> <span class="n">boot</span>
+</pre></div>
+</div>
+<p>[1]</p>
+<p>Source:</p>
+<ol class="arabic simple">
+<li>“GNU GRUB Manual 0.97.” GNU. Accessed February 8, 2017.
+<a class="reference external" href="https://www.gnu.org/software/grub/manual/legacy/grub.html">https://www.gnu.org/software/grub/manual/legacy/grub.html</a></li>
+</ol>
+</div>
+</div>
+<div class="section" id="grub-2">
+<h2>GRUB 2<a class="headerlink" href="#grub-2" title="Permalink to this headline">¶</a></h2>
+<p>GRUB stands for the GRand Unified Bootloader. It was designed to be
+cross platform compatible with most operating systems including BSD,
+Linux, and Windows variants.</p>
+<div class="section" id="grub-2-installation">
+<h3>GRUB 2 - Installation<a class="headerlink" href="#grub-2-installation" title="Permalink to this headline">¶</a></h3>
+<p>GRUB must be installed onto the start of the entire drive, not a
+partition, to avoid issues in the case of partitions needing to be
+modified. The first 512 bytes of a drive are used for the Master Boot
+Record (MBR). If you are using a GPT partition then it uses the first
+2048 bytes. GRUB will add it’s own data right after that. It is usually
+a safe and recommended option to create your first partition 1MB after
+the start of the drive, especially if GPT is in use.</p>
+<p>Install GRUB to a drive (replace “X”) and then generate a boot menu
+configuration file. This will create the menu file that loads up to the
+end-user upon boot.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># grub-install /dev/sdX</span>
+<span class="c1"># grub-mkconfig -o /boot/grub/grub.cfg</span>
+</pre></div>
+</div>
+<p>If any changes are made to GRUB’s settings and/or it’s various scripts,
+run this command to update the changes. [1]</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># update-grub</span>
+</pre></div>
+</div>
+<p>Common “grub-install” options: * compress = Compress GRUB-related
+files. Valid options are: * no (default), xz, gz, lzo * –modules =
+List kernel modules that are required for boot. Depending on the
+end-user’s setup, “lvm”, “raid” (for mdadm), and/or “encrypt” (for LUKS)
+may be required. * –force = Install despite any warnings. * –recheck
+= Remove the original /boot/grub/device.map file (if it exists) and then
+review the current mapping of partitions. * –boot-directory = The
+directory that the “grub/” folder should exist in. This is typically
+“/boot”. [2]</p>
+<p>Sources:</p>
+<ol class="arabic simple">
+<li>“GRUB.” Arch Linux Wiki. May 27, 2016.
+<a class="reference external" href="https://wiki.archlinux.org/index.php/GRUB">https://wiki.archlinux.org/index.php/GRUB</a></li>
+<li>“GRUB2-INSTALL MAN PAGE.” Mankier. February 26, 2014.
+<a class="reference external" href="https://www.mankier.com/8/grub2-install">https://www.mankier.com/8/grub2-install</a></li>
+</ol>
+</div>
+<div class="section" id="grub-2-configuration">
+<h3>GRUB 2 - Configuration<a class="headerlink" href="#grub-2-configuration" title="Permalink to this headline">¶</a></h3>
+<p>Important files:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="87%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">FILE</th>
+<th class="head">DESCRIPTION</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>/etc/default/grub</td>
+<td>GRUB default settings.</td>
+</tr>
+<tr class="row-odd"><td>/etc/grub.d/</td>
+<td>A folder with various scripts that make up the grub.cfg. Scripts prefixed with lower numbers are executed first.</td>
+</tr>
+<tr class="row-even"><td>/boot/grub/grub.cfg</td>
+<td>This is automatically generated using the settings from /etc/default/grub and the scripts in /etc/grub.d/ . Manual changes may get overwritten.</td>
+</tr>
+</tbody>
+</table>
+<p>Common Options: * /etc/default/grub * GRUB_DEFAULT = The default menu
+entry to autoboot into. * saved = Boot from the last option selected.
+This is cached in the /boot/grub/grubenv file. * Alternatively, this
+can either be the number of the “menuentry” section, in order from top
+to bottom, starting at 0. * Or the menu entry title can be explicitly
+specified. For example, “CentOS Linux (3.10.0-327.13.1.el7.x86_64) 7
+(Core).”</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># grep ^menuentry /boot/grub2/grub.cfg</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span>menuentry &#39;CentOS Linux (3.10.0-327.18.2.el7.x86_64) 7 (Core)&#39; --class centos --class gnu-linux --class gnu --class os --unrestricted $menuentry_id_option &#39;gnulinux-3.10.0-327.18.2.el7.x86_64-advanced-d2e5b723-0055-4157-9197-e7d715937e8b&#39; {
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span>menuentry &#39;CentOS Linux (3.10.0-327.13.1.el7.x86_64) 7 (Core)&#39; --class centos --class gnu-linux --class gnu --class os --unrestricted $menuentry_id_option &#39;gnulinux-3.10.0-327.13.1.el7.x86_64-advanced-d2e5b723-0055-4157-9197-e7d715937e8b&#39; {
+</pre></div>
+</div>
+<ul class="simple">
+<li>GRUB_TIMEOUT = Set the timeout (in seconds) before booting into the
+default menu entry.</li>
+<li>GRUB_CMDLINE_LINUX = Append kernel options to the end of the
+“linux” line. These can later be seen in the operating system in
+/proc/cmdline. This applies to both the normal and recovery mode
+options.</li>
+<li>GRUB_CMDLINE_LINUX_DEFAULT = The same as the above setting except
+this option does not affect the recovery kernel options.</li>
+<li>GRUB_DISABLE_LINUX_UUID = If set to “true”, devices from /dev/
+will be used for specifying the root instead of the UUID. The default
+is “false” which will use UUIDs.</li>
+<li>GRUB_BACKGROUND = Specify the full path to a custom image for GRUB’s
+menu background.</li>
+</ul>
+<p>[1]</p>
+<p>Source:</p>
+<ol class="arabic simple">
+<li>“GRUB2/Setup.” Ubuntu Documentation. November 29, 2015.
+<a class="reference external" href="https://help.ubuntu.com/community/Grub2/Setup">https://help.ubuntu.com/community/Grub2/Setup</a></li>
+</ol>
+</div>
+<div class="section" id="grub-2-recovery">
+<h3>GRUB 2 - Recovery<a class="headerlink" href="#grub-2-recovery" title="Permalink to this headline">¶</a></h3>
+<p>In cases where GRUB fails (because it was installed incorrectly), the
+end-user is automatically switched into GRUB’s rescue shell.</p>
+<p>Common options:</p>
+<ul class="simple">
+<li>insmod = Load kernel modules.</li>
+<li>ls = List partitions and file systems within them.</li>
+<li>cat = View file contents.</li>
+<li>set = Set a boot option.</li>
+<li>unset = Remove a boot option.</li>
+<li>boot = Attempt to boot again.</li>
+<li>halt = Shutdown the computer.</li>
+<li>reboot = Restart the computer.</li>
+</ul>
+<p>The rescue prompt will look similar to this.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">grub</span> <span class="n">rescue</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Example of using these commands to do a custom rescue boot.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">grub</span> <span class="n">rescue</span><span class="o">&gt;</span> <span class="n">ls</span>
+<span class="p">(</span><span class="n">hd0</span><span class="p">)</span> <span class="p">(</span><span class="n">hd0</span><span class="p">,</span><span class="n">msdos1</span><span class="p">)</span>
+<span class="n">grub</span> <span class="n">rescue</span><span class="o">&gt;</span> <span class="n">ls</span> <span class="p">(</span><span class="n">hd0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">boot</span><span class="o">/</span>
+<span class="n">grub</span><span class="o">/</span>
+<span class="n">vmlinuz</span>
+<span class="n">initramfs</span><span class="o">-</span><span class="n">linux</span><span class="o">.</span><span class="n">img</span>
+<span class="n">grub</span> <span class="n">rescue</span><span class="o">&gt;</span> <span class="nb">set</span> <span class="n">root</span><span class="o">=</span><span class="p">(</span><span class="n">hd0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">grub</span> <span class="n">rescue</span><span class="o">&gt;</span> <span class="n">linux</span> <span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">vmlinuz</span> <span class="n">root</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda1</span>
+<span class="n">grub</span> <span class="n">rescue</span><span class="o">&gt;</span> <span class="n">initrd</span> <span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">initramfs</span><span class="o">-</span><span class="n">linux</span><span class="o">.</span><span class="n">img</span>
+<span class="n">grub</span> <span class="n">rescue</span><span class="o">&gt;</span> <span class="n">boot</span>
+</pre></div>
+</div>
+<p>Alternatively, you can switch back to the graphical GRUB menu and make
+changes there.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">grub</span> <span class="n">rescue</span><span class="o">&gt;</span> <span class="n">insmod</span> <span class="n">normal</span>
+<span class="n">grub</span> <span class="n">rescue</span><span class="o">&gt;</span> <span class="n">normal</span>
+</pre></div>
+</div>
+<p>For recovering from a corrupt GRUB installation, fully change root into
+the environment from a live CD, USB, or PXE network boot. Then you can
+modify configuration files and re-install GRUB using the same commands
+used during the installation.</p>
+<p>In this example, /dev/sda2 is the root partition and /dev/sda1 is the
+boot partition. [1]</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># mount /dev/sda2 /mnt</span>
+<span class="c1"># mount /dev/sda1 /mnt/boot</span>
+<span class="c1"># mount --bind /dev /mnt/dev</span>
+<span class="c1"># mount --bind /run /mnt/run</span>
+<span class="c1"># mount --bind /sys /mnt/sys</span>
+<span class="c1"># chroot /mnt</span>
+<span class="c1"># /bin/bash</span>
+<span class="c1"># export PATH=&quot;$PATH:/sbin:/bin&quot;</span>
+</pre></div>
+</div>
+<p>If you need to recover GRUB from a chroot that is based on a LVM on the
+host node, make sure that LVM tools are installed on the guest. This way
+it can properly see the logical volume as a block device.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Debian</span><span class="o">/</span><span class="n">Ubuntu</span>
+<span class="c1"># apt-get install lvm2</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">RHEL</span><span class="o">/</span><span class="n">Fedora</span>
+<span class="c1"># yum install lvm2</span>
+</pre></div>
+</div>
+<p>Sources:</p>
+<ol class="arabic simple">
+<li>“Grub2/Installing.” Ubuntu Documentation. March 6, 2015.
+<a class="reference external" href="https://help.ubuntu.com/community/Grub2/Installing">https://help.ubuntu.com/community/Grub2/Installing</a></li>
+<li>“GNU GRUB Manual 2.00.” GNU. Accessed June 27, 2016.
+<a class="reference external" href="https://www.gnu.org/software/grub/manual/grub.html">https://www.gnu.org/software/grub/manual/grub.html</a></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="c_and_c++.html" class="btn btn-neutral float-right" title="C and C++" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="authentication.html" class="btn btn-neutral" title="Authentication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Luke Short.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2018.01.26',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
