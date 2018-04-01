@@ -1,22 +1,7 @@
 HTTP Servers
 ============
 
--  `Apache 2.4 <#apache-2.4>`__
-
-   -  `Configuration <#apache---configuration>`__
-   -  `Virtual Hosts <#apache---virtual-hosts>`__
-   -  `Files, Directories, and
-      Locations <#apache---files,-directories,-and-locations>`__
-   -  `Authentication <#apache---authentication>`__
-   -  `CGI <#apache---cgi>`__
-   -  `SELinux <#apache---selinux>`__
-
--  `NGINX <#nginx>`__
-
-   -  `Configuration <#nginx---configuration>`__
-
--  Lighttpd
--  `OpenSSL <#openssl>`__
+.. contents:: Table of Contents
 
 Apache 2.4
 ----------
@@ -25,28 +10,15 @@ The Apache HTTP Server Project is designed to provide a versatile open
 source HTTP and HTTPS web server. It is one of the top used web servers.
 [1]
 
-Source:
-
-1. "The Number One HTTP Server On The Internet." Apache HTTP Server
-   Project. Accessed October 1, 2016. https://httpd.apache.org/
-
-Apache - Configuration
-~~~~~~~~~~~~~~~~~~~~~~
+Configuration
+~~~~~~~~~~~~~
 
 There is generally one primary Apache configuration file that then
 includes other possible configuration files.
 
-RHEL/Fedora
+Fedora file: /etc/http/conf/httpd.conf
 
-::
-
-    /etc/http/conf/httpd.conf
-
-Debian/Ubuntu
-
-::
-
-    /etc/apache2/apache2.conf
+Debian file: /etc/apache2/apache2.conf
 
 Options:
 
@@ -89,26 +61,20 @@ Options:
 
    -  Example: IncludeOptional conf.d/\*.conf
 
-[1]
+[2]
 
 Verify that the configuration is correct with one of these commands:
 
-::
+.. code-block:: sh
 
-    # apachectl configtest
+    $ sudo apachectl configtest
 
-::
+.. code-block:: sh
 
-    # httpd -t
+    $ sudo httpd -t
 
-Source:
-
-1. "Configure the /etc/httpd/conf/httpd.conf file." Securing and
-   Optimizing Linux. 2000. Accessed October 1, 2016.
-   http://www.tldp.org/LDP/solrhe/Securing-Optimizing-Linux-RH-Edition-v1.3/chap29sec245.html
-
-Apache - Virtual Hosts
-~~~~~~~~~~~~~~~~~~~~~~
+Virtual Hosts
+~~~~~~~~~~~~~
 
 A virtual host file is part of the configuration that is required for
 Apache to load a domain.
@@ -127,7 +93,7 @@ Options:
 -  DocumentRoot = The directory where the domain loads its files from.
 -  DirectoryIndex = The main file that is loaded up in a directory, if
    found. Default: "index.html" or "index.htm."
--  LogLevel, ErroLog, and CustomLog = Refer to the `Apache
+-  LogLevel, ErrorLog, and CustomLog = Refer to the `Apache
    Configuration <#apache---configuration>`__ section.
 
 Example:
@@ -135,25 +101,19 @@ Example:
 ::
 
     <VirtualHost 127.0.0.1:80>
-      ServerName  rootpages.tld
-      ServerAlias www.rootpages.tld
-      DirectoryIndex index.html
-      DocumentRoot /var/www/html/rootpages/
-      LogLevel warn
-      ErrorLog /var/log/httpd/rootpages_tld.error_log
-      CustomLog /var/log/httpd/rootpages_tld.custom_log
+        ServerName  rootpages.tld
+        ServerAlias www.rootpages.tld
+        DirectoryIndex index.html
+        DocumentRoot /var/www/html/rootpages/
+        LogLevel warn
+        ErrorLog /var/log/httpd/rootpages_tld.error_log
+        CustomLog /var/log/httpd/rootpages_tld.custom_log
     </VirtualHost>
 
-[1]
+[3]
 
-Source:
-
-1. "Set up Apache virtual hosts on Ubuntu." Rackspace Network Support.
-   July 8, 2016. Accessed October 1, 2016.
-   https://support.rackspace.com/how-to/set-up-apache-virtual-hosts-on-ubuntu/
-
-Apache - Files, Directories, and Locations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Files, Directories, and Locations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Different settings can be used on items based on if a matched file,
 directory, or location is found. Regular expressions can be used to
@@ -196,7 +156,7 @@ Options:
       -  denied = Deny the matched rule.
 
 -  Require not [all\|host\|ip] = Deny access to a host or IP. This
-   should be configured after a Require rule. [1]
+   should be configured after a Require rule. [4]
 -  Options = Specify attributes of the matched area. Enable an option
    with a "+" or disable it with "-". If no sign is present, Apache
    assumes it should be enabled. If at least one option requires a sign
@@ -210,7 +170,7 @@ Options:
       files to execute commands or scripts.
    -  Indexes = Show the content of a directory if the DirectoryIndex is
       not found.
-   -  FollowSymLinks = Allow symlinks to different directories. [2]
+   -  FollowSymLinks = Allow symlinks to different directories. [5]
 
 A combination of a "Require all" or "Require not all" and then an
 explicit allow/deny list can only be used within a "RequireAll" block.
@@ -225,43 +185,36 @@ explicit allow/deny list can only be used within a "RequireAll" block.
         </RequireAll>
     </Directory>
 
-Sources:
-
-1. "Access Control." Apache HTTP Server Project. Accessed October 1,
-   2016. https://httpd.apache.org/docs/2.4/howto/access.html
-2. "Options Directive." Apache HTTP Server Project. Accessed October 1,
-   2016. http://httpd.apache.org/docs/2.4/mod/core.html#options
-
-Apache - Authentication
-~~~~~~~~~~~~~~~~~~~~~~~
+Authentication
+~~~~~~~~~~~~~~
 
 Locations can be secured by a username and password. Users can also be
 assigned to groups.
 
 Create an Apache user.
 
-::
+.. code-block:: sh
 
-    # htpasswd -c /etc/httpd/conf.d/passwd <USER1>
+    $ sudo htpasswd -c /etc/httpd/conf.d/passwd <USER1>
 
 Another user can be appended to this file by omitting the "-c" create
 option.
 
-::
+.. code-block:: sh
 
-    # htpasswd /etc/httpd/conf.d/passwd <USER2>
+    $ sudo htpasswd /etc/httpd/conf.d/passwd <USER2>
 
 A new file can be created to assign multiple users to a group.
 
+File: /etc/httpd/conf.d/group
+
 ::
 
-    # vim /etc/httpd/conf.d/group
     <GROUP>: <USER1> <USER2>
 
-Authentication can now be applied to any location. [1] The syntax is:
+Authentication can now be applied to any location. [6] The syntax is:
 
 ::
-
     AuthType Basic
     AuthName "Login Prompt Text"
     AuthUserFile "/path/to/passwd/file"
@@ -291,14 +244,8 @@ Example #2:
         Require group spring_2016
     </File>
 
-Source:
-
-1. "Authentication and Authorization." Apache HTTP Server Project.
-   Accessed October 1, 2016.
-   https://httpd.apache.org/docs/2.4/howto/auth.html
-
-Apache - CGI
-~~~~~~~~~~~~
+CGI
+~~~
 
 The common gateway interface (CGI) is a method of the web server
 executing a script and then sending the results to a web browser. The
@@ -330,7 +277,7 @@ example shebang is "#!/bin/bash." The program will also need to first
 print out "Content-type: text/html" so the web browser knows that it is
 a HTML page. An example is shown below.
 
-::
+.. code-block:: sh
 
     #!/bin/bash
     echo "Content-type: text/html"
@@ -339,20 +286,14 @@ a HTML page. An example is shown below.
 All scripts should have readable and executable Unix permissions by the
 anonymous user ("other") access category.
 
-::
+.. code-block:: sh
 
-    # chmod -R o+rx /path/to/custom/cgi-bin/
+    $ sudo chmod -R o+rx /path/to/custom/cgi-bin/
 
-[1]
+[7]
 
-Source:
-
-1. "Apache Tutorial: Dynamic Content with CGI." Apache HTTP Server
-   Project. Accessed October 1, 2016.
-   https://httpd.apache.org/docs/2.4/howto/cgi.html
-
-Apache - SELinux
-~~~~~~~~~~~~~~~~
+SELinux
+~~~~~~~
 
 Red Hat Enterprise Linux and related distributions use SELinux as an
 extra layer of security. In this case, by having SELinux, this ensures
@@ -363,46 +304,41 @@ will need to be modified.
 
 Install the troubleshooting utilities:
 
-::
+.. code-block:: sh
 
-    # yum install setroubleshoot
+    $ sudo yum install setroubleshoot
 
 View the current Apache ports allowed by SELinux:
 
-::
+.. code-block:: sh
 
-    # semanage port -l | grep ^http_port_t
+    $ sudo semanage port -l | grep ^http_port_t
     http_port_t                    tcp      80, 81, 443, 488, 8008, 8009, 8443, 9000
 
 Add a new allowed TCP port:
 
-::
+.. code-block:: sh
 
-    # semanage port -a -t http_port_t -p tcp <PORT_NUMBER>
+    $ sudo semanage port -a -t http_port_t -p tcp <PORT_NUMBER>
 
 Lookup the Apache SELinux file context permissions. It should be
 "httpd\_sys\_content\_t."
 
-::
+.. code-block:: sh
 
-    # ls -lahZ /var/www/html/
+    $ ls -lahZ /var/www/html/
     drwxr-xr-x. root root system_u:object_r:httpd_sys_content_t:s0 .
     drwxr-xr-x. root root system_u:object_r:httpd_sys_content_t:s0 ..
 
 Permanently fix SELinux permissions on a custom directory using the
 semanage tool and then apply the permissions by running restorecon:
 
-::
+.. code-block:: sh
 
-    # semanage fcontext -a -t httpd_sys_content_t "/path/to/custom/dir(/.*)?"
-    # restorecon -Rv /path/to/custom/dir
+    $ sudo semanage fcontext -a -t httpd_sys_content_t "/path/to/custom/dir(/.*)?"
+    $ sudo restorecon -Rv /path/to/custom/dir
 
-[1]
-
-Source:
-
-1. "HowTos SELinux." CentOS Wiki. February 26, 2017. Accessed May 7,
-   2017. https://wiki.centos.org/HowTos/SELinux
+[8]
 
 NGINX
 -----
@@ -412,8 +348,8 @@ added the functionality of being a HTTP web server. For HTTP, it is
 focused on high-performance static content handling. Dynamic scripts
 must be processed by a different web server.
 
-NGINX - Configuration
-~~~~~~~~~~~~~~~~~~~~~
+Configuration
+~~~~~~~~~~~~~
 
 The NGINX configuration file ``/etc/nginx/nginx.conf`` contains
 different blocks defined by using brackets ``{}``. Each line in the file
@@ -482,7 +418,7 @@ configuration settings.
    -  root
    -  try\_files
 
-[2][3]
+[10][11]
 
 ::
 
@@ -501,24 +437,13 @@ configuration settings.
         }
     }
 
-[1]
-
-Sources:
-
-1. "NGINX Beginner’s Guide." NGINX Documentation. April 18, 2017.
-   Accessed May 7, 2017. https://nginx.org/en/docs/beginners\_guide.html
-2. "`NGINX <#nginx>`__ Core functionality." NGINX Documentation. April
-   18, 2017. Accessed May 7, 2017.
-   https://nginx.org/en/docs/ngx\_core\_module.html
-3. "`NGINX <#nginx>`__ Module ngx\_http\_core\_module." NGINX
-   Documentation. April 18, 2017. Accessed May 7, 2017.
-   https://nginx.org/en/docs/http/ngx\_http\_core\_module.html
+[9]
 
 OpenSSL
 -------
 
 OpenSSL is a free and open source library for managing secure socket
-layer (SSL) and Transport Layer Security (TLS) encryption. [1]
+layer (SSL) and Transport Layer Security (TLS) encryption. [12]
 
 PEM files can either be a single certificate or a full encapsulation of
 all related certificates and keys. This is useful for distributing an
@@ -534,14 +459,14 @@ domain's certificate key (RSA PRIVATE KEY).
 
 Minimal Syntax:
 
-::
+.. code-block:: sh
 
     -----BEGIN MY CERTIFICATE-----
     -----END MY CERTIFICATE-----
 
 Full Self-signed Syntax:
 
-::
+.. code-block:: sh
 
     -----BEGIN MY CERTIFICATE-----
     -----END MY CERTIFICATE-----
@@ -550,7 +475,7 @@ Full Self-signed Syntax:
 
 Full Verified Syntax:
 
-::
+.. code-block:: sh
 
     -----BEGIN MY CERTIFICATE-----
     -----END MY CERTIFICATE-----
@@ -563,12 +488,24 @@ Full Verified Syntax:
     -----BEGIN RSA PRIVATE KEY-----
     -----END RSA PRIVATE KEY-----
 
-[2]
+[13]
 
-Sources:
+`Errata <https://github.com/ekultails/rootpages/commits/master/src/http_servers.rst>`__
+---------------------------------------------------------------------------------------
 
-1. "Welcome to OpenSSL!" Accessed November 27, 2016.
-   https://www.openssl.org/
-2. "HAProxy Comodo SSL." Stack Overflow. August 31, 2013. Accessed
-   November 27, 2016.
-   http://stackoverflow.com/questions/18537855/haproxy-comodo-ssl
+Bibliography
+------------
+
+1. "The Number One HTTP Server On The Internet." Apache HTTP Server Project. Accessed October 1, 2016. https://httpd.apache.org/
+2. "Configure the /etc/httpd/conf/httpd.conf file." Securing and Optimizing Linux. 2000. Accessed October 1, 2016. http://www.tldp.org/LDP/solrhe/Securing-Optimizing-Linux-RH-Edition-v1.3/chap29sec245.html
+3. "Set up Apache virtual hosts on Ubuntu." Rackspace Network Support. July 8, 2016. Accessed October 1, 2016. https://support.rackspace.com/how-to/set-up-apache-virtual-hosts-on-ubuntu/
+4. "Access Control." Apache HTTP Server Project. Accessed October 1, 2016. https://httpd.apache.org/docs/2.4/howto/access.html
+5. "Options Directive." Apache HTTP Server Project. Accessed October 1, 2016. http://httpd.apache.org/docs/2.4/mod/core.html#options
+6. "Authentication and Authorization." Apache HTTP Server Project. Accessed October 1, 2016. https://httpd.apache.org/docs/2.4/howto/auth.html
+7. "Apache Tutorial: Dynamic Content with CGI." Apache HTTP Server Project. Accessed October 1, 2016. https://httpd.apache.org/docs/2.4/howto/cgi.html
+8. "HowTos SELinux." CentOS Wiki. February 26, 2017. Accessed May 7, 2017. https://wiki.centos.org/HowTos/SELinux
+9. "NGINX Beginner’s Guide." NGINX Documentation. April 18, 2017. Accessed May 7, 2017. https://nginx.org/en/docs/beginners\_guide.html
+10. "`NGINX <#nginx>`__ Core functionality." NGINX Documentation. April 18, 2017. Accessed May 7, 2017. https://nginx.org/en/docs/ngx\_core\_module.html
+11. "`NGINX <#nginx>`__ Module ngx\_http\_core\_module." NGINX Documentation. April 18, 2017. Accessed May 7, 2017. https://nginx.org/en/docs/http/ngx\_http\_core\_module.html
+12. "Welcome to OpenSSL!" Accessed November 27, 2016. https://www.openssl.org/
+13. "HAProxy Comodo SSL." Stack Overflow. August 31, 2013. Accessed November 27, 2016. http://stackoverflow.com/questions/18537855/haproxy-comodo-ssl

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>File Systems &mdash; Root Pages 2018.01.26 documentation</title>
+  <title>File Systems &mdash; Root Pages 2018.04.01 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Root Pages 2018.01.26 documentation" href="index.html"/>
+    <link rel="top" title="Root Pages 2018.04.01 documentation" href="index.html"/>
         <link rel="next" title="HTTP Servers" href="http_servers.html"/>
         <link rel="prev" title="DNS" href="dns_servers.html"/> 
 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2018.01.26
+                2018.04.01
               </div>
             
           
@@ -96,16 +96,17 @@
 <li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bootloaders.html">Bootloaders</a></li>
 <li class="toctree-l1"><a class="reference internal" href="c_and_c++.html">C and C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="databases.html">Databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="clustering.html">Clustering and High Availability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dns_servers.html">DNS</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">File Systems</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#types">Types</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#types-btrfs">Types - Btrfs</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#types-btrfs-btrfs-raids">Types - Btrfs - Btrfs RAIDs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#types-btrfs-btrfs-limitations">Types - Btrfs - Btrfs Limitations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#btrfs">Btrfs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#btrfs-raids">Btrfs RAIDs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#btrfs-limitations">Btrfs Limitations</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#types-ext4">Types - ext4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ext4">ext4</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#raids">RAIDs</a><ul>
@@ -113,23 +114,25 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#network">Network</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#network-nfs">Network - NFS</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#network-smb">Network - SMB</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#network-iscsi">Network - iSCSI</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#network-iscsi-target">Network - iSCSI - Target</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#network-iscsi-initiator">Network - iSCSI - Initiator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nfs">NFS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#smb">SMB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iscsi">iSCSI</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#target">Target</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#initiator">Initiator</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#network-ceph">Network - Ceph</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#network-ceph-installation">Network - Ceph - Installation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#network-ceph-crush-map">Network - Ceph - CRUSH Map</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#network-ceph-repair">Network - Ceph - Repair</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#network-ceph-libvirt">Network - Ceph - libvirt</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#network-ceph-cephfs">Network - Ceph - CephFS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ceph">Ceph</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#crush-map">CRUSH Map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#repair">Repair</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#libvirt">libvirt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cephfs">CephFS</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#errata">Errata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bibliography">Bibliography</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="http_servers.html">HTTP Servers</a></li>
@@ -137,13 +140,11 @@
 <li class="toctree-l1"><a class="reference internal" href="mail_servers.html">Mail Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="monitoring.html">Monitoring</a></li>
 <li class="toctree-l1"><a class="reference internal" href="networking.html">Networking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nosql.html">NoSQL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="openstack.html">OpenStack Ocata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openstack.html">OpenStack Queens</a></li>
 <li class="toctree-l1"><a class="reference internal" href="operating_systems.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages.html">Packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="security.html">Security</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sql.html">SQL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="virtualization.html">Virtualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="wine.html">Wine</a></li>
 </ul>
@@ -210,55 +211,65 @@
            <div itemprop="articleBody">
             
   <div class="section" id="file-systems">
-<h1>File Systems<a class="headerlink" href="#file-systems" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id1">File Systems</a><a class="headerlink" href="#file-systems" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
 <ul class="simple">
-<li><a class="reference external" href="#types">Types</a><ul>
-<li><a class="reference external" href="#types---btrfs">Btrfs</a><ul>
-<li><a class="reference external" href="#types---btrfs---btrfs-raids">Btrfs RAIDs</a></li>
-<li><a class="reference external" href="#types---btrfs---btrfs-limitations">Btrfs Limitations</a></li>
+<li><a class="reference internal" href="#file-systems" id="id1">File Systems</a><ul>
+<li><a class="reference internal" href="#types" id="id2">Types</a><ul>
+<li><a class="reference internal" href="#btrfs" id="id3">Btrfs</a><ul>
+<li><a class="reference internal" href="#btrfs-raids" id="id4">Btrfs RAIDs</a></li>
+<li><a class="reference internal" href="#btrfs-limitations" id="id5">Btrfs Limitations</a></li>
 </ul>
 </li>
-<li><a class="reference external" href="#types---ext4">ext4</a></li>
-<li>XFS</li>
-<li>ZFS</li>
+<li><a class="reference internal" href="#ext4" id="id6">ext4</a></li>
 </ul>
 </li>
-<li>LVM</li>
-<li><a class="reference external" href="#raids">RAIDs</a><ul>
-<li><a class="reference external" href="#raids---mdadm">mdadm</a></li>
+<li><a class="reference internal" href="#raids" id="id7">RAIDs</a><ul>
+<li><a class="reference internal" href="#raids-mdadm" id="id8">RAIDs - mdadm</a></li>
 </ul>
 </li>
-<li><a class="reference external" href="#network">Network</a><ul>
-<li><a class="reference external" href="#network---nfs">NFS</a></li>
-<li><a class="reference external" href="#network---smb">SMB</a></li>
-<li><a class="reference external" href="#network---iscsi">iSCSI</a><ul>
-<li><a class="reference external" href="#network---iscsi---target">Target</a></li>
-<li><a class="reference external" href="#network---iscsi---initiator">Initiator</a></li>
+<li><a class="reference internal" href="#network" id="id9">Network</a><ul>
+<li><a class="reference internal" href="#nfs" id="id10">NFS</a></li>
+<li><a class="reference internal" href="#smb" id="id11">SMB</a></li>
+<li><a class="reference internal" href="#iscsi" id="id12">iSCSI</a><ul>
+<li><a class="reference internal" href="#target" id="id13">Target</a></li>
+<li><a class="reference internal" href="#initiator" id="id14">Initiator</a></li>
 </ul>
 </li>
-<li><a class="reference external" href="#network---ceph">Ceph</a><ul>
-<li><a class="reference external" href="#network---ceph---installation">Installation</a><ul>
-<li><a class="reference external" href="#network---ceph---installation---quick">Quick</a></li>
-<li>Full</li>
-<li><a class="reference external" href="#ceph---installation---ceph-ansible">Ceph-Ansible</a></li>
+<li><a class="reference internal" href="#ceph" id="id15">Ceph</a><ul>
+<li><a class="reference internal" href="#installation" id="id16">Installation</a><ul>
+<li><a class="reference internal" href="#quick" id="id17">Quick</a></li>
+<li><a class="reference internal" href="#ceph-ansible" id="id18">ceph-ansible</a></li>
 </ul>
 </li>
-<li><a class="reference external" href="#network---ceph---crush-map">CRUSH Map</a></li>
-<li><a class="reference external" href="#network---ceph---repair">Repair</a></li>
-<li><a class="reference external" href="#network---ceph---libvirt">libvirt</a></li>
-<li><a class="reference external" href="#network---ceph---cephfs">CephFS</a></li>
+<li><a class="reference internal" href="#crush-map" id="id19">CRUSH Map</a><ul>
+<li><a class="reference internal" href="#devices" id="id20">Devices</a></li>
+<li><a class="reference internal" href="#bucket-types" id="id21">Bucket Types</a></li>
+<li><a class="reference internal" href="#bucket-instances" id="id22">Bucket Instances</a></li>
+<li><a class="reference internal" href="#rules" id="id23">Rules</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#repair" id="id24">Repair</a></li>
+<li><a class="reference internal" href="#libvirt" id="id25">libvirt</a></li>
+<li><a class="reference internal" href="#cephfs" id="id26">CephFS</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li><a class="reference internal" href="#errata" id="id27">Errata</a></li>
+<li><a class="reference internal" href="#bibliography" id="id28">Bibliography</a></li>
 </ul>
+</li>
+</ul>
+</div>
 <div class="section" id="types">
-<h2>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Types</a><a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
 <p>Many types of file systems exist for various operating systems. These
 are used to handle the underlying file and data structure when it is
 being read and written to. Every file system has a limit to the number
 of inodes (files and directories) it can handle. The inode limit can be
-calculated by using the equation: <code class="docutils literal"><span class="pre">2^&lt;BIT_SIZE&gt;</span> <span class="pre">-</span> <span class="pre">1</span></code>.</p>
+calculated by using the equation: <code class="docutils literal notranslate"><span class="pre">2^&lt;BIT_SIZE&gt;</span> <span class="pre">-</span> <span class="pre">1</span></code>.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="11%" />
@@ -344,25 +355,15 @@ calculated by using the equation: <code class="docutils literal"><span class="pr
 </tbody>
 </table>
 <p>[1]</p>
-<p>Sources:</p>
-<ol class="arabic simple">
-<li>“Linux File systems Explained.” Ubuntu Documentation. November 8,
-2015. <a class="reference external" href="https://help.ubuntu.com/community/LinuxFilesystemsExplained">https://help.ubuntu.com/community/LinuxFilesystemsExplained</a></li>
-<li>“How many files can I put in a directory?” Stack Overflow. July 14,
-2015.
-<a class="reference external" href="http://stackoverflow.com/questions/466521/how-many-files-can-i-put-in-a-directory">http://stackoverflow.com/questions/466521/how-many-files-can-i-put-in-a-directory</a></li>
-<li>“Btrfs Main Page.” Btrfs Kernel Wiki. June 24, 2016.
-<a class="reference external" href="https://btrfs.wiki.kernel.org/index.php/Main_Page">https://btrfs.wiki.kernel.org/index.php/Main_Page</a></li>
-</ol>
-<div class="section" id="types-btrfs">
-<h3>Types - Btrfs<a class="headerlink" href="#types-btrfs" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="btrfs">
+<h3><a class="toc-backref" href="#id3">Btrfs</a><a class="headerlink" href="#btrfs" title="Permalink to this headline">¶</a></h3>
 <p>Btrfs stands for the “B-tree file system.” The file system is commonly
 referred to as “BtreeFS”, “ButterFS”, and “BetterFS”. In this model,
 data is organized efficiently for fast I/O operations. This helps to
 provide copy-on-write (CoW) for efficient file copies as well as other
 useful features. Btrfs supports subvolumes, CoW snapshots, online
 defragmentation, built-in RAID, compression, and the ability to upgrade
-an existing ext file systems to Btrfs. [1]</p>
+an existing ext file systems to Btrfs. [4]</p>
 <p>Common mount options:</p>
 <ul class="simple">
 <li>autodefrag = Automatically defragment the file system. This can
@@ -379,57 +380,39 @@ result in a loss of the file system if power is lost.</li>
 <li>subvol = Mount a subvolume contained inside a Btrfs file system.</li>
 <li>ssd = Enables various solid state drive optimizations. This does not
 turn on TRIM support.</li>
-<li>discard = Enables TRIM support. [2]</li>
+<li>discard = Enables TRIM support. [5]</li>
 </ul>
-<p>Sources:</p>
-<ol class="arabic simple">
-<li>“What’s All This I Hear About Btrfs For Linux.” The Personal Blog of
-Dan Calloway. December 16, 2012.
-<a class="reference external" href="https://danielcalloway.wordpress.com/2012/12/16/whats-all-this-i-hear-about-btrfs-for-linux/">https://danielcalloway.wordpress.com/2012/12/16/whats-all-this-i-hear-about-btrfs-for-linux/</a></li>
-<li>“Mount Options” Btrfs Kernel Wiki. May 5, 2016.
-<a class="reference external" href="https://btrfs.wiki.kernel.org/index.php/Mount_options">https://btrfs.wiki.kernel.org/index.php/Mount_options</a></li>
-</ol>
-<div class="section" id="types-btrfs-btrfs-raids">
-<h4>Types - Btrfs - Btrfs RAIDs<a class="headerlink" href="#types-btrfs-btrfs-raids" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="btrfs-raids">
+<h4><a class="toc-backref" href="#id4">Btrfs RAIDs</a><a class="headerlink" href="#btrfs-raids" title="Permalink to this headline">¶</a></h4>
 <p>In the latest Linux kernels, all RAID types (0, 1, 5, 6, and 10) are
-supported. [1]</p>
-<p>Source:</p>
-<ol class="arabic simple">
-<li>“Using Btrfs with Multiple Devices” Btrfs Kernel Wiki. May 14, 2016.
-<a class="reference external" href="https://btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices">https://btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices</a></li>
-</ol>
+supported. [6]</p>
 </div>
-<div class="section" id="types-btrfs-btrfs-limitations">
-<h4>Types - Btrfs - Btrfs Limitations<a class="headerlink" href="#types-btrfs-btrfs-limitations" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="btrfs-limitations">
+<h4><a class="toc-backref" href="#id5">Btrfs Limitations</a><a class="headerlink" href="#btrfs-limitations" title="Permalink to this headline">¶</a></h4>
 <p>Known limitations:</p>
 <ul class="simple">
 <li>The “df” (disk free) command does not report an accurate disk usage
-due to Btrfs’s fragmentation. Instead, <code class="docutils literal"><span class="pre">btrfs</span> <span class="pre">filesystem</span> <span class="pre">df</span></code> should
+due to Btrfs’s fragmentation. Instead, <code class="docutils literal notranslate"><span class="pre">btrfs</span> <span class="pre">filesystem</span> <span class="pre">df</span></code> should
 be used to view disk space usage on mount points and “btrfs
 filesystem show” for partitions.<ul>
 <li>For freeing up space, run a block-level and then a file-level
 defragmentation. Then the disk space usage should be accurate to
 df’s output.<ul>
-<li><code class="docutils literal"><span class="pre">#</span> <span class="pre">btrfs</span> <span class="pre">balance</span> <span class="pre">start</span> <span class="pre">/</span></code></li>
-<li><code class="docutils literal"><span class="pre">#</span> <span class="pre">btrfs</span> <span class="pre">defragment</span> <span class="pre">-r</span> <span class="pre">/</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">sudo</span> <span class="pre">btrfs</span> <span class="pre">balance</span> <span class="pre">start</span> <span class="pre">/</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">sudo</span> <span class="pre">btrfs</span> <span class="pre">defragment</span> <span class="pre">-r</span> <span class="pre">/</span></code></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<p>[1]</p>
-<p>Source:</p>
-<ol class="arabic simple">
-<li>“Preventing a btrfs Nightmare.” Jupiter Broadcasting. July 6, 2014.
-<a class="reference external" href="http://www.jupiterbroadcasting.com/61572/preventing-a-btrfs-nightmare-las-320/">http://www.jupiterbroadcasting.com/61572/preventing-a-btrfs-nightmare-las-320/</a></li>
-</ol>
+<p>[7]</p>
 </div>
 </div>
-<div class="section" id="types-ext4">
-<h3>Types - ext4<a class="headerlink" href="#types-ext4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ext4">
+<h3><a class="toc-backref" href="#id6">ext4</a><a class="headerlink" href="#ext4" title="Permalink to this headline">¶</a></h3>
 <p>The Extended File System 4 (ext4) is the default file system for most
 Linux operating systems. It’s focus is on performance and reliability.
-It is also backwards compatible with the ext3 file system. [1]</p>
+It is also backwards compatible with the ext3 file system. [8]</p>
 <p>Mount options:</p>
 <ul class="simple">
 <li>ro = Mount as read-only.</li>
@@ -463,21 +446,12 @@ mode.</li>
 </li>
 <li>discard = Enables TRIM support. The file system will immediately free
 up the space from a deleted file for use with new files.</li>
-<li>nodiscard = Disables TRIM. [2]</li>
+<li>nodiscard = Disables TRIM. [9]</li>
 </ul>
-<p>Sources:</p>
-<ol class="arabic simple">
-<li>“Linux File Systems: Ext2 vs Ext3 vs Ext4.” The Geek Stuff. May 16,
-2011. Accessed October 1, 2016.
-<a class="reference external" href="http://www.thegeekstuff.com/2011/05/ext2-ext3-ext4">http://www.thegeekstuff.com/2011/05/ext2-ext3-ext4</a></li>
-<li>“Ext4 Filesystem.” Kernel Documentation. May 29, 2015. Accessed
-October 1, 2016.
-<a class="reference external" href="https://kernel.org/doc/Documentation/filesystems/ext4.txt">https://kernel.org/doc/Documentation/filesystems/ext4.txt</a></li>
-</ol>
 </div>
 </div>
 <div class="section" id="raids">
-<h2>RAIDs<a class="headerlink" href="#raids" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">RAIDs</a><a class="headerlink" href="#raids" title="Permalink to this headline">¶</a></h2>
 <p>RAID officially stands for “Redundant Array of Independent Disks.” The
 idea of a RAID is to get either increased performance and/or an
 automatic backup from using multiple disks together. It utilizes these
@@ -545,67 +519,57 @@ drives to create 1 logical drive.</p>
 </tr>
 </tbody>
 </table>
-<p>[1]</p>
-<p>Source:</p>
-<ol class="arabic simple">
-<li>“RAID levels 0, 1, 2, 3, 4, 5, 6, 0+1, 1+0 features explained in
-detail.” GOLINUXHUB. April 09, 2016. Accessed August 13th, 2016.
-<a class="reference external" href="http://www.golinuxhub.com/2014/04/raid-levels-0-1-2-3-4-5-6-01-10.html">http://www.golinuxhub.com/2014/04/raid-levels-0-1-2-3-4-5-6-01-10.html</a></li>
-</ol>
+<p>[10]</p>
 <div class="section" id="raids-mdadm">
-<h3>RAIDs - mdadm<a class="headerlink" href="#raids-mdadm" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id8">RAIDs - mdadm</a><a class="headerlink" href="#raids-mdadm" title="Permalink to this headline">¶</a></h3>
 <p>Most software RAIDs in Linux are handled by the “mdadm” utility and the
 “md_mod” kernel module. Creating a new RAID requires specifying the
 RAID level and the partitions you will use to create it.</p>
 <p>Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># mdadm --create --level=&lt;LEVEL&gt; --raid-devices=&lt;NUMBER_OF_DISKS&gt; /dev/md&lt;DEVICE_NUMBER_TO_CREATE&gt; /dev/sd&lt;PARTITION1&gt; /dev/sd&lt;PARTITION2&gt;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo mdadm --create --level<span class="o">=</span>&lt;LEVEL&gt; --raid-devices<span class="o">=</span>&lt;NUMBER_OF_DISKS&gt; /dev/md&lt;DEVICE_NUMBER_TO_CREATE&gt; /dev/sd&lt;PARTITION1&gt; /dev/sd&lt;PARTITION2&gt;
 </pre></div>
 </div>
 <p>Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># mdadm --create --level=10 --raid-devices=4 /dev/md0 /dev/sda1 /dev/sdb1 /dev/sdc1 /dev/sdd1</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo mdadm --create --level<span class="o">=</span><span class="m">10</span> --raid-devices<span class="o">=</span><span class="m">4</span> /dev/md0 /dev/sda1 /dev/sdb1 /dev/sdc1 /dev/sdd1
 </pre></div>
 </div>
 <p>Then to automatically create the partition layout file run this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># echo &#39;DEVICE partitions&#39; &gt; /etc/mdadm.conf</span>
-<span class="c1"># mdadm --detail --scan &gt;&gt; /etc/mdadm.conf</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo <span class="nb">echo</span> <span class="s1">&#39;DEVICE partitions&#39;</span> &gt; /etc/mdadm.conf
+$ sudo mdadm --detail --scan &gt;&gt; /etc/mdadm.conf
 </pre></div>
 </div>
 <p>Finally, you can initialize the RAID.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># mdadm --assemble --scan</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo mdadm --assemble --scan
 </pre></div>
 </div>
-<p>[1]</p>
-<p>Source:</p>
-<ol class="arabic simple">
-<li>“RAID.” Arch Linux Wiki. August 7, 2016. Accessed August 13, 2016.
-<a class="reference external" href="https://wiki.archlinux.org/index.php/RAID">https://wiki.archlinux.org/index.php/RAID</a></li>
-</ol>
+<p>[11]</p>
 </div>
 </div>
 <div class="section" id="network">
-<h2>Network<a class="headerlink" href="#network" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="network-nfs">
-<h3>Network - NFS<a class="headerlink" href="#network-nfs" title="Permalink to this headline">¶</a></h3>
+<h2><a class="toc-backref" href="#id9">Network</a><a class="headerlink" href="#network" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="nfs">
+<h3><a class="toc-backref" href="#id10">NFS</a><a class="headerlink" href="#nfs" title="Permalink to this headline">¶</a></h3>
 <p>The Network File System (NFS) aims to universally provide a way to
 remotely mount directories between servers. All subdirectories from a
 shared directory will also be available.</p>
-<p>NFS Ports: * 111 TCP/UDP * 2049 TCP/UDP * 4045 TCP/UDP</p>
+<p>NFS ports:</p>
+<ul class="simple">
+<li>111 TCP/UDP</li>
+<li>2049 TCP/UDP</li>
+<li>4045 TCP/UDP</li>
+</ul>
 <p>On the server, the /etc/exports file is used to manage NFS exports. Here
 a directory can be specified to be shared via NFS to a specific IP
 address or CIDR range. After adjusting the exports, the NFS daemon will
 need to be restarted.</p>
-<ul>
-<li><p class="first">Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">DIRECTORY</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">ALLOWED_HOST</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&lt;</span><span class="n">OPTIONS</span><span class="o">&gt;</span><span class="p">)</span>
+<p>Syntax:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">DIRECTORY</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">ALLOWED_HOST</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&lt;</span><span class="n">OPTIONS</span><span class="o">&gt;</span><span class="p">)</span>
 </pre></div>
 </div>
-</li>
-<li><p class="first">Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="nb">dir</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.0</span><span class="o">/</span><span class="mi">24</span><span class="p">(</span><span class="n">rw</span><span class="p">,</span><span class="n">no_root_squash</span><span class="p">)</span>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="nb">dir</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.0</span><span class="o">/</span><span class="mi">24</span><span class="p">(</span><span class="n">rw</span><span class="p">,</span><span class="n">no_root_squash</span><span class="p">)</span>
 </pre></div>
 </div>
-</li>
-</ul>
 <p>NFS export options:</p>
 <ul class="simple">
 <li>rw = The directory will be writable.</li>
@@ -625,27 +589,21 @@ These writes may be cached in memory.</li>
 </ul>
 </li>
 </ul>
-<p>[1]</p>
+<p>[12]</p>
 <p>On Red Hat Enterprise Linux systems, the exported directory will need to
 have the “nfs_t” file context for SELinux to work properly.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># semanage fcontext -a -t nfs_t &quot;/path/to/dir{/.*)?&quot;</span>
-<span class="c1"># restorecon -R &quot;/path/to/dir&quot;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo semanage fcontext -a -t nfs_t <span class="s2">&quot;/path/to/dir{/.*)?&quot;</span>
+$ sudo restorecon -R <span class="s2">&quot;/path/to/dir&quot;</span>
 </pre></div>
 </div>
-<p>Source:</p>
-<ol class="arabic simple">
-<li>“NFS SERVER CONFIGURATION.” Red Hat Documentation. Accessed September
-19, 2016.
-<a class="reference external" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/nfs-serverconfig.html">https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/nfs-serverconfig.html</a></li>
-</ol>
 </div>
-<div class="section" id="network-smb">
-<h3>Network - SMB<a class="headerlink" href="#network-smb" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="smb">
+<h3><a class="toc-backref" href="#id11">SMB</a><a class="headerlink" href="#smb" title="Permalink to this headline">¶</a></h3>
 <p>The Server Message Block (SMB) protocol was created to view and edit
 files remotely over a network. The Common Internet File System (CIFS)
 was created by Microsoft as an enhanced fork of SMB but was eventually
 replaced with newer versions of SMB. On Linux, the “Samba” service is
-typically used for setting up SMB share. [1]</p>
+typically used for setting up SMB share. [13]</p>
 <p>SMB Ports:</p>
 <ul class="simple">
 <li>137 UDP</li>
@@ -677,255 +635,211 @@ set to no, the share will have write permissions.</li>
 <li>write list = Specify users that can write to the share, separated
 by spaces. Groups can also be specified using by appending a “+”
 to the front of the name.</li>
-<li>comment = Place a comment about the share. [2]</li>
+<li>comment = Place a comment about the share. [14]</li>
 </ul>
 </li>
 </ul>
 <p>Verify the Samba configuration.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># testparm</span>
-<span class="c1"># smbclient //localhost/&lt;SHARE_NAME&gt; -U &lt;SMB_USER1&gt;%&lt;SMB_USER1_PASS&gt;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo testparm
+$ sudo smbclient //localhost/&lt;SHARE_NAME&gt; -U &lt;SMB_USER1&gt;%&lt;SMB_USER1_PASS&gt;
 </pre></div>
 </div>
 <p>The Linux user for accessing the SMB share will need to be created and
 have their password added to the Samba configuration. These are stored
 in a binary file at “/var/lib/samba/passdb.tdb.” This can be updated by
 running:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># useradd &lt;SMB_USER1&gt;</span>
-<span class="c1"># smbpasswd -a &lt;SMB_USER1&gt;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo useradd &lt;SMB_USER1&gt;
+$ sudo smbpasswd -a &lt;SMB_USER1&gt;
 </pre></div>
 </div>
 <p>On Red Hat Enterprise Linux systems, the exported directory will need to
 have the “samba_share_t” file context for SELinux to work properly.
-[3]</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># semanage fcontext -a -t samba_share_t &quot;/path/to/dir{/.*)?&quot;</span>
-<span class="c1"># restorecon -R &quot;/path/to/dir&quot;</span>
+[15]</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo semanage fcontext -a -t samba_share_t <span class="s2">&quot;/path/to/dir{/.*)?&quot;</span>
+$ sudo restorecon -R <span class="s2">&quot;/path/to/dir&quot;</span>
 </pre></div>
 </div>
-<p>Sources:</p>
-<ol class="arabic simple">
-<li>“The Difference between CIFS and SMB.” VARONIS. February 14, 1024.
-Accessed September 18th, 2016.
-<a class="reference external" href="https://blog.varonis.com/the-difference-between-cifs-and-smb/">https://blog.varonis.com/the-difference-between-cifs-and-smb/</a></li>
-<li>“The Samba Configuration File.” SAMBA. September 26th, 2003. Accessed
-September 18th, 2016.
-<a class="reference external" href="https://www.samba.org/samba/docs/using_samba/ch06.html">https://www.samba.org/samba/docs/using_samba/ch06.html</a></li>
-<li>“RHEL7: Provide SMB network shares to specific clients.” CertDepot.
-August 25, 2016. Accessed September 18th, 2016.
-<a class="reference external" href="https://www.certdepot.net/rhel7-provide-smb-network-shares/">https://www.certdepot.net/rhel7-provide-smb-network-shares/</a></li>
-</ol>
 </div>
-<div class="section" id="network-iscsi">
-<h3>Network - iSCSI<a class="headerlink" href="#network-iscsi" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="iscsi">
+<h3><a class="toc-backref" href="#id12">iSCSI</a><a class="headerlink" href="#iscsi" title="Permalink to this headline">¶</a></h3>
 <p>The “Internet Small Computer Systems Interface” (also known as “Internet
 SCSI” or simply “iSCSI”) is used to allocate block storage to servers
 over a network. It relies on two components: the target (server) and the
 initiator (client). The target must first be configured to allow the
 client to attach the storage device.</p>
-<div class="section" id="network-iscsi-target">
-<h4>Network - iSCSI - Target<a class="headerlink" href="#network-iscsi-target" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="target">
+<h4><a class="toc-backref" href="#id13">Target</a><a class="headerlink" href="#target" title="Permalink to this headline">¶</a></h4>
 <p>For setting up a target storage, these are the general steps to follow
 in order:</p>
-<ul>
-<li><p class="first">Create a backstores device.</p>
-</li>
-<li><p class="first">Create an iSCSI target.</p>
-</li>
-<li><p class="first">Create a network portal to listen on.</p>
-</li>
-<li><p class="first">Create a LUN associated with the backstores.</p>
-</li>
-<li><p class="first">Create an ACL.</p>
-</li>
-<li><p class="first">Optionally configure ACL rules.</p>
-</li>
-<li><p class="first">First, start and enable the iSCSI service to start on bootup.</p>
-<ul>
-<li><p class="first">Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># systemctl enable target &amp;&amp; systemctl start target</span>
-</pre></div>
-</div>
-</li>
+<ul class="simple">
+<li>Create a backstores device.</li>
+<li>Create an iSCSI target.</li>
+<li>Create a network portal to listen on.</li>
+<li>Create a LUN associated with the backstores.</li>
+<li>Create an ACL.</li>
+<li>Optionally configure ACL rules.</li>
+<li>First, start and enable the iSCSI service to start on bootup.</li>
 </ul>
-</li>
-<li><p class="first">Create a storage device. This is typically either a block device or a
-file.</p>
-</li>
-<li><p class="first">Block syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># targetcli</span>
-<span class="o">&gt;</span> <span class="n">cd</span> <span class="o">/</span><span class="n">backstores</span><span class="o">/</span><span class="n">block</span><span class="o">/</span>
-<span class="o">&gt;</span> <span class="n">create</span> <span class="n">iscsidisk1</span> <span class="n">dev</span><span class="o">=/</span><span class="n">dev</span><span class="o">/</span><span class="n">sd</span><span class="o">&lt;</span><span class="n">DISK</span><span class="o">&gt;</span>
+<p>Syntax:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo systemctl <span class="nb">enable</span> target <span class="o">&amp;&amp;</span> systemctl start target
 </pre></div>
 </div>
-</li>
-<li><p class="first">File syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># targetcli</span>
-<span class="o">&gt;</span> <span class="n">cd</span> <span class="o">/</span><span class="n">backstore</span><span class="o">/</span><span class="n">fileio</span><span class="o">/</span>
-<span class="o">&gt;</span> <span class="n">create</span> <span class="n">iscsidisk1</span> <span class="o">/&lt;</span><span class="n">PATH_TO_DISK</span><span class="o">&gt;.</span><span class="n">img</span> <span class="o">&lt;</span><span class="n">SIZE_IN_MB</span><span class="o">&gt;</span><span class="n">M</span>
+<ul class="simple">
+<li>Create a storage device. This is typically either a block device or a
+file.</li>
+</ul>
+<p>Block syntax:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo targetcli
+&gt; <span class="nb">cd</span> /backstores/block/
+&gt; create iscsidisk1 <span class="nv">dev</span><span class="o">=</span>/dev/sd&lt;DISK&gt;
 </pre></div>
 </div>
-</li>
-<li><p class="first">A special iSCSI Qualified Name (IQN) is required to create a Target
+<p>File syntax:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo targetcli
+&gt; <span class="nb">cd</span> /backstore/fileio/
+&gt; create iscsidisk1 /&lt;PATH_TO_DISK&gt;.img &lt;SIZE_IN_MB&gt;M
+</pre></div>
+</div>
+<ul class="simple">
+<li>A special iSCSI Qualified Name (IQN) is required to create a Target
 Portal Group (TPG). The syntax is
-“iqn.YYYY-MM.tld.domain.subdomain:exportname.”</p>
-</li>
-<li><p class="first">Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">cd</span> <span class="o">/</span><span class="n">iscsi</span>
-<span class="o">&gt;</span> <span class="n">create</span> <span class="n">iqn</span><span class="o">.</span><span class="n">YYYY</span><span class="o">-</span><span class="n">MM</span><span class="o">.&lt;</span><span class="n">TLD</span><span class="o">.</span><span class="n">DOMAIN</span><span class="o">&gt;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">ISCSINAME</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">cd</span> <span class="o">/</span><span class="n">iscsi</span>
-<span class="o">&gt;</span> <span class="n">create</span> <span class="n">iqn</span><span class="o">.</span><span class="mi">2016</span><span class="o">-</span><span class="mf">01.</span><span class="n">com</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">server</span><span class="p">:</span><span class="n">iscsidisk</span>
-<span class="o">&gt;</span> <span class="n">ls</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Create a portal for the iSCSI device to be accessible on.</p>
-</li>
-<li><p class="first">Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">cd</span> <span class="o">/</span><span class="n">iscsi</span><span class="o">/</span><span class="n">iqn</span><span class="o">.</span><span class="n">YYYY</span><span class="o">-</span><span class="n">MM</span><span class="o">.&lt;</span><span class="n">TLD</span><span class="o">.</span><span class="n">DOMAIN</span><span class="o">&gt;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">ISCSINAME</span><span class="o">&gt;/</span><span class="n">tpg1</span>
-<span class="o">&gt;</span> <span class="n">portals</span><span class="o">/</span> <span class="n">create</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">cd</span> <span class="o">/</span><span class="n">iscsi</span><span class="o">/</span><span class="n">iqn</span><span class="o">.</span><span class="mi">2016</span><span class="o">-</span><span class="mf">01.</span><span class="n">com</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">server</span><span class="p">:</span><span class="n">iscsidisk</span><span class="o">/</span><span class="n">tpg1</span>
-<span class="o">&gt;</span> <span class="n">ls</span>
-<span class="n">o</span><span class="o">-</span> <span class="n">tpg1</span>
-<span class="n">o</span><span class="o">-</span> <span class="n">acls</span>
-<span class="n">o</span><span class="o">-</span> <span class="n">luns</span>
-<span class="n">o</span><span class="o">-</span> <span class="n">portals</span>
-<span class="o">&gt;</span> <span class="n">portals</span><span class="o">/</span> <span class="n">create</span>
-<span class="o">&gt;</span> <span class="n">ls</span>
-<span class="n">o</span><span class="o">-</span> <span class="n">tpg1</span>
-<span class="n">o</span><span class="o">-</span> <span class="n">acls</span>
-<span class="n">o</span><span class="o">-</span> <span class="n">luns</span>
-<span class="n">o</span><span class="o">-</span> <span class="n">portals</span>
-    <span class="n">o</span><span class="o">-</span> <span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span><span class="p">:</span><span class="mi">3260</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Create a LUN.</p>
-</li>
-<li><p class="first">Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">luns</span><span class="o">/</span> <span class="n">create</span> <span class="o">/</span><span class="n">backstores</span><span class="o">/</span><span class="n">block</span><span class="o">/&lt;</span><span class="n">DEVICE</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">luns</span><span class="o">/</span> <span class="n">create</span> <span class="o">/</span><span class="n">backstores</span><span class="o">/</span><span class="n">block</span><span class="o">/</span><span class="n">iscsidisk</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Create a blank ACL. By default, this will allow any user to access
-this iSCSI target.</p>
-</li>
-<li><p class="first">Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">acls</span><span class="o">/</span> <span class="n">create</span> <span class="n">iqn</span><span class="o">.</span><span class="n">YYYY</span><span class="o">-</span><span class="n">MM</span><span class="o">.&lt;</span><span class="n">TLD</span><span class="o">.</span><span class="n">DOMAIN</span><span class="o">&gt;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">ACL_NAME</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">acls</span><span class="o">/</span> <span class="n">create</span> <span class="n">iqn</span><span class="o">.</span><span class="mi">2016</span><span class="o">-</span><span class="mf">01.</span><span class="n">com</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">server</span><span class="p">:</span><span class="n">client</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Optionally, add a username and password.</p>
-</li>
-<li><p class="first">Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">cd</span> <span class="n">acls</span><span class="o">/</span><span class="n">iqn</span><span class="o">.</span><span class="n">YYYY</span><span class="o">-</span><span class="n">MM</span><span class="o">.&lt;</span><span class="n">TLD</span><span class="o">.</span><span class="n">DOMAIN</span><span class="o">&gt;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">ACL_NAME</span><span class="o">&gt;</span>
-<span class="o">&gt;</span> <span class="nb">set</span> <span class="n">auth</span> <span class="n">userid</span><span class="o">=&lt;</span><span class="n">USER</span><span class="o">&gt;</span>
-<span class="o">&gt;</span> <span class="nb">set</span> <span class="n">auth</span> <span class="n">password</span><span class="o">=&lt;</span><span class="n">PASSWORD</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">cd</span> <span class="n">acls</span><span class="o">/</span><span class="n">iqn</span><span class="o">.</span><span class="mi">2016</span><span class="o">-</span><span class="mf">01.</span><span class="n">com</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">server</span><span class="p">:</span><span class="n">client</span>
-<span class="o">&gt;</span> <span class="nb">set</span> <span class="n">auth</span> <span class="n">userid</span><span class="o">=</span><span class="n">toor</span>
-<span class="o">&gt;</span> <span class="nb">set</span> <span class="n">auth</span> <span class="n">password</span><span class="o">=</span><span class="k">pass</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Any ACL rules that were created can be overridden by turning off
-authentication entirely.</p>
-<ul>
-<li><p class="first">Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nb">set</span> <span class="n">attribute</span> <span class="n">authentication</span><span class="o">=</span><span class="mi">0</span>
-<span class="o">&gt;</span> <span class="nb">set</span> <span class="n">attribute</span> <span class="n">generate_node_acls</span><span class="o">=</span><span class="mi">1</span>
-<span class="o">&gt;</span> <span class="nb">set</span> <span class="n">attribute</span> <span class="n">demo_mode_write_protect</span><span class="o">=</span><span class="mi">0</span>
-</pre></div>
-</div>
-</li>
+“iqn.YYYY-MM.tld.domain.subdomain:exportname.”</li>
 </ul>
-</li>
-<li><p class="first">Finally, make sure that both the TCP and UDP port 3260 are open in
-the firewall. [1]</p>
-</li>
+<p>Syntax:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>&gt; <span class="nb">cd</span> /iscsi
+&gt; create iqn.YYYY-MM.&lt;TLD.DOMAIN&gt;:&lt;ISCSINAME&gt;
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>&gt; <span class="nb">cd</span> /iscsi
+&gt; create iqn.2016-01.com.example.server:iscsidisk
+&gt; ls
+</pre></div>
+</div>
+<ul class="simple">
+<li>Create a portal for the iSCSI device to be accessible on.</li>
+</ul>
+<p>Syntax:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>&gt; <span class="nb">cd</span> /iscsi/iqn.YYYY-MM.&lt;TLD.DOMAIN&gt;:&lt;ISCSINAME&gt;/tpg1
+&gt; portals/ create
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>&gt; <span class="nb">cd</span> /iscsi/iqn.2016-01.com.example.server:iscsidisk/tpg1
+&gt; ls
+o- tpg1
+o- acls
+o- luns
+o- portals
+&gt; portals/ create
+&gt; ls
+o- tpg1
+o- acls
+o- luns
+o- portals
+    o- <span class="m">0</span>.0.0.0:3260
+</pre></div>
+</div>
+<ul class="simple">
+<li>Create a LUN.</li>
+</ul>
+<p>Syntax:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>&gt; luns/ create /backstores/block/&lt;DEVICE&gt;
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>&gt; luns/ create /backstores/block/iscsidisk
+</pre></div>
+</div>
+<ul class="simple">
+<li>Create a blank ACL. By default, this will allow any user to access
+this iSCSI target.</li>
+</ul>
+<p>Syntax:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>&gt; acls/ create iqn.YYYY-MM.&lt;TLD.DOMAIN&gt;:&lt;ACL_NAME&gt;
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>&gt; acls/ create iqn.2016-01.com.example.server:client
+</pre></div>
+</div>
+<ul class="simple">
+<li>Optionally, add a username and password.</li>
+</ul>
+<p>Syntax:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>&gt; <span class="nb">cd</span> acls/iqn.YYYY-MM.&lt;TLD.DOMAIN&gt;:&lt;ACL_NAME&gt;
+&gt; <span class="nb">set</span> auth <span class="nv">userid</span><span class="o">=</span>&lt;USER&gt;
+&gt; <span class="nb">set</span> auth <span class="nv">password</span><span class="o">=</span>&lt;PASSWORD&gt;
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>&gt; <span class="nb">cd</span> acls/iqn.2016-01.com.example.server:client
+&gt; <span class="nb">set</span> auth <span class="nv">userid</span><span class="o">=</span>toor
+&gt; <span class="nb">set</span> auth <span class="nv">password</span><span class="o">=</span>pass
+</pre></div>
+</div>
+<ul class="simple">
+<li>Any ACL rules that were created can be overridden by turning off
+authentication entirely.</li>
+</ul>
+<p>Syntax:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>&gt; <span class="nb">set</span> attribute <span class="nv">authentication</span><span class="o">=</span><span class="m">0</span>
+&gt; <span class="nb">set</span> attribute <span class="nv">generate_node_acls</span><span class="o">=</span><span class="m">1</span>
+&gt; <span class="nb">set</span> attribute <span class="nv">demo_mode_write_protect</span><span class="o">=</span><span class="m">0</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Finally, make sure that both the TCP and UDP port 3260 are open in
+the firewall. [16]</li>
 </ul>
 </div>
-<div class="section" id="network-iscsi-initiator">
-<h4>Network - iSCSI - Initiator<a class="headerlink" href="#network-iscsi-initiator" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="initiator">
+<h4><a class="toc-backref" href="#id14">Initiator</a><a class="headerlink" href="#initiator" title="Permalink to this headline">¶</a></h4>
 <p>This should be configured on the client server.</p>
-<ul>
-<li><p class="first">In the initiator configuration file, specify the IQN along with the
-ACL used to access it.</p>
-</li>
-<li><p class="first">Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vim /etc/iscsi/initiatorname.iscsi</span>
-<span class="n">InitiatorName</span><span class="o">=&lt;</span><span class="n">IQN</span><span class="o">&gt;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">ACL</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vim /etc/iscsi/initiatorname.iscsi</span>
-<span class="n">InitiatorName</span><span class="o">=</span><span class="n">iqn</span><span class="o">.</span><span class="mi">2016</span><span class="o">-</span><span class="mf">01.</span><span class="n">com</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">server</span><span class="p">:</span><span class="n">client</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Start and enable the iSCSI initiator to load on bootup.</p>
-<ul>
-<li><p class="first">Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># systemctl start iscsi &amp;&amp; systemctl enable iscsi</span>
-</pre></div>
-</div>
-</li>
+<ul class="simple">
+<li>In the initiator configuration file, specify the IQN along with the
+ACL used to access it.</li>
 </ul>
-</li>
-<li><p class="first">Once started, the iSCSI device should be able to be attached.</p>
-</li>
-<li><p class="first">Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># iscsiadm --mode node --targetname &lt;IQN&gt;:&lt;TARGET&gt; --portal &lt;iSCSI_SERVER_IP&gt; --login</span>
+<p>Syntax:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo vim /etc/iscsi/initiatorname.iscsi
+<span class="nv">InitiatorName</span><span class="o">=</span>&lt;IQN&gt;:&lt;ACL&gt;
 </pre></div>
 </div>
-</li>
-<li><p class="first">Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># iscsiadm --mode node --targetname iqn.2016-01.com.example.server:iscsidisk --portal 10.0.0.1 --login</span>
+<p>Example:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo vim /etc/iscsi/initiatorname.iscsi
+<span class="nv">InitiatorName</span><span class="o">=</span>iqn.2016-01.com.example.server:client
 </pre></div>
 </div>
-</li>
-<li><p class="first">Verify that a new “iscsi” device exists.</p>
-<ul>
-<li><p class="first">Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># lsblk --scsi</span>
-</pre></div>
-</div>
-</li>
+<ul class="simple">
+<li>Start and enable the iSCSI initiator to load on bootup.</li>
 </ul>
-</li>
+<p>Syntax:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo systemctl start iscsi <span class="o">&amp;&amp;</span> systemctl <span class="nb">enable</span> iscsi
+</pre></div>
+</div>
+<ul class="simple">
+<li>Once started, the iSCSI device should be able to be attached.</li>
 </ul>
-<p>[1]</p>
-<p>Source:</p>
-<ol class="arabic simple">
-<li>“RHEL7: Configure a system as either an iSCSI target or initiator
-that persistently mounts an iSCSI target.” CertDepot. July 30, 2016.
-Accessed August 13, 2016.
-<a class="reference external" href="https://www.certdepot.net/rhel7-configure-iscsi-target-initiator-persistently/">https://www.certdepot.net/rhel7-configure-iscsi-target-initiator-persistently/</a></li>
-</ol>
+<p>Syntax:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo iscsiadm --mode node --targetname &lt;IQN&gt;:&lt;TARGET&gt; --portal &lt;iSCSI_SERVER_IP&gt; --login
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo iscsiadm --mode node --targetname iqn.2016-01.com.example.server:iscsidisk --portal <span class="m">10</span>.0.0.1 --login
+</pre></div>
+</div>
+<ul class="simple">
+<li>Verify that a new “iscsi” device exists.</li>
+</ul>
+<p>Syntax:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo lsblk --scsi
+</pre></div>
+</div>
+<p>[16]</p>
 </div>
 </div>
-<div class="section" id="network-ceph">
-<h3>Network - Ceph<a class="headerlink" href="#network-ceph" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="ceph">
+<h3><a class="toc-backref" href="#id15">Ceph</a><a class="headerlink" href="#ceph" title="Permalink to this headline">¶</a></h3>
 <p>Ceph has developed a concept called Reliable Autonomic Distributed
 Object Store (RADOS). It provides scalable, fast, and reliable
 software-defined storage by storing files as objects and calculating
@@ -957,29 +871,29 @@ map.</p>
 <ul class="simple">
 <li>Monitor map = The cluster fsid (uuid), position, name, address and
 port of each monitor server.<ul>
-<li><code class="docutils literal"><span class="pre">#</span> <span class="pre">ceph</span> <span class="pre">mon</span> <span class="pre">dump</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">sudo</span> <span class="pre">ceph</span> <span class="pre">mon</span> <span class="pre">dump</span></code></li>
 </ul>
 </li>
 <li>OSD map = The cluster fsid, available pools, PG numbers, and OSDs
 current status.<ul>
-<li><code class="docutils literal"><span class="pre">#</span> <span class="pre">ceph</span> <span class="pre">osd</span> <span class="pre">dump</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">sudo</span> <span class="pre">ceph</span> <span class="pre">osd</span> <span class="pre">dump</span></code></li>
 </ul>
 </li>
 <li>PG map = PG version, PG ID, ratios, and data usage statistics.<ul>
-<li><code class="docutils literal"><span class="pre">#</span> <span class="pre">ceph</span> <span class="pre">pg</span> <span class="pre">dump</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">sudo</span> <span class="pre">ceph</span> <span class="pre">pg</span> <span class="pre">dump</span></code></li>
 </ul>
 </li>
 <li><a class="reference external" href="#network---ceph---crush-map">CRUSH map</a> = Storage devices,
 physical locations, and rules for storing objects. It is recommended
 to tweak this for production clusters.</li>
 <li>MDS map<ul>
-<li><code class="docutils literal"><span class="pre">#</span> <span class="pre">ceph</span> <span class="pre">fs</span> <span class="pre">dump</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">sudo</span> <span class="pre">ceph</span> <span class="pre">fs</span> <span class="pre">dump</span></code></li>
 </ul>
 </li>
 </ul>
 <p>When the end-user asks for a file, that name is combined with it’s PG ID
 and then CRUSH hashes it to find the exact location of it on all of the
-OSDs. The master OSD for that file serves the content. [1]</p>
+OSDs. The master OSD for that file serves the content. [17]</p>
 <p>The current back-end for handling data storage is FileStore. When data
 is written to a Ceph OSD, it is first fully written to the OSD journal.
 This is a separate partition that can be on the same drive or a
@@ -992,16 +906,16 @@ FileStore by writing the the data to the block device first and then
 updating the metadata of the data’s location. All of the metadata is
 also stored in the fast RocksDB key-value store. File systems are no
 longer required for OSDs because BlueStore can write data directly to
-the block device of the hard drive. [2]</p>
+the block device of the hard drive. [18]</p>
 <p>The optimal number of PGs is found be using this equation (replacing the
 number of OSD daemons and how many replicas are set). This number should
 be rounded up to the next power of 2.</p>
-<p>Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Total</span> <span class="n">PGs</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">NUMBER_OF_OSDS</span><span class="o">&gt;</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span> <span class="o">/</span> <span class="o">&lt;</span><span class="n">REPLICA_COUNT</span><span class="o">&gt;</span> <span class="o">/</span> <span class="o">&lt;</span><span class="n">NUMBER_OF_POOLS</span><span class="o">&gt;</span>
-</pre></div>
-</div>
+<dl class="docutils">
+<dt>::</dt>
+<dd>Total PGs = (&lt;NUMBER_OF_OSDS&gt; * 100) / &lt;REPLICA_COUNT&gt; / &lt;NUMBER_OF_POOLS&gt;</dd>
+</dl>
 <p>Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">OSD</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">replica</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">pool</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OSD</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">replica</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">pool</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">Run</span> <span class="n">the</span> <span class="n">calculations</span><span class="p">:</span> <span class="mi">1000</span> <span class="o">=</span> <span class="p">(</span><span class="mi">30</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">1</span>
 <span class="n">Find</span> <span class="n">the</span> <span class="nb">next</span> <span class="n">highest</span> <span class="n">power</span> <span class="n">of</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">2</span><span class="o">^</span><span class="mi">10</span> <span class="o">=</span> <span class="mi">1024</span>
 <span class="mi">1000</span> <span class="o">=&lt;</span> <span class="mi">1024</span>
@@ -1012,50 +926,39 @@ be rounded up to the next power of 2.</p>
 (PGP) should be set to the same PG number. PGs are the number of number
 of times a file should be split. This change only makes the Ceph cluster
 rebalance when the PGP count is increased.</p>
-<ul>
-<li><p class="first">New pools:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vim /etc/ceph/ceph.conf</span>
-<span class="o">...</span>
-<span class="p">[</span><span class="k">global</span><span class="p">]</span>
-<span class="n">osd</span> <span class="n">pool</span> <span class="n">default</span> <span class="n">pg</span> <span class="n">num</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">OPTIMAL_PG_NUMBER</span><span class="o">&gt;</span>
-<span class="n">osd</span> <span class="n">pool</span> <span class="n">default</span> <span class="n">pgp</span> <span class="n">num</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">OPTIMAL_PG_NUMBER</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-</li>
-<li><p class="first">Existing pools:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ceph osd pool set &lt;POOL&gt; pg_num &lt;OPTIMAL_PG_NUMBER&gt;</span>
-<span class="c1"># ceph osd pool set &lt;POOL&gt; pgp_num &lt;OPTIMAL_PG_NUMBER&gt;</span>
-</pre></div>
-</div>
-</li>
+<ul class="simple">
+<li>New pools:</li>
 </ul>
+<p>File:  /etc/ceph/ceph.conf</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[global]</span>
+<span class="na">osd pool default pg num</span> <span class="o">=</span> <span class="s">&lt;OPTIMAL_PG_NUMBER&gt;</span>
+<span class="na">osd pool default pgp num</span> <span class="o">=</span> <span class="s">&lt;OPTIMAL_PG_NUMBER&gt;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li>Existing pools:</li>
+</ul>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo ceph osd pool <span class="nb">set</span> &lt;POOL&gt; pg_num &lt;OPTIMAL_PG_NUMBER&gt;
+$ sudo ceph osd pool <span class="nb">set</span> &lt;POOL&gt; pgp_num &lt;OPTIMAL_PG_NUMBER&gt;
+</pre></div>
+</div>
 <p>Cache pools can be configured used to cache files onto faster drives.
 When a file is continually being read, it will be copied to the faster
 drive. When a file is first written, it will go to the faster drives.
 After a period of time of lesser use, those files will be moved to the
-slow drives. [3]</p>
+slow drives. [19]</p>
 <p>For testing, the “cephx” authentication protocols can temporarily be
 disabled. This will require a restart of all of the Ceph services.
-Re-enable <code class="docutils literal"><span class="pre">cephx</span></code> by setting these values from “none” to “cephx.” [4]</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vim /etc/ceph/ceph.conf</span>
-<span class="p">[</span><span class="k">global</span><span class="p">]</span>
-<span class="n">auth</span> <span class="n">cluster</span> <span class="n">required</span> <span class="o">=</span> <span class="n">none</span>
-<span class="n">auth</span> <span class="n">service</span> <span class="n">required</span> <span class="o">=</span> <span class="n">none</span>
-<span class="n">auth</span> <span class="n">client</span> <span class="n">required</span> <span class="o">=</span> <span class="n">none</span>
+Re-enable <code class="docutils literal notranslate"><span class="pre">cephx</span></code> by setting these values from “none” to “cephx.” [20]</p>
+<p>File: /etc/ceph/ceph.conf</p>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[global]</span>
+<span class="na">auth cluster required</span> <span class="o">=</span> <span class="s">none</span>
+<span class="na">auth service required</span> <span class="o">=</span> <span class="s">none</span>
+<span class="na">auth client required</span> <span class="o">=</span> <span class="s">none</span>
 </pre></div>
 </div>
-<p>Sources:</p>
-<ol class="arabic simple">
-<li>Karan Singh <em>Learning Ceph</em> (Birmingham, UK: Packet Publishing, 2015)</li>
-<li><a class="reference external" href="https://www.sebastien-han.fr/blog/2016/03/21/ceph-a-new-store-is-coming/">https://www.sebastien-han.fr/blog/2016/03/21/ceph-a-new-store-is-coming/</a></li>
-<li>“CACHE POOL.” Ceph Documentation. Accessed January 19, 2017.
-<a class="reference external" href="http://docs.ceph.com/docs/jewel/dev/cache-pool/">http://docs.ceph.com/docs/jewel/dev/cache-pool/</a></li>
-<li>“CEPHX CONFIG REFERENCE.” Ceph Docmentation. Accessed January 28,
-2017.
-<a class="reference external" href="http://docs.ceph.com/docs/master/rados/configuration/auth-config-ref/">http://docs.ceph.com/docs/master/rados/configuration/auth-config-ref/</a></li>
-</ol>
-<div class="section" id="network-ceph-installation">
-<h4>Network - Ceph - Installation<a class="headerlink" href="#network-ceph-installation" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="installation">
+<h4><a class="toc-backref" href="#id16">Installation</a><a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h4>
 <p>Ceph Requirements:</p>
 <ul class="simple">
 <li>Fast CPU for OSD and metadata nodes.</li>
@@ -1063,78 +966,68 @@ Re-enable <code class="docutils literal"><span class="pre">cephx</span></code> b
 <li>1GB RAM per monitor daemon.</li>
 <li>1GB RAM per metadata daemon.</li>
 <li>An odd number of montior nodes (starting at least 3 for high
-availability and quorum). [1]</li>
+availability and quorum). [21]</li>
 </ul>
-<p>Source:</p>
-<ol class="arabic simple">
-<li>“INTRO TO CEPH.” Ceph Documentation. Accessed January 15, 2017.
-<a class="reference external" href="http://docs.ceph.com/docs/jewel/start/intro/">http://docs.ceph.com/docs/jewel/start/intro/</a></li>
-</ol>
-<div class="section" id="network-ceph-installation-quick">
-<h5>Network - Ceph - Installation - Quick<a class="headerlink" href="#network-ceph-installation-quick" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="quick">
+<h5><a class="toc-backref" href="#id17">Quick</a><a class="headerlink" href="#quick" title="Permalink to this headline">¶</a></h5>
 <p>This example demonstrates how to deploy a 3 node Ceph cluster with both
 the monitor and OSD services. In production, monitor servers should be
 separated from the OSD storage nodes.</p>
 <ul>
 <li><p class="first">Create a new Ceph cluster group, by default called “ceph.”</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ceph-deploy new &lt;SERVER1&gt;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo ceph-deploy new &lt;SERVER1&gt;
 </pre></div>
 </div>
 </li>
 <li><p class="first">Install the latest LTS release for production environments on the
 specified servers. SSH access is required.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ceph-deploy install --release jewel &lt;SERVER1&gt; &lt;SERVER2&gt; &lt;SERVER3&gt;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo ceph-deploy install --release jewel &lt;SERVER1&gt; &lt;SERVER2&gt; &lt;SERVER3&gt;
 </pre></div>
 </div>
 </li>
 <li><p class="first">Initialize the first monitor.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ceph-deploy mon create-inital &lt;SERVER1&gt;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo ceph-deploy mon create-inital &lt;SERVER1&gt;
 </pre></div>
 </div>
 </li>
 <li><p class="first">Install the monitor service on the other nodes.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ceph-deploy mon create &lt;SERVER2&gt; &lt;SERVER3&gt;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo ceph-deploy mon create &lt;SERVER2&gt; &lt;SERVER3&gt;
 </pre></div>
 </div>
 </li>
 <li><p class="first">List the available hard drives from all of the servers. It is
 recommended to have a fully dedicated drive, not a partition, for
 each Ceph OSD.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ceph-deploy disk list &lt;SERVER1&gt; &lt;SERVER2&gt; &lt;SERVER3&gt;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo ceph-deploy disk list &lt;SERVER1&gt; &lt;SERVER2&gt; &lt;SERVER3&gt;
 </pre></div>
 </div>
 </li>
 <li><p class="first">Carefully select the drives to use. Then use the “disk zap” arguments
 to zero out the drive before use.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ceph-deploy disk zap &lt;SERVER1&gt;:&lt;DRIVE&gt; &lt;SERVER2&gt;:&lt;DRIVE&gt; &lt;SERVER3&gt;:&lt;DRIVE&gt;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo ceph-deploy disk zap &lt;SERVER1&gt;:&lt;DRIVE&gt; &lt;SERVER2&gt;:&lt;DRIVE&gt; &lt;SERVER3&gt;:&lt;DRIVE&gt;
 </pre></div>
 </div>
 </li>
 <li><p class="first">Prepare and deploy the OSD service for the specified drives. The
 default file system is XFS, but Btrfs is much feature-rich with
 technologies such as copy-on-write (CoW) support.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ceph-deploy osd create --fs-type btrfs &lt;SERVER1&gt;:&lt;DRIVE&gt; &lt;SERVER2&gt;:&lt;DRIVE&gt; &lt;SERVER3&gt;:&lt;DRIVE&gt;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo ceph-deploy osd create --fs-type btrfs &lt;SERVER1&gt;:&lt;DRIVE&gt; &lt;SERVER2&gt;:&lt;DRIVE&gt; &lt;SERVER3&gt;:&lt;DRIVE&gt;
 </pre></div>
 </div>
 </li>
 <li><p class="first">Verify it’s working.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ceph status</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo ceph status
 </pre></div>
 </div>
 </li>
 </ul>
-<p>[1]</p>
-<p>Source:</p>
-<ol class="arabic simple">
-<li>“Ceph Deployment.” Ceph Jewel Documentation. Accessed January 14,
-2017. <a class="reference external" href="http://docs.ceph.com/docs/jewel/rados/deployment/">http://docs.ceph.com/docs/jewel/rados/deployment/</a></li>
-</ol>
+<p>[22]</p>
 </div>
-<div class="section" id="network-ceph-installation-ceph-ansible">
-<h5>Network - Ceph - Installation - ceph-ansible<a class="headerlink" href="#network-ceph-installation-ceph-ansible" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="ceph-ansible">
+<h5><a class="toc-backref" href="#id18">ceph-ansible</a><a class="headerlink" href="#ceph-ansible" title="Permalink to this headline">¶</a></h5>
 <p>The ceph-ansible project is used to help deploy and automate updates.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># git clone https://github.com/ceph/ceph-ansible/</span>
-<span class="c1"># cd ceph-ansible/</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo git clone https://github.com/ceph/ceph-ansible/
+$ sudo <span class="nb">cd</span> ceph-ansible/
 </pre></div>
 </div>
 <p>Configure the Ansible inventory hosts file. This should contain the SSH
@@ -1148,30 +1041,30 @@ connection details to access the relevant servers.</p>
 storage API support. (Optional)</li>
 </ul>
 <p>Example inventory:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ceph_monitor_01</span> <span class="n">ansible_host</span><span class="o">=</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">20.11</span>
-<span class="n">ceph_monitor_02</span> <span class="n">ansible_host</span><span class="o">=</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">20.12</span>
-<span class="n">ceph_monitor_03</span> <span class="n">ansible_host</span><span class="o">=</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">20.13</span>
-<span class="n">ceph_osd_01</span> <span class="n">ansible_host</span><span class="o">=</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">20.101</span> <span class="n">ansible_port</span><span class="o">=</span><span class="mi">2222</span>
-<span class="n">ceph_osd_02</span> <span class="n">ansible_host</span><span class="o">=</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">20.102</span> <span class="n">ansible_port</span><span class="o">=</span><span class="mi">2222</span>
-<span class="n">ceph_osd_03</span> <span class="n">ansible_host</span><span class="o">=</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">20.103</span> <span class="n">ansible_port</span><span class="o">=</span><span class="mi">2222</span>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="na">ceph_monitor_01 ansible_host</span><span class="o">=</span><span class="s">192.168.20.11</span>
+<span class="na">ceph_monitor_02 ansible_host</span><span class="o">=</span><span class="s">192.168.20.12</span>
+<span class="na">ceph_monitor_03 ansible_host</span><span class="o">=</span><span class="s">192.168.20.13</span>
+<span class="na">ceph_osd_01 ansible_host</span><span class="o">=</span><span class="s">192.168.20.101 ansible_port=2222</span>
+<span class="na">ceph_osd_02 ansible_host</span><span class="o">=</span><span class="s">192.168.20.102 ansible_port=2222</span>
+<span class="na">ceph_osd_03 ansible_host</span><span class="o">=</span><span class="s">192.168.20.103 ansible_port=2222</span>
 
-<span class="p">[</span><span class="n">mons</span><span class="p">]</span>
-<span class="n">ceph_monitor_01</span>
-<span class="n">ceph_monitor_02</span>
-<span class="n">ceph_monitor_03</span>
+<span class="k">[mons]</span>
+<span class="na">ceph_monitor_01</span>
+<span class="na">ceph_monitor_02</span>
+<span class="na">ceph_monitor_03</span>
 
-<span class="p">[</span><span class="n">osds</span><span class="p">]</span>
-<span class="n">ceph_osd_01</span>
-<span class="n">ceph_osd_02</span>
-<span class="n">ceph_osd_03</span>
+<span class="k">[osds]</span>
+<span class="na">ceph_osd_01</span>
+<span class="na">ceph_osd_02</span>
+<span class="na">ceph_osd_03</span>
 </pre></div>
 </div>
 <p>Copy the sample configurations and modify the variables.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># cp site.yml.sample site.yml</span>
-<span class="c1"># cd group_vars/</span>
-<span class="c1"># cp all.yml.sample all.yml</span>
-<span class="c1"># cp mons.yml.sample mons.yml</span>
-<span class="c1"># cp osds.yml.sample osds.yml</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo cp site.yml.sample site.yml
+$ sudo <span class="nb">cd</span> group_vars/
+$ sudo cp all.yml.sample all.yml
+$ sudo cp mons.yml.sample mons.yml
+$ sudo cp osds.yml.sample osds.yml
 </pre></div>
 </div>
 <p>Common variables:</p>
@@ -1224,7 +1117,7 @@ journaling.</li>
 <li>osd_directory = Boolean value. Default: false. Use a specified
 directory for OSDs. This assumes that the end-user has already
 partitioned the drive and mounted it to
-<code class="docutils literal"><span class="pre">/var/lib/ceph/osd/&lt;OSD_NAME&gt;</span></code> or a custom directory.</li>
+<code class="docutils literal notranslate"><span class="pre">/var/lib/ceph/osd/&lt;OSD_NAME&gt;</span></code> or a custom directory.</li>
 <li>osd_directories = The directories to use for OSD storage.</li>
 </ul>
 </li>
@@ -1251,19 +1144,14 @@ different drives.</li>
 </li>
 </ul>
 <p>Finally, run the Playbook to deploy the Ceph cluster.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ansible-playbook -i production site.yml</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo ansible-playbook -i production site.yml
 </pre></div>
 </div>
-<p>[1]</p>
-<p>Source:</p>
-<ol class="arabic simple">
-<li>“ceph-ansible Wiki.” ceph-ansible GitHub. February 29, 2016. Accessed
-January 15, 2017. <a class="reference external" href="https://github.com/ceph/ceph-ansible/wiki">https://github.com/ceph/ceph-ansible/wiki</a></li>
-</ol>
+<p>[23]</p>
 </div>
 </div>
-<div class="section" id="network-ceph-crush-map">
-<h4>Network - Ceph - CRUSH Map<a class="headerlink" href="#network-ceph-crush-map" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="crush-map">
+<h4><a class="toc-backref" href="#id19">CRUSH Map</a><a class="headerlink" href="#crush-map" title="Permalink to this headline">¶</a></h4>
 <p>CRUSH maps are used to keep track of OSDs, physical locations of
 servers, and it defines how to replicate objects.</p>
 <p>These maps are divided into four main parts:</p>
@@ -1280,31 +1168,31 @@ be used for reading, writing, and/or replicating data.</li>
 <p>A binary of the configuration must be saved and then decompiled before
 changes can be made. Then the file must be recompiled for the updates to
 be loaded.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ceph osd getcrushmap -o &lt;NEW_COMPILED_FILE&gt;</span>
-<span class="c1"># crushtool -d &lt;NEW_COMPILED_FILE&gt; -o &lt;NEW_DECOMPILED_FILE&gt;</span>
-<span class="c1"># vim &lt;NEW_DECOMPILED_FILE&gt;`</span>
-<span class="c1"># crushtool -c &lt;NEW_DECOMPILED_FILE&gt; -o &lt;UPDATED_COMPILED_FILE&gt;</span>
-<span class="c1"># ceph osd setcrushmap -i &lt;UPDATED_COMPILED_FILE&gt;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo ceph osd getcrushmap -o &lt;NEW_COMPILED_FILE&gt;
+$ sudo crushtool -d &lt;NEW_COMPILED_FILE&gt; -o &lt;NEW_DECOMPILED_FILE&gt;
+$ sudo vim &lt;NEW_DECOMPILED_FILE&gt;<span class="sb">`</span>
+$ sudo crushtool -c &lt;NEW_DECOMPILED_FILE&gt; -o &lt;UPDATED_COMPILED_FILE&gt;
+$ sudo ceph osd setcrushmap -i &lt;UPDATED_COMPILED_FILE&gt;
 </pre></div>
 </div>
-<div class="section" id="network-ceph-crush-map-devices">
-<h5>Network - Ceph - CRUSH Map - Devices<a class="headerlink" href="#network-ceph-crush-map-devices" title="Permalink to this headline">¶</a></h5>
-<p>Devices must follow the format of <code class="docutils literal"><span class="pre">device</span> <span class="pre">&lt;COUNT&gt;</span> <span class="pre">&lt;OSD_NAME&gt;</span></code>. These
+<div class="section" id="devices">
+<h5><a class="toc-backref" href="#id20">Devices</a><a class="headerlink" href="#devices" title="Permalink to this headline">¶</a></h5>
+<p>Devices must follow the format of <code class="docutils literal notranslate"><span class="pre">device</span> <span class="pre">&lt;COUNT&gt;</span> <span class="pre">&lt;OSD_NAME&gt;</span></code>. These
 are automatically generated but can be adjusted and new nodes can be
 manually added here.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># devices</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># devices</span>
 <span class="n">device</span> <span class="mi">0</span> <span class="n">osd</span><span class="o">.</span><span class="mi">0</span>
 <span class="n">device</span> <span class="mi">1</span> <span class="n">osd</span><span class="o">.</span><span class="mi">1</span>
 <span class="n">device</span> <span class="mi">2</span> <span class="n">osd</span><span class="o">.</span><span class="mi">2</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="network-ceph-crush-map-bucket-types">
-<h5>Network - Ceph - CRUSH Map - Bucket Types<a class="headerlink" href="#network-ceph-crush-map-bucket-types" title="Permalink to this headline">¶</a></h5>
-<p>Bucket types follow a similar format of <code class="docutils literal"><span class="pre">type</span> <span class="pre">&lt;COUNT&gt;</span> <span class="pre">&lt;TYPE_NAME&gt;</span></code>.
+<div class="section" id="bucket-types">
+<h5><a class="toc-backref" href="#id21">Bucket Types</a><a class="headerlink" href="#bucket-types" title="Permalink to this headline">¶</a></h5>
+<p>Bucket types follow a similar format of <code class="docutils literal notranslate"><span class="pre">type</span> <span class="pre">&lt;COUNT&gt;</span> <span class="pre">&lt;TYPE_NAME&gt;</span></code>.
 The name of the type can be anything. The higher numbered type always
 inherits the lower numbers. The default types include:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># types</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># types</span>
 <span class="nb">type</span> <span class="mi">0</span> <span class="n">osd</span>
 <span class="nb">type</span> <span class="mi">1</span> <span class="n">host</span>
 <span class="nb">type</span> <span class="mi">2</span> <span class="n">chassis</span>
@@ -1319,11 +1207,11 @@ inherits the lower numbers. The default types include:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="network-ceph-crush-map-bucket-instances">
-<h5>Network - Ceph - CRUSH Map - Bucket Instances<a class="headerlink" href="#network-ceph-crush-map-bucket-instances" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="bucket-instances">
+<h5><a class="toc-backref" href="#id22">Bucket Instances</a><a class="headerlink" href="#bucket-instances" title="Permalink to this headline">¶</a></h5>
 <p>Bucket instances are used to group OSD configurations together.
 Typically these should define physical locations of the OSDs.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">CUSTOM_BUCKET_TYPE</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">UNIQUE_BUCKET_NAME</span><span class="o">&gt;</span> <span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">CUSTOM_BUCKET_TYPE</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">UNIQUE_BUCKET_NAME</span><span class="o">&gt;</span> <span class="p">{</span>
     <span class="nb">id</span> <span class="o">&lt;</span><span class="n">UNIQUE_NEGATIVE_NUMBER</span><span class="o">&gt;</span>
     <span class="n">weight</span> <span class="o">&lt;</span><span class="n">FLOATING_NUMBER</span><span class="o">&gt;</span>
     <span class="n">alg</span> <span class="o">&lt;</span><span class="n">BUCKET_TYPE</span><span class="o">&gt;</span>
@@ -1333,9 +1221,9 @@ Typically these should define physical locations of the OSDs.</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">&lt;CUSTOM_BUCKET_TYPE&gt;</span></code> = Required. This should be one of the
+<li><code class="docutils literal notranslate"><span class="pre">&lt;CUSTOM_BUCKET_TYPE&gt;</span></code> = Required. This should be one of the
 user-defined bucket types.</li>
-<li><code class="docutils literal"><span class="pre">&lt;UNIQUE_BUCKET_NAME&gt;</span></code> = Required. A unique name that describes the
+<li><code class="docutils literal notranslate"><span class="pre">&lt;UNIQUE_BUCKET_NAME&gt;</span></code> = Required. A unique name that describes the
 bucket.</li>
 <li>id = Required. A unique negative number to identify the bucket.</li>
 <li>weight = Optional. A floating/decimal number for all of the weight of
@@ -1363,11 +1251,11 @@ is supported.</li>
 useful if a bucket instance has hard drives of different speeds.</li>
 </ul>
 </div>
-<div class="section" id="network-ceph-crush-map-rules">
-<h5>Network - Ceph - CRUSH Map - Rules<a class="headerlink" href="#network-ceph-crush-map-rules" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="rules">
+<h5><a class="toc-backref" href="#id23">Rules</a><a class="headerlink" href="#rules" title="Permalink to this headline">¶</a></h5>
 <p>By modifying the CRUSH map, replication can be configured to go to a
 different drive, server, chassis, row, rack, datacenter, etc.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="o">&lt;</span><span class="n">RULE_NAME</span><span class="o">&gt;</span> <span class="p">{</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rule</span> <span class="o">&lt;</span><span class="n">RULE_NAME</span><span class="o">&gt;</span> <span class="p">{</span>
     <span class="n">ruleset</span> <span class="o">&lt;</span><span class="n">RULESET</span><span class="o">&gt;</span>
     <span class="nb">type</span> <span class="o">&lt;</span><span class="n">RULE_TYPE</span><span class="o">&gt;</span>
     <span class="n">min_size</span> <span class="o">&lt;</span><span class="n">MINIMUM_SIZE</span><span class="o">&gt;</span>
@@ -1379,7 +1267,7 @@ different drive, server, chassis, row, rack, datacenter, etc.</p>
 </pre></div>
 </div>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">&lt;RULE_NAME&gt;</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">&lt;RULE_NAME&gt;</span></code></li>
 <li>ruleset = Required. An integer that can be used to reference this
 ruleset by a pool.</li>
 <li>type = Required. Default is “replicated.” How to handle data
@@ -1394,16 +1282,11 @@ replicated to one drive. This option helps to save space.</li>
 <li>step take</li>
 <li>step emit = Required. This signifies the end of the rule block.</li>
 </ul>
-<p>[1]</p>
-<p>Source:</p>
-<ol class="arabic simple">
-<li>“CRUSH MAPS.” Ceph Documentation. Accessed January 29, 2017.
-<a class="reference external" href="http://docs.ceph.com/docs/master/rados/operations/crush-map/">http://docs.ceph.com/docs/master/rados/operations/crush-map/</a></li>
-</ol>
+<p>[24]</p>
 </div>
 </div>
-<div class="section" id="network-ceph-repair">
-<h4>Network - Ceph - Repair<a class="headerlink" href="#network-ceph-repair" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="repair">
+<h4><a class="toc-backref" href="#id24">Repair</a><a class="headerlink" href="#repair" title="Permalink to this headline">¶</a></h4>
 <p>Ceph automatically runs through a data integrity check called
 “scrubbing.” This checks the health of each placement group (object).
 Sometimes these can fail due to inconsistencies, commonly a mismatch in
@@ -1414,10 +1297,10 @@ object exists on the 8, 11, and 20 OSD drives.</p>
 <li><p class="first">Check the health information.</p>
 <ul>
 <li><p class="first">Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ceph health detail</span>
-<span class="n">HEALTH_ERR</span> <span class="mi">1</span> <span class="n">pgs</span> <span class="n">inconsistent</span><span class="p">;</span> <span class="mi">1</span> <span class="n">scrub</span> <span class="n">errors</span>
-<span class="n">pg</span> <span class="mf">1.28</span> <span class="ow">is</span> <span class="n">active</span><span class="o">+</span><span class="n">clean</span><span class="o">+</span><span class="n">inconsistent</span><span class="p">,</span> <span class="n">acting</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">20</span><span class="p">]</span>
-<span class="mi">1</span> <span class="n">scrub</span> <span class="n">errors</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo ceph health detail
+HEALTH_ERR <span class="m">1</span> pgs inconsistent<span class="p">;</span> <span class="m">1</span> scrub errors
+pg <span class="m">1</span>.28 is active+clean+inconsistent, acting <span class="o">[</span><span class="m">8</span>,11,20<span class="o">]</span>
+<span class="m">1</span> scrub errors
 </pre></div>
 </div>
 </li>
@@ -1426,12 +1309,12 @@ object exists on the 8, 11, and 20 OSD drives.</p>
 <li><p class="first">Manually run a repair.</p>
 <ul>
 <li><p class="first">Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ceph pg repar &lt;PLACEMENT_GROUP&gt;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo ceph pg repair &lt;PLACEMENT_GROUP&gt;
 </pre></div>
 </div>
 </li>
 <li><p class="first">Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ceph pg repair 1.28</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo ceph pg repair <span class="m">1</span>.28
 </pre></div>
 </div>
 </li>
@@ -1440,13 +1323,13 @@ object exists on the 8, 11, and 20 OSD drives.</p>
 <li><p class="first">Find the error:</p>
 <ul>
 <li><p class="first">Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># grep ERR /var/log/ceph/ceph-osd.&lt;OSD_NUMBER&gt;.log</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo grep ERR /var/log/ceph/ceph-osd.&lt;OSD_NUMBER&gt;.log
 </pre></div>
 </div>
 </li>
 <li><p class="first">Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># grep ERR /var/log/ceph/ceph-osd.11.log</span>
-<span class="mi">2017</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">12</span> <span class="mi">22</span><span class="p">:</span><span class="mi">27</span><span class="p">:</span><span class="mf">52.626252</span> <span class="mi">7</span><span class="n">f5b511e8700</span> <span class="o">-</span><span class="mi">1</span> <span class="n">log_channel</span><span class="p">(</span><span class="n">cluster</span><span class="p">)</span> <span class="n">log</span> <span class="p">[</span><span class="n">ERR</span><span class="p">]</span> <span class="p">:</span> <span class="mf">1.27</span> <span class="n">shard</span> <span class="mi">12</span><span class="p">:</span> <span class="n">soid</span> <span class="mi">1</span><span class="p">:</span><span class="n">e4c200f7</span><span class="p">:::</span><span class="n">rbd_data</span><span class="o">.</span><span class="n">a1e002238e1f29</span><span class="o">.</span><span class="mi">000000000000136</span><span class="n">d</span><span class="p">:</span><span class="n">head</span> <span class="n">candidate</span> <span class="n">had</span> <span class="n">a</span> <span class="n">read</span> <span class="n">error</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo grep ERR /var/log/ceph/ceph-osd.11.log
+<span class="m">2017</span>-01-12 <span class="m">22</span>:27:52.626252 7f5b511e8700 -1 log_channel<span class="o">(</span>cluster<span class="o">)</span> log <span class="o">[</span>ERR<span class="o">]</span> : <span class="m">1</span>.27 shard <span class="m">12</span>: soid <span class="m">1</span>:e4c200f7:::rbd_data.a1e002238e1f29.000000000000136d:head candidate had a <span class="nb">read</span> error
 </pre></div>
 </div>
 </li>
@@ -1455,13 +1338,13 @@ object exists on the 8, 11, and 20 OSD drives.</p>
 <li><p class="first">Find the bad file.</p>
 <ul>
 <li><p class="first">Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># find /var/lib/ceph/osd/ceph-&lt;OSD_NUMBER&gt;/current/&lt;PLACEMENT_GROUP&gt;_head/ -name &#39;*&lt;OBJECT_ID&gt;*&#39; -ls</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo find /var/lib/ceph/osd/ceph-&lt;OSD_NUMBER&gt;/current/&lt;PLACEMENT_GROUP&gt;_head/ -name <span class="s1">&#39;*&lt;OBJECT_ID&gt;*&#39;</span> -ls
 </pre></div>
 </div>
 </li>
 <li><p class="first">Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># find /var/lib/ceph/osd/ceph-11/current/1.28_head/ -name &quot;*a1e002238e1f29.000000000000136d*&quot;</span>
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">ceph</span><span class="o">/</span><span class="n">osd</span><span class="o">/</span><span class="n">ceph</span><span class="o">-</span><span class="mi">11</span><span class="o">/</span><span class="n">current</span><span class="o">/</span><span class="mf">1.28</span><span class="n">_head</span><span class="o">/</span><span class="n">DIR_7</span><span class="o">/</span><span class="n">DIR_2</span><span class="o">/</span><span class="n">DIR_3</span><span class="o">/</span><span class="n">rbd</span>\<span class="n">udata</span><span class="o">.</span><span class="n">b3e012238e1f29</span><span class="o">.</span><span class="mi">000000000000136</span><span class="n">d__head_EF004327__1</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo find /var/lib/ceph/osd/ceph-11/current/1.28_head/ -name <span class="s2">&quot;*a1e002238e1f29.000000000000136d*&quot;</span>
+/var/lib/ceph/osd/ceph-11/current/1.28_head/DIR_7/DIR_2/DIR_3/rbd<span class="se">\u</span>data.b3e012238e1f29.000000000000136d__head_EF004327__1
 </pre></div>
 </div>
 </li>
@@ -1470,12 +1353,12 @@ object exists on the 8, 11, and 20 OSD drives.</p>
 <li><p class="first">Stop the OSD.</p>
 <ul>
 <li><p class="first">Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># systemctl stop ceph-osd@&lt;OSD_NUMBER&gt;.service</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo systemctl stop ceph-osd@&lt;OSD_NUMBER&gt;.service
 </pre></div>
 </div>
 </li>
 <li><p class="first">Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># systemctl stop ceph-osd@11.service</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo systemctl stop ceph-osd@11.service
 </pre></div>
 </div>
 </li>
@@ -1484,12 +1367,12 @@ object exists on the 8, 11, and 20 OSD drives.</p>
 <li><p class="first">Flush the journal to save the current files cached in memory.</p>
 <ul>
 <li><p class="first">Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ceph-osd -i &lt;OSD_NUMBER&gt; --flush-journal</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo ceph-osd -i &lt;OSD_NUMBER&gt; --flush-journal
 </pre></div>
 </div>
 </li>
 <li><p class="first">Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ceph-osd -i 11 --flush-journal</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo ceph-osd -i <span class="m">11</span> --flush-journal
 </pre></div>
 </div>
 </li>
@@ -1498,7 +1381,7 @@ object exists on the 8, 11, and 20 OSD drives.</p>
 <li><p class="first">Move the bad object out of it’s current directory in the OSD.</p>
 <ul>
 <li><p class="first">Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># mv /var/lib/ceph/osd/ceph-11/current/1.28_head/DIR_7/DIR_2/DIR_3/rbd\\udata.b3e012238e1f29.000000000000136d__head_EF004327__1 /root/ceph_osd_backups/</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo mv /var/lib/ceph/osd/ceph-11/current/1.28_head/DIR_7/DIR_2/DIR_3/rbd<span class="se">\\</span>udata.b3e012238e1f29.000000000000136d__head_EF004327__1 /root/ceph_osd_backups/
 </pre></div>
 </div>
 </li>
@@ -1507,12 +1390,12 @@ object exists on the 8, 11, and 20 OSD drives.</p>
 <li><p class="first">Restart the OSD.</p>
 <ul>
 <li><p class="first">Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># systemctl restart ceph-osd@&lt;OSD_NUMBER&gt;.service</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo systemctl restart ceph-osd@&lt;OSD_NUMBER&gt;.service
 </pre></div>
 </div>
 </li>
 <li><p class="first">Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># systemctl restart ceph-osd@11.service</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo systemctl restart ceph-osd@11.service
 </pre></div>
 </div>
 </li>
@@ -1521,41 +1404,36 @@ object exists on the 8, 11, and 20 OSD drives.</p>
 <li><p class="first">Run another placement group repair.</p>
 <ul>
 <li><p class="first">Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ceph pg repar &lt;PLACEMENT_GROUP&gt;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo ceph pg repair &lt;PLACEMENT_GROUP&gt;
 </pre></div>
 </div>
 </li>
 <li><p class="first">Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ceph pg repair 1.28</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo ceph pg repair <span class="m">1</span>.28
 </pre></div>
 </div>
 </li>
 </ul>
 </li>
 </ul>
-<p>[1]</p>
-<p>Source:</p>
-<ol class="arabic simple">
-<li>“Ceph: manually repair object.” April 27, 2015. Accessed January 15,
-2017. <a class="reference external" href="http://ceph.com/planet/ceph-manually-repair-object/">http://ceph.com/planet/ceph-manually-repair-object/</a></li>
-</ol>
+<p>[25]</p>
 </div>
-<div class="section" id="network-ceph-libvirt">
-<h4>Network - Ceph - libvirt<a class="headerlink" href="#network-ceph-libvirt" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="libvirt">
+<h4><a class="toc-backref" href="#id25">libvirt</a><a class="headerlink" href="#libvirt" title="Permalink to this headline">¶</a></h4>
 <p>Virtual machines that are run via the libvirt front-end can utilize
 Ceph’s RADOS block devices (RBDs) as their main disk.</p>
 <ul>
 <li><p class="first">Add the network disk to the available devices in the Virsh
 configuration.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">devices</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">disk</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;network&#39;</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;disk&#39;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">source</span> <span class="n">protocol</span><span class="o">=</span><span class="s1">&#39;rbd&#39;</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;&lt;POOL&gt;/&lt;IMAGE&gt;&#39;</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="n">host</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;&lt;MONITOR_IP&gt;&#39;</span> <span class="n">port</span><span class="o">=</span><span class="s1">&#39;6789&#39;</span><span class="o">/&gt;</span>
-    <span class="o">&lt;/</span><span class="n">source</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">target</span> <span class="n">dev</span><span class="o">=</span><span class="s1">&#39;vda&#39;</span> <span class="n">bus</span><span class="o">=</span><span class="s1">&#39;virtio&#39;</span><span class="o">/&gt;</span>
-<span class="o">&lt;/</span><span class="n">disk</span><span class="o">&gt;</span>
-<span class="o">...</span>
-<span class="o">&lt;/</span><span class="n">devices</span><span class="o">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;devices&gt;</span>
+<span class="nt">&lt;disk</span> <span class="na">type=</span><span class="s">&#39;network&#39;</span> <span class="na">device=</span><span class="s">&#39;disk&#39;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;source</span> <span class="na">protocol=</span><span class="s">&#39;rbd&#39;</span> <span class="na">name=</span><span class="s">&#39;&lt;POOL&gt;/&lt;IMAGE&gt;&#39;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;host</span> <span class="na">name=</span><span class="s">&#39;&lt;MONITOR_IP&gt;&#39;</span> <span class="na">port=</span><span class="s">&#39;6789&#39;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/source&gt;</span>
+    <span class="nt">&lt;target</span> <span class="na">dev=</span><span class="s">&#39;vda&#39;</span> <span class="na">bus=</span><span class="s">&#39;virtio&#39;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/disk&gt;</span>
+...
+<span class="nt">&lt;/devices&gt;</span>
 </pre></div>
 </div>
 </li>
@@ -1564,70 +1442,93 @@ encrypted by libvirt. This encrypted hash is called a “secret.”</p>
 </li>
 <li><p class="first">Create a Virsh template that has a secret of type “ceph” with a
 description for the end user. Optionally specify a UUID for this
-secret to be associated with or else one will be generated.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># vim ceph-secret.xml</span>
-<span class="o">&lt;</span><span class="n">secret</span> <span class="n">ephemeral</span><span class="o">=</span><span class="s1">&#39;no&#39;</span> <span class="n">private</span><span class="o">=</span><span class="s1">&#39;no&#39;</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">uuid</span><span class="o">&gt;</span><span class="mi">51757078</span><span class="o">-</span><span class="mi">7</span><span class="n">d63</span><span class="o">-</span><span class="mi">476</span><span class="n">f</span><span class="o">-</span><span class="mi">8524</span><span class="o">-</span><span class="mi">5</span><span class="n">d46119cfc8a</span><span class="o">&lt;/</span><span class="n">uuid</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">usage</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;ceph&#39;</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">The</span> <span class="n">Ceph</span> <span class="n">client</span> <span class="n">key</span><span class="o">&lt;/</span><span class="n">name</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">usage</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">secret</span><span class="o">&gt;</span>
+secret to be associated with or else one will be generated. Example file: ceph-secret.xml</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;secret</span> <span class="na">ephemeral=</span><span class="s">&#39;no&#39;</span> <span class="na">private=</span><span class="s">&#39;no&#39;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;uuid&gt;</span>51757078-7d63-476f-8524-5d46119cfc8a<span class="nt">&lt;/uuid&gt;</span>
+<span class="nt">&lt;usage</span> <span class="na">type=</span><span class="s">&#39;ceph&#39;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;name&gt;</span>The Ceph client key<span class="nt">&lt;/name&gt;</span>
+<span class="nt">&lt;/usage&gt;</span>
+<span class="nt">&lt;/secret&gt;</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Define a blank secret from this template.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># virsh secret-define --file ceph-secret.xml</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo virsh secret-define --file ceph-secret.xml
 </pre></div>
 </div>
 </li>
 <li><p class="first">Verify that the secret was created.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># virsh secret-list</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo virsh secret-list
 </pre></div>
 </div>
 </li>
-<li><p class="first">Set the secret to the Ceph client’s key. [1]</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># virsh secret-set-value --secret &lt;GENERATED_UUID&gt; --base64 $(ceph auth get-key client.&lt;USER&gt;)</span>
+<li><p class="first">Set the secret to the Ceph client’s key. [26]</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo virsh secret-set-value --secret &lt;GENERATED_UUID&gt; --base64 <span class="k">$(</span>ceph auth get-key client.&lt;USER&gt;<span class="k">)</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">Finally, the secret needs to be referenced as type “ceph” with either
 the “usage” (description) or “uuid” or the secret element that has
-been created. [2]</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">devices</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">disk</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;network&#39;</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;disk&#39;</span><span class="o">&gt;</span>
-<span class="o">...</span>
-<span class="o">&lt;</span><span class="n">auth</span> <span class="n">username</span><span class="o">=</span><span class="s1">&#39;&lt;CLIENT&gt;&#39;</span><span class="o">&gt;</span>
-  <span class="o">&lt;</span><span class="n">secret</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;ceph&#39;</span> <span class="n">usage</span><span class="o">=</span><span class="s1">&#39;The Ceph client key&#39;</span><span class="o">/&gt;</span>
-<span class="o">&lt;/</span><span class="n">auth</span><span class="o">&gt;</span>
-<span class="o">...</span>
-<span class="o">&lt;</span><span class="n">disk</span><span class="o">&gt;</span>
-<span class="o">...</span>
-<span class="o">&lt;/</span><span class="n">devices</span><span class="o">&gt;</span>
+been created. [27]</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;devices&gt;</span>
+<span class="nt">&lt;disk</span> <span class="na">type=</span><span class="s">&#39;network&#39;</span> <span class="na">device=</span><span class="s">&#39;disk&#39;</span><span class="nt">&gt;</span>
+...
+<span class="nt">&lt;auth</span> <span class="na">username=</span><span class="s">&#39;&lt;CLIENT&gt;&#39;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;secret</span> <span class="na">type=</span><span class="s">&#39;ceph&#39;</span> <span class="na">usage=</span><span class="s">&#39;The Ceph client key&#39;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/auth&gt;</span>
+...
+<span class="nt">&lt;disk&gt;</span>
+...
+<span class="nt">&lt;/devices&gt;</span>
 </pre></div>
 </div>
 </li>
 </ul>
-<p>Sources:</p>
-<ol class="arabic simple">
-<li>“USING LIBVIRT WITH CEPH RBD.” Ceph Documentation. Accessed January
-27, 2017. <a class="reference external" href="http://docs.ceph.com/docs/master/rbd/libvirt/">http://docs.ceph.com/docs/master/rbd/libvirt/</a></li>
-<li>“Secret XML.” libvirt. Accessed January 27, 2017.
-<a class="reference external" href="https://libvirt.org/formatsecret.html">https://libvirt.org/formatsecret.html</a></li>
-</ol>
 </div>
-<div class="section" id="network-ceph-cephfs">
-<h4>Network - Ceph - CephFS<a class="headerlink" href="#network-ceph-cephfs" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="cephfs">
+<h4><a class="toc-backref" href="#id26">CephFS</a><a class="headerlink" href="#cephfs" title="Permalink to this headline">¶</a></h4>
 <p>CephFS has been stable since the Ceph Jewel 10.2.0 release. This now
 includes repair utilities, including fsck. For clients, it is
 recommended to use a Linux kernel in the 4 series, or newer, to have the
-latest features and bug fixes for the file system. [1]</p>
-<p>Source:</p>
+latest features and bug fixes for the file system. [28]</p>
+</div>
+</div>
+</div>
+<div class="section" id="errata">
+<h2><a class="reference external" href="https://github.com/ekultails/rootpages/commits/master/src/file_systems.rst">Errata</a><a class="headerlink" href="#errata" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="bibliography">
+<h2><a class="toc-backref" href="#id28">Bibliography</a><a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>“USING CEPHFS.” Ceph Documentation. Accessed January 15, 2017.
-<a class="reference external" href="http://docs.ceph.com/docs/master/cephfs/">http://docs.ceph.com/docs/master/cephfs/</a></li>
+<li>“Linux File systems Explained.” Ubuntu Documentation. November 8, 2015. <a class="reference external" href="https://help.ubuntu.com/community/LinuxFilesystemsExplained">https://help.ubuntu.com/community/LinuxFilesystemsExplained</a></li>
+<li>“How many files can I put in a directory?” Stack Overflow. July 14, 2015.http://stackoverflow.com/questions/466521/how-many-files-can-i-put-in-a-directory</li>
+<li>“Btrfs Main Page.” Btrfs Kernel Wiki. June 24, 2016. <a class="reference external" href="https://btrfs.wiki.kernel.org/index.php/Main_Page">https://btrfs.wiki.kernel.org/index.php/Main_Page</a></li>
+<li>“What’s All This I Hear About Btrfs For Linux.” The Personal Blog of Dan Calloway. December 16, 2012. <a class="reference external" href="https://danielcalloway.wordpress.com/2012/12/16/whats-all-this-i-hear-about-btrfs-for-linux/">https://danielcalloway.wordpress.com/2012/12/16/whats-all-this-i-hear-about-btrfs-for-linux/</a></li>
+<li>“Mount Options” Btrfs Kernel Wiki. May 5, 2016. <a class="reference external" href="https://btrfs.wiki.kernel.org/index.php/Mount_options">https://btrfs.wiki.kernel.org/index.php/Mount_options</a></li>
+<li>“Using Btrfs with Multiple Devices” Btrfs Kernel Wiki. May 14, 2016. <a class="reference external" href="https://btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices">https://btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices</a></li>
+<li>“Preventing a btrfs Nightmare.” Jupiter Broadcasting. July 6, 2014. <a class="reference external" href="http://www.jupiterbroadcasting.com/61572/preventing-a-btrfs-nightmare-las-320/">http://www.jupiterbroadcasting.com/61572/preventing-a-btrfs-nightmare-las-320/</a></li>
+<li>“Linux File Systems: Ext2 vs Ext3 vs Ext4.” The Geek Stuff. May 16, 2011. Accessed October 1, 2016. <a class="reference external" href="http://www.thegeekstuff.com/2011/05/ext2-ext3-ext4">http://www.thegeekstuff.com/2011/05/ext2-ext3-ext4</a></li>
+<li>“Ext4 Filesystem.” Kernel Documentation. May 29, 2015. Accessed October 1, 2016. <a class="reference external" href="https://kernel.org/doc/Documentation/filesystems/ext4.txt">https://kernel.org/doc/Documentation/filesystems/ext4.txt</a></li>
+<li>“RAID levels 0, 1, 2, 3, 4, 5, 6, 0+1, 1+0 features explained in detail.” GOLINUXHUB. April 09, 2016. Accessed August 13th, 2016. <a class="reference external" href="http://www.golinuxhub.com/2014/04/raid-levels-0-1-2-3-4-5-6-01-10.html">http://www.golinuxhub.com/2014/04/raid-levels-0-1-2-3-4-5-6-01-10.html</a></li>
+<li>“RAID.” Arch Linux Wiki. August 7, 2016. Accessed August 13, 2016. <a class="reference external" href="https://wiki.archlinux.org/index.php/RAID">https://wiki.archlinux.org/index.php/RAID</a></li>
+<li>“NFS SERVER CONFIGURATION.” Red Hat Documentation. Accessed September 19, 2016.  <a class="reference external" href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/nfs-serverconfig.html">https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/nfs-serverconfig.html</a></li>
+<li>“The Difference between CIFS and SMB.” VARONIS. February 14, 1024. Accessed September 18th, 2016. <a class="reference external" href="https://blog.varonis.com/the-difference-between-cifs-and-smb/">https://blog.varonis.com/the-difference-between-cifs-and-smb/</a></li>
+<li>“The Samba Configuration File.” SAMBA. September 26th, 2003. Accessed September 18th, 2016. <a class="reference external" href="https://www.samba.org/samba/docs/using_samba/ch06.html">https://www.samba.org/samba/docs/using_samba/ch06.html</a></li>
+<li>“RHEL7: Provide SMB network shares to specific clients.” CertDepot. August 25, 2016. Accessed September 18th, 2016. <a class="reference external" href="https://www.certdepot.net/rhel7-provide-smb-network-shares/">https://www.certdepot.net/rhel7-provide-smb-network-shares/</a></li>
+<li>“RHEL7: Configure a system as either an iSCSI target or initiator that persistently mounts an iSCSI target.” CertDepot. July 30, 2016. Accessed August 13, 2016. <a class="reference external" href="https://www.certdepot.net/rhel7-configure-iscsi-target-initiator-persistently/">https://www.certdepot.net/rhel7-configure-iscsi-target-initiator-persistently/</a></li>
+<li>Karan Singh <em>Learning Ceph</em> (Birmingham, UK: Packet Publishing, 2015)</li>
+<li><a class="reference external" href="https://www.sebastien-han.fr/blog/2016/03/21/ceph-a-new-store-is-coming/">https://www.sebastien-han.fr/blog/2016/03/21/ceph-a-new-store-is-coming/</a></li>
+<li>“CACHE POOL.” Ceph Documentation. Accessed January 19, 2017. <a class="reference external" href="http://docs.ceph.com/docs/jewel/dev/cache-pool/">http://docs.ceph.com/docs/jewel/dev/cache-pool/</a></li>
+<li>“CEPHX CONFIG REFERENCE.” Ceph Documentation. Accessed January 28, 2017. <a class="reference external" href="http://docs.ceph.com/docs/master/rados/configuration/auth-config-ref/">http://docs.ceph.com/docs/master/rados/configuration/auth-config-ref/</a></li>
+<li>“INTRO TO CEPH.” Ceph Documentation. Accessed January 15, 2017. <a class="reference external" href="http://docs.ceph.com/docs/jewel/start/intro/">http://docs.ceph.com/docs/jewel/start/intro/</a></li>
+<li>“Ceph Deployment.” Ceph Jewel Documentation. Accessed January 14, 2017. <a class="reference external" href="http://docs.ceph.com/docs/jewel/rados/deployment/">http://docs.ceph.com/docs/jewel/rados/deployment/</a></li>
+<li>“ceph-ansible Wiki.” ceph-ansible GitHub. February 29, 2016. Accessed January 15, 2017. <a class="reference external" href="https://github.com/ceph/ceph-ansible/wiki">https://github.com/ceph/ceph-ansible/wiki</a></li>
+<li>“CRUSH MAPS.” Ceph Documentation. Accessed January 29, 2017. <a class="reference external" href="http://docs.ceph.com/docs/master/rados/operations/crush-map/">http://docs.ceph.com/docs/master/rados/operations/crush-map/</a></li>
+<li>“Ceph: manually repair object.” April 27, 2015. Accessed January 15, 2017. <a class="reference external" href="http://ceph.com/planet/ceph-manually-repair-object/">http://ceph.com/planet/ceph-manually-repair-object/</a></li>
+<li>“USING LIBVIRT WITH CEPH RBD.” Ceph Documentation. Accessed January 27, 2017. <a class="reference external" href="http://docs.ceph.com/docs/master/rbd/libvirt/">http://docs.ceph.com/docs/master/rbd/libvirt/</a></li>
+<li>“Secret XML.” libvirt. Accessed January 27, 2017. <a class="reference external" href="https://libvirt.org/formatsecret.html">https://libvirt.org/formatsecret.html</a></li>
+<li>“USING CEPHFS.” Ceph Documentation. Accessed January 15, 2017. <a class="reference external" href="http://docs.ceph.com/docs/master/cephfs/">http://docs.ceph.com/docs/master/cephfs/</a></li>
 </ol>
-</div>
-</div>
 </div>
 </div>
 
@@ -1653,7 +1554,7 @@ latest features and bug fixes for the file system. [1]</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Luke Short.
+        &copy; Copyright 2018, Luke Short. Documents licensed under GPLv3.
 
     </p>
   </div>
@@ -1675,7 +1576,7 @@ latest features and bug fixes for the file system. [1]</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'2018.01.26',
+            VERSION:'2018.04.01',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

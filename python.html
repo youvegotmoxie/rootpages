@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Python 3 &mdash; Root Pages 2018.01.26 documentation</title>
+  <title>Python 3 &mdash; Root Pages 2018.04.01 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Root Pages 2018.01.26 documentation" href="index.html"/>
+    <link rel="top" title="Root Pages 2018.04.01 documentation" href="index.html"/>
         <link rel="next" title="Security" href="security.html"/>
         <link rel="prev" title="Packages" href="packages.html"/> 
 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2018.01.26
+                2018.04.01
               </div>
             
           
@@ -96,6 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bootloaders.html">Bootloaders</a></li>
 <li class="toctree-l1"><a class="reference internal" href="c_and_c++.html">C and C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="databases.html">Databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="clustering.html">Clustering and High Availability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dns_servers.html">DNS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="file_systems.html">File Systems</a></li>
@@ -104,8 +105,7 @@
 <li class="toctree-l1"><a class="reference internal" href="mail_servers.html">Mail Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="monitoring.html">Monitoring</a></li>
 <li class="toctree-l1"><a class="reference internal" href="networking.html">Networking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nosql.html">NoSQL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="openstack.html">OpenStack Ocata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openstack.html">OpenStack Queens</a></li>
 <li class="toctree-l1"><a class="reference internal" href="operating_systems.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages.html">Packages</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Python 3</a><ul>
@@ -117,11 +117,18 @@
 <li class="toctree-l3"><a class="reference internal" href="#dictionaries">Dictionaries</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#conditionals">Conditionals</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#control-and-operators">Control and Operators</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#for">For</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#if">If</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#while">While</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#errata">Errata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#bibliography">Bibliography</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="security.html">Security</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sql.html">SQL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="virtualization.html">Virtualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="wine.html">Wine</a></li>
 </ul>
@@ -201,7 +208,15 @@
 <li><a class="reference internal" href="#dictionaries" id="id5">Dictionaries</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#bibliography" id="id6">Bibliography</a></li>
+<li><a class="reference internal" href="#conditionals" id="id6">Conditionals</a><ul>
+<li><a class="reference internal" href="#control-and-operators" id="id7">Control and Operators</a></li>
+<li><a class="reference internal" href="#for" id="id8">For</a></li>
+<li><a class="reference internal" href="#if" id="id9">If</a></li>
+<li><a class="reference internal" href="#while" id="id10">While</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#errata" id="id11">Errata</a></li>
+<li><a class="reference internal" href="#bibliography" id="id12">Bibliography</a></li>
 </ul>
 </li>
 </ul>
@@ -221,7 +236,7 @@ itself and developer’s code. Each PEP is assigned a specific number. [1]</p>
 </ul>
 </li>
 </ul>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 
 
 <span class="k">class</span> <span class="nc">Pep8</span><span class="p">():</span>
@@ -230,20 +245,20 @@ itself and developer’s code. Each PEP is assigned a specific number. [1]</p>
 <ul class="simple">
 <li>Method and function should:<ul>
 <li>Be named in all lowercase.</li>
-<li>Use underscores “<code class="docutils literal"><span class="pre">_</span></code>” to separate words in the name.</li>
+<li>Use underscores “<code class="docutils literal notranslate"><span class="pre">_</span></code>” to separate words in the name.</li>
 <li>Have it’s contents intended by 4 spaces.</li>
 <li>Example:</li>
 </ul>
 </li>
 </ul>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Hello world&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li>Variables names should:<ul>
 <li>Have the first letter be lowercase.</li>
-<li>Contain no underscores “<code class="docutils literal"><span class="pre">_</span></code>.”<ul>
+<li>Contain no underscores “<code class="docutils literal notranslate"><span class="pre">_</span></code>.”<ul>
 <li>Unless they are private variables, then it needs to start with
 two underscores.</li>
 </ul>
@@ -258,7 +273,7 @@ two underscores.</li>
 </li>
 </ul>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>if (phoneNumber == 999):
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>if (phoneNumber == 999):
 
     if (callerID is “Frank”):
         print(“Hello Frank.”)
@@ -281,7 +296,7 @@ print(&quot;Welcome to work.&quot;)
 <h2><a class="toc-backref" href="#id4">Data Types</a><a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h2>
 <p>Python automatically guesses what data type a variable should be used
 when it is defined. The datatype a variable is using can be found using
-the <code class="docutils literal"><span class="pre">type()</span></code> function.</p>
+the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="10%" />
@@ -331,10 +346,10 @@ the <code class="docutils literal"><span class="pre">type()</span></code> functi
 </table>
 <p>Variables defined outside of a function are global variables. Although
 this practice is discouraged, these can be referenced using the
-<code class="docutils literal"><span class="pre">global</span></code> method. It is preferred to pass variables to a function and
+<code class="docutils literal notranslate"><span class="pre">global</span></code> method. It is preferred to pass variables to a function and
 return their new values.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="s2">&quot;Hello world&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="s2">&quot;Hello world&quot;</span>
 
 <span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
     <span class="k">global</span> <span class="n">var</span>
@@ -346,7 +361,7 @@ return their new values.</p>
 <p>Dictionaries are a variable that provides a key-value store. It can be
 used as a nested array of variables.</p>
 <p>Example replacing a key:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;stub_host&#39;</span><span class="p">:</span> <span class="s1">&#39;123&#39;</span><span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;stub_host&#39;</span><span class="p">:</span> <span class="s1">&#39;123&#39;</span><span class="p">}</span>
 <span class="n">dictionary</span><span class="p">[</span><span class="s1">&#39;hello_world&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">dictionary</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;stub_host&#39;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">dictionary</span><span class="p">)</span>
 </pre></div>
@@ -365,11 +380,190 @@ used as a nested array of variables.</p>
 </ul>
 </div>
 </div>
+<div class="section" id="conditionals">
+<h2><a class="toc-backref" href="#id6">Conditionals</a><a class="headerlink" href="#conditionals" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="control-and-operators">
+<h3><a class="toc-backref" href="#id7">Control and Operators</a><a class="headerlink" href="#control-and-operators" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="44%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Comparison Operator</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>==</td>
+<td>Equal to.</td>
+</tr>
+<tr class="row-odd"><td>!=</td>
+<td>Not equal to.</td>
+</tr>
+<tr class="row-even"><td>&gt;</td>
+<td>Greater than.</td>
+</tr>
+<tr class="row-odd"><td>&lt;</td>
+<td>Lesser than.</td>
+</tr>
+<tr class="row-even"><td>&gt;=</td>
+<td>Greater than or equal to.</td>
+</tr>
+<tr class="row-odd"><td>&lt;=</td>
+<td>Lesser than or equal to.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Identity Operator</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>is</td>
+<td>Compares two memory addresses to see if they are the same.</td>
+</tr>
+<tr class="row-odd"><td>is not</td>
+<td>Compares two memory addresses to see if they are not the same.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Logical Operator</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>and</td>
+<td>All booleans must be true.</td>
+</tr>
+<tr class="row-odd"><td>or</td>
+<td>At least one boolean must be true.</td>
+</tr>
+<tr class="row-even"><td>not</td>
+<td>No booleans can be true.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Membership Operator</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>in</td>
+<td>The first variable needs to exist as at least a substring or key in the second variable.</td>
+</tr>
+<tr class="row-odd"><td>not in</td>
+<td>The first variable must not be in the second variable.</td>
+</tr>
+</tbody>
+</table>
+<p>[3]</p>
+<p>Control statements for loops [4]:</p>
+<ul class="simple">
+<li>break = Stops the most outer loop that is currently in progress.</li>
+<li>continue = Skips the inner loop once.</li>
+<li>pass = This does nothing and is only meant to be a place holder.</li>
+<li>else = After all iterations of a loop are over, the else block is executed. This is specifically for “for” and “while” loops (not “if” statements).</li>
+</ul>
+</div>
+<div class="section" id="for">
+<h3><a class="toc-backref" href="#id8">For</a><a class="headerlink" href="#for" title="Permalink to this headline">¶</a></h3>
+<p>For loops will iterate through each element in a variable. This is normally an array, list, or dictionary.</p>
+<p>Syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="o">&lt;</span><span class="n">VALUE</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">LIST_OR_DICTIONARY</span><span class="o">&gt;</span><span class="p">:</span>
+    <span class="c1"># Insert code to use &lt;VALUE&gt; here.</span>
+</pre></div>
+</div>
+<p>The “else” statement can be used to always execute code after the “for” loop has iterated through each element.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cars</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sedan&quot;</span><span class="p">,</span> <span class="s2">&quot;truck&quot;</span><span class="p">,</span> <span class="s2">&quot;van&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">car</span> <span class="ow">in</span> <span class="n">cars</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Consider buying a </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span> <span class="n">car</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;This FOR loop is now completed.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>[5]</p>
+</div>
+<div class="section" id="if">
+<h3><a class="toc-backref" href="#id9">If</a><a class="headerlink" href="#if" title="Permalink to this headline">¶</a></h3>
+<p>If statements will check different comparisons and execute the first code block that is matched. The first comparison is defined as “if” and other comparisons after that can be defined using “elif.” The “else” block will be executed if nothing else was matched. In Python, there is no traditional “switch” conditional so an “if” statement must be used instead.</p>
+<p>Syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">&lt;</span><span class="n">COMPARISON_STATEMENT_1</span><span class="o">&gt;</span><span class="p">:</span>
+    <span class="c1"># Execute if this statement is True.</span>
+<span class="k">elif</span> <span class="o">&lt;</span><span class="n">COMPARISON_STATEMENT_2</span><span class="o">&gt;</span><span class="p">:</span>
+    <span class="c1"># Execute if this statement is True.</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># If not other matches are found, execute this.</span>
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bread_required</span> <span class="o">=</span> <span class="mi">13</span>
+
+<span class="k">if</span> <span class="n">bread_required</span> <span class="o">==</span> <span class="mi">12</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;You need a dozen loafs of bread.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">bread_required</span> <span class="o">==</span> <span class="mi">13</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;You need a baker&#39;s dozen loafs of bread.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">bread_required</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;You need one loaf of bread.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;You need </span><span class="si">%d</span><span class="s2"> loafs of bread.&quot;</span> <span class="o">%</span> <span class="n">bread_required</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>[5]</p>
+</div>
+<div class="section" id="while">
+<h3><a class="toc-backref" href="#id10">While</a><a class="headerlink" href="#while" title="Permalink to this headline">¶</a></h3>
+<p>While statements will continue to loop until the condition it is checking becomes False.</p>
+<p>Syntax:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="o">&lt;</span><span class="n">COMPARISON_STATEMENT_OR_BOOLEAN_VARIABLE</span><span class="o">&gt;</span><span class="p">:</span>
+    <span class="c1"># Insert code to use while the statement is true.</span>
+</pre></div>
+</div>
+<p>The “while” statement can be used to always execute code after the loop has completed.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Looping...&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;This WHILE loop is now completed.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>[5]</p>
+</div>
+</div>
+<div class="section" id="errata">
+<h2><a class="reference external" href="https://github.com/ekultails/rootpages/commits/master/src/python.rst">Errata</a><a class="headerlink" href="#errata" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="bibliography">
-<h2><a class="toc-backref" href="#id6">Bibliography</a><a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">Bibliography</a><a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>“PEP 0 – Index of Python Enhancement Proposals (PEPs).” Python’s Developer’s Guide. Accessed November 15, 2017. <a class="reference external" href="https://www.python.org/dev/peps/">https://www.python.org/dev/peps/</a></li>
 <li>“PEP 8 – Style Guide for Python Code.” Python’s Developer’s Guide. Accessed November 15, 2017. <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a></li>
+<li>“Python Operators.” Programiz. Accessed January 29, 2018. <a class="reference external" href="https://www.programiz.com/python-programming/operators">https://www.programiz.com/python-programming/operators</a></li>
+<li>“Python break, continue and pass Statements.” Tutorials Point. Accessed January 29, 2018. <a class="reference external" href="http://www.tutorialspoint.com/python/python_loop_control.htm">http://www.tutorialspoint.com/python/python_loop_control.htm</a></li>
+<li>“Compound statements.” Python Documentation. January 30, 2018. Accessed January 30, 2018. <a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html">https://docs.python.org/3/reference/compound_stmts.html</a></li>
 </ol>
 </div>
 </div>
@@ -396,7 +590,7 @@ used as a nested array of variables.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Luke Short.
+        &copy; Copyright 2018, Luke Short. Documents licensed under GPLv3.
 
     </p>
   </div>
@@ -418,7 +612,7 @@ used as a nested array of variables.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'2018.01.26',
+            VERSION:'2018.04.01',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

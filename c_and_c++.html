@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>C and C++ &mdash; Root Pages 2018.01.26 documentation</title>
+  <title>C and C++ &mdash; Root Pages 2018.04.01 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Root Pages 2018.01.26 documentation" href="index.html"/>
-        <link rel="next" title="Clustering and High Availability" href="clustering.html"/>
+    <link rel="top" title="Root Pages 2018.04.01 documentation" href="index.html"/>
+        <link rel="next" title="Databases" href="databases.html"/>
         <link rel="prev" title="Bootloaders" href="bootloaders.html"/> 
 
   
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2018.01.26
+                2018.04.01
               </div>
             
           
@@ -114,6 +114,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#while">While</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#libraries">Libraries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#stdlib">stdlib</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#input-and-output">Input and Output</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#terminal">Terminal</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#argument-parsing">Argument Parsing</a></li>
@@ -122,9 +126,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#files">Files</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#errata">Errata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#bibliography">Bibliography</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="databases.html">Databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="clustering.html">Clustering and High Availability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dns_servers.html">DNS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="file_systems.html">File Systems</a></li>
@@ -133,13 +139,11 @@
 <li class="toctree-l1"><a class="reference internal" href="mail_servers.html">Mail Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="monitoring.html">Monitoring</a></li>
 <li class="toctree-l1"><a class="reference internal" href="networking.html">Networking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nosql.html">NoSQL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="openstack.html">OpenStack Ocata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openstack.html">OpenStack Queens</a></li>
 <li class="toctree-l1"><a class="reference internal" href="operating_systems.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages.html">Packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="security.html">Security</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sql.html">SQL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="virtualization.html">Virtualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="wine.html">Wine</a></li>
 </ul>
@@ -229,15 +233,20 @@
 <li><a class="reference internal" href="#while" id="id15">While</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#input-and-output" id="id16">Input and Output</a><ul>
-<li><a class="reference internal" href="#terminal" id="id17">Terminal</a><ul>
-<li><a class="reference internal" href="#argument-parsing" id="id18">Argument Parsing</a></li>
+<li><a class="reference internal" href="#libraries" id="id16">Libraries</a><ul>
+<li><a class="reference internal" href="#stdlib" id="id17">stdlib</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#files" id="id19">Files</a></li>
+<li><a class="reference internal" href="#input-and-output" id="id18">Input and Output</a><ul>
+<li><a class="reference internal" href="#terminal" id="id19">Terminal</a><ul>
+<li><a class="reference internal" href="#argument-parsing" id="id20">Argument Parsing</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#bibliography" id="id20">Bibliography</a></li>
+<li><a class="reference internal" href="#files" id="id21">Files</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#errata" id="id22">Errata</a></li>
+<li><a class="reference internal" href="#bibliography" id="id23">Bibliography</a></li>
 </ul>
 </li>
 </ul>
@@ -269,10 +278,10 @@ dependencies explicit and minimal.</p>
 <p>Comments can be placed throughout the code as a reminder of why
 something is done a certain way. This is a human note to help any
 developer working on the program to understand the reasoning for how the
-program was coded. These comment blocks have to start with <code class="docutils literal"><span class="pre">/*</span></code> and
-end with a <code class="docutils literal"><span class="pre">*/</span></code>.</p>
+program was coded. These comment blocks have to start with <code class="docutils literal notranslate"><span class="pre">/*</span></code> and
+end with a <code class="docutils literal notranslate"><span class="pre">*/</span></code>.</p>
 <p>A simple C example is provided below:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="cm">/* This will tell a user &quot;Hello world&quot; */</span>
@@ -283,7 +292,7 @@ end with a <code class="docutils literal"><span class="pre">*/</span></code>.</p
 </div>
 <p>On Linux, C programs can be compiled with the GNU C compiler (gcc) and
 C++ programs with the GNU C++ compiler (g++).</p>
-<div class="highlight-sh"><div class="highlight"><pre><span></span>$ gcc hello.c -o hello
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ gcc hello.c -o hello
 $ ./hello
 Hello world
 </pre></div>
@@ -364,13 +373,13 @@ Boston</a></li>
 </table>
 <p>Integers can be “signed” or “unsigned.” An “unsigned” digit can be a
 negative number.</p>
-<p>Below shows how to assign/create variables using these data types.</p>
+<p>Below shows how to create variables using these data types.</p>
 <p>Syntax:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">DATA_TYPE</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">VARIABLE_NAME</span><span class="o">&gt;</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">VALUE</span><span class="o">&gt;</span><span class="p">;</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">DATA_TYPE</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">VARIABLE_NAME</span><span class="o">&gt;</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">VALUE</span><span class="o">&gt;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Examples:</p>
-<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="n">boolean_var</span> <span class="o">=</span> <span class="s">&quot;true&quot;</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="n">boolean_var</span> <span class="o">=</span> <span class="s">&quot;true&quot;</span><span class="p">;</span>
 <span class="kt">long</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">integer_var</span> <span class="o">=</span> <span class="s">&quot;-100&quot;</span><span class="p">;</span>
 <span class="kt">float</span> <span class="n">float_var</span> <span class="o">=</span> <span class="s">&quot;100.99&quot;</span><span class="p">;</span>
 <span class="kt">double</span> <span class="n">double_var</span> <span class="o">=</span> <span class="s">&quot;99.99999999999999999999999999&quot;</span><span class="p">;</span>
@@ -380,24 +389,24 @@ negative number.</p>
 </pre></div>
 </div>
 <p>[4]</p>
-<p>Blank and/or dynamic variables can be created with the <code class="docutils literal"><span class="pre">new</span></code>
+<p>Blank and/or dynamic variables can be created with the <code class="docutils literal notranslate"><span class="pre">new</span></code>
 functions. These will not be cleaned up and will result in the program
 wasting RAM (a memory leak) if not handled correctly. In a class, a
-destructor should be used to <code class="docutils literal"><span class="pre">delete</span></code> the variables when an object is
+destructor should be used to <code class="docutils literal notranslate"><span class="pre">delete</span></code> the variables when an object is
 no longer in use. [5] On modern operating systems such as Linux, macOS,
 and Windows, any leaked memory from a program will be cleaned up
 automatically after the main process is complete.</p>
 <p>Syntax:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">DATA_TYPE</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">VARIABLE_NAME</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">new</span> <span class="o">&lt;</span><span class="n">DATA_TYPE</span><span class="o">&gt;</span><span class="p">;</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">DATA_TYPE</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">VARIABLE_NAME</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">new</span> <span class="o">&lt;</span><span class="n">DATA_TYPE</span><span class="o">&gt;</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ARRAY_VARIABLE_NAME</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">new</span> <span class="o">&lt;</span><span class="n">DATA_TYPE</span><span class="o">&gt;</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">SIZE</span><span class="o">&gt;</span><span class="p">];</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ARRAY_VARIABLE_NAME</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">new</span> <span class="o">&lt;</span><span class="n">DATA_TYPE</span><span class="o">&gt;</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">SIZE</span><span class="o">&gt;</span><span class="p">];</span>
 </pre></div>
 </div>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">delete</span> <span class="o">&lt;</span><span class="n">VARIABLE_NAME</span><span class="o">&gt;</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">delete</span> <span class="o">&lt;</span><span class="n">VARIABLE_NAME</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">delete</span><span class="p">[]</span> <span class="o">&lt;</span><span class="n">ARRAY_VARIABLE_NAME</span><span class="o">&gt;</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">delete</span><span class="p">[]</span> <span class="o">&lt;</span><span class="n">ARRAY_VARIABLE_NAME</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <div class="section" id="arrays">
@@ -407,21 +416,21 @@ It is similar to defining a variable, except the number of elements (the
 size) of the array needs to explicitly be defined. For more dynamic
 arrays, use vectors instead.</p>
 <p>Syntax:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">DAYA_TYPE</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">ARRAY_VARIABLE_NAME</span><span class="o">&gt;</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">SIZE</span><span class="o">&gt;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="o">&lt;</span><span class="n">VALUE_1</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">VALUE_2</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">VALUE_3</span><span class="o">&gt;</span> <span class="p">};</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">DAYA_TYPE</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">ARRAY_VARIABLE_NAME</span><span class="o">&gt;</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">SIZE</span><span class="o">&gt;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="o">&lt;</span><span class="n">VALUE_1</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">VALUE_2</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">VALUE_3</span><span class="o">&gt;</span> <span class="p">};</span>
 </pre></div>
 </div>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ARRAY_VARIABLE_NAME</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">new</span> <span class="o">&lt;</span><span class="n">DATA_TYPE</span><span class="o">&gt;</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">SIZE</span><span class="o">&gt;</span><span class="p">];</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ARRAY_VARIABLE_NAME</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">new</span> <span class="o">&lt;</span><span class="n">DATA_TYPE</span><span class="o">&gt;</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">SIZE</span><span class="o">&gt;</span><span class="p">];</span>
 </pre></div>
 </div>
 <p>Example:</p>
-<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">first_array</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;us&quot;</span><span class="p">,</span> <span class="s">&quot;uk&quot;</span><span class="p">,</span> <span class="s">&quot;de&quot;</span> <span class="p">};</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">first_array</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;us&quot;</span><span class="p">,</span> <span class="s">&quot;uk&quot;</span><span class="p">,</span> <span class="s">&quot;de&quot;</span> <span class="p">};</span>
 
 <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">count</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">count</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">first_array</span><span class="p">[</span><span class="n">count</span><span class="p">];</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">empty_array</span> <span class="o">=</span> <span class="n">new</span> <span class="kt">float</span> <span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">empty_array</span> <span class="o">=</span> <span class="n">new</span> <span class="kt">float</span> <span class="p">[</span><span class="mi">3</span><span class="p">];</span>
 </pre></div>
 </div>
 <p>[6]</p>
@@ -433,21 +442,21 @@ points. However, vectors provide more functionality. Memory cleanup is
 automatic, additional functions exist for sorting and retrieving
 information, and vectors can be resized.</p>
 <p>Include:</p>
-<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
 </pre></div>
 </div>
 <p>Syntax:</p>
-<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">&lt;&lt;</span><span class="n">DATA_TYPE</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">VARIABLE_NAME</span><span class="o">&gt;</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">&lt;&lt;</span><span class="n">DATA_TYPE</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">VARIABLE_NAME</span><span class="o">&gt;</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">&lt;&lt;</span><span class="n">DATA_TYPE</span><span class="o">&gt;&gt;</span> <span class="o">&lt;</span><span class="n">VARIABLE_NAME</span><span class="o">&gt;</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">SIZE</span><span class="o">&gt;</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">&lt;&lt;</span><span class="n">DATA_TYPE</span><span class="o">&gt;&gt;</span> <span class="o">&lt;</span><span class="n">VARIABLE_NAME</span><span class="o">&gt;</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">SIZE</span><span class="o">&gt;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Example:</p>
-<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">restaurant_order_numbers</span> <span class="p">(</span><span class="mi">999</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">restaurant_order_numbers</span> <span class="p">(</span><span class="mi">999</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>[7]</p>
@@ -459,29 +468,29 @@ In C, this is useful because pointers can be used as array to create
 things such as a string from multiple characters. A pointer can only be
 associated with one data type and cannot be resized. For C++, it is
 recommended to use vectors instead. Pointers will require manual memory
-cleanup with a <code class="docutils literal"><span class="pre">delete</span></code> statement. [8]</p>
+cleanup with a <code class="docutils literal notranslate"><span class="pre">delete</span></code> statement. [8]</p>
 <p>There are a few different ways to define a pointer.</p>
 <p>Syntax:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">DATA_TYPE</span><span class="o">&gt;</span> <span class="o">*&lt;</span><span class="n">POINTER</span><span class="o">&gt;</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">DATA_TYPE</span><span class="o">&gt;</span> <span class="o">*&lt;</span><span class="n">POINTER</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">DATA_TYPE</span><span class="o">&gt;*</span> <span class="o">&lt;</span><span class="n">POINTER</span><span class="o">&gt;</span><span class="p">;</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">DATA_TYPE</span><span class="o">&gt;*</span> <span class="o">&lt;</span><span class="n">POINTER</span><span class="o">&gt;</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">DATA_TYPE</span><span class="o">&gt;</span> <span class="o">*</span> <span class="o">&lt;</span><span class="n">POINTER</span><span class="o">&gt;</span><span class="p">;</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">DATA_TYPE</span><span class="o">&gt;</span> <span class="o">*</span> <span class="o">&lt;</span><span class="n">POINTER</span><span class="o">&gt;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Example:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="o">*</span><span class="n">pointer_variable</span><span class="p">;</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="o">*</span><span class="n">pointer_variable</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>It is possible to get the pointer address of an existing variable.</p>
 <p>Syntax:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="o">&amp;&lt;</span><span class="n">VARIABLE_NAME</span><span class="o">&gt;</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="o">&amp;&lt;</span><span class="n">VARIABLE_NAME</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>Example:</p>
-<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="o">*</span><span class="n">the_answer_to_life</span><span class="p">;</span> <span class="c1">// pointer int</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="o">*</span><span class="n">the_answer_to_life</span><span class="p">;</span> <span class="c1">// pointer int</span>
 <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span> <span class="c1">// int</span>
 <span class="n">the_answer_to_life</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">answer</span><span class="p">;</span> <span class="c1">// point to the address location of the &quot;answer&quot; variable</span>
 <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">the_answer_to_life</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// 42</span>
@@ -490,15 +499,15 @@ cleanup with a <code class="docutils literal"><span class="pre">delete</span></c
 <p>C and C++ do not provide a native way to see how many elements are in an
 array. The most simple method is to find the size of one element in the
 array and then the size of the entire array.</p>
-<p>Example of founding the size of array <code class="docutils literal"><span class="pre">x</span></code>:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">x</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">&#39;h&#39;</span><span class="p">,</span> <span class="sc">&#39;e&#39;</span><span class="p">,</span> <span class="sc">&#39;l&#39;</span><span class="p">,</span> <span class="sc">&#39;l&#39;</span><span class="p">,</span> <span class="sc">&#39;o&#39;</span> <span class="p">};</span>
+<p>Example of founding the size of array <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">x</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">&#39;h&#39;</span><span class="p">,</span> <span class="sc">&#39;e&#39;</span><span class="p">,</span> <span class="sc">&#39;l&#39;</span><span class="p">,</span> <span class="sc">&#39;l&#39;</span><span class="p">,</span> <span class="sc">&#39;o&#39;</span> <span class="p">};</span>
 <span class="kt">int</span> <span class="n">x_array_size</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>The GNU C Compiler (GCC) provides the “ARRAY_SIZE” to do this
 automatically. [9]</p>
 <p>Example:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">x</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">&#39;w&#39;</span><span class="p">,</span> <span class="sc">&#39;o&#39;</span><span class="p">,</span> <span class="sc">&#39;r&#39;</span><span class="p">,</span> <span class="sc">&#39;l&#39;</span><span class="p">,</span> <span class="sc">&#39;d&#39;</span> <span class="p">};</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">x</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">&#39;w&#39;</span><span class="p">,</span> <span class="sc">&#39;o&#39;</span><span class="p">,</span> <span class="sc">&#39;r&#39;</span><span class="p">,</span> <span class="sc">&#39;l&#39;</span><span class="p">,</span> <span class="sc">&#39;d&#39;</span> <span class="p">};</span>
 <span class="kt">int</span> <span class="n">x_array_size</span> <span class="o">=</span> <span class="n">ARRAY_SIZE</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -507,7 +516,7 @@ automatically. [9]</p>
 <h3><a class="toc-backref" href="#id8">Structures and Unions</a><a class="headerlink" href="#structures-and-unions" title="Permalink to this headline">¶</a></h3>
 <p>Both a “struct” and a “union” store multiple variables within themselves. A struct can have variables that are of different data types. The memory allocated to the struct is equal to the memory allocation of each variable within it combined. A union should only contain one data type. The union is only allocated memory for the data type that is the largest. This memory is shared between all variables which is why they should be the same type or else a variable might not contain it’s full value when read. [10]</p>
 <p>Structure syntax:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="o">&lt;</span><span class="n">NAME</span><span class="o">&gt;</span> <span class="p">{</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="o">&lt;</span><span class="n">NAME</span><span class="o">&gt;</span> <span class="p">{</span>
     <span class="o">&lt;</span><span class="n">DATA_TYPE_1</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">VARIABLE_NAME_1</span><span class="o">&gt;</span><span class="p">;</span>
     <span class="o">&lt;</span><span class="n">DATA_TYPE_2</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">VARIABLE_NAME_2</span><span class="o">&gt;</span><span class="p">;</span>
     <span class="o">&lt;</span><span class="n">DATA_TYPE_3</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">VARIABLE_NAME_3</span><span class="o">&gt;</span><span class="p">;</span>
@@ -515,7 +524,7 @@ automatically. [9]</p>
 </pre></div>
 </div>
 <p>Union syntax:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">union</span> <span class="o">&lt;</span><span class="n">NAME</span><span class="o">&gt;</span> <span class="p">{</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">union</span> <span class="o">&lt;</span><span class="n">NAME</span><span class="o">&gt;</span> <span class="p">{</span>
     <span class="o">&lt;</span><span class="n">DATA_TYPE_1</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">VARIABLE_NAME_1</span><span class="o">&gt;</span><span class="p">;</span>
     <span class="o">&lt;</span><span class="n">DATA_TYPE_1</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">VARIABLE_NAME_2</span><span class="o">&gt;</span><span class="p">;</span>
     <span class="o">&lt;</span><span class="n">DATA_TYPE_1</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">VARIABLE_NAME_3</span><span class="o">&gt;</span><span class="p">;</span>
@@ -523,7 +532,7 @@ automatically. [9]</p>
 </pre></div>
 </div>
 <p>A variable in a struct or union can be referenced using it’s name, a period, and then the actual variable name.</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">STRUCT_OR_UNION_NAME</span><span class="o">&gt;</span><span class="p">.</span><span class="o">&lt;</span><span class="n">VARIABLE_NAME</span><span class="o">&gt;</span><span class="p">;</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">STRUCT_OR_UNION_NAME</span><span class="o">&gt;</span><span class="p">.</span><span class="o">&lt;</span><span class="n">VARIABLE_NAME</span><span class="o">&gt;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -535,11 +544,11 @@ another function.</li>
 <li>Global = Defined outside of the main function. This can be used by
 any function.</li>
 <li>Static = There is only one static variable that is shared between
-different objects from the same class. The keyword <code class="docutils literal"><span class="pre">static</span></code> must be
+different objects from the same class. The keyword <code class="docutils literal notranslate"><span class="pre">static</span></code> must be
 used when defining the variable.</li>
 <li>Constant = This variable is set once and cannot be changed. The keyword
-<code class="docutils literal"><span class="pre">const</span></code> must be used when defining the variable. [11]</li>
-<li>Final (C++) = This is exactly like a Constant and it also extends to classes and objects in that their parent virtual functions cannot be overridden. Use the keyword <code class="docutils literal"><span class="pre">final</span></code>. [12]</li>
+<code class="docutils literal notranslate"><span class="pre">const</span></code> must be used when defining the variable. [11]</li>
+<li>Final (C++) = This is exactly like a Constant and it also extends to classes and objects in that their parent virtual functions cannot be overridden. Use the keyword <code class="docutils literal notranslate"><span class="pre">final</span></code>. [12]</li>
 </ul>
 </div>
 </div>
@@ -610,7 +619,7 @@ the operator is true then the conditional will execute.</p>
 <p>If statements execute a task if an expression of comparing two or more
 things is returned as true.</p>
 <p>Syntax:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">TRUE_STATEMENT</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">TRUE_STATEMENT</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// &lt;DO_SOMETHING_1&gt;</span>
 <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">TRUE_STATEMENT</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// &lt;DO_SOMETHING_2&gt;</span>
@@ -620,11 +629,11 @@ things is returned as true.</p>
 </pre></div>
 </div>
 <p>Example:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="n">number_of_cats_owned</span> <span class="o">&gt;</span> <span class="mi">9</span> <span class="p">)</span> <span class="p">{</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="n">number_of_cats_owned</span> <span class="o">&gt;</span> <span class="mi">9</span> <span class="p">)</span> <span class="p">{</span>
     <span class="n">cat_lover</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="n">number_of_dogs_owned</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">{</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="n">number_of_dogs_owned</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span> <span class="p">{</span>
     <span class="n">dog_lover</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
     <span class="n">dog_owner</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
 <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">number_of_dogs_owned</span> <span class="o">&gt;</span> <span class="mi">9</span> <span class="p">)</span> <span class="p">{</span>
@@ -645,7 +654,7 @@ of a variable. If a switch condition is met, it is a good idea to a
 “break” statement to exit the switch. For more complex comparisons, use
 “if” conditionals instead of the “switch.”</p>
 <p>Syntax:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">switch</span><span class="p">(</span><span class="o">&lt;</span><span class="n">VARIABLE</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">switch</span><span class="p">(</span><span class="o">&lt;</span><span class="n">VARIABLE</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">case</span> <span class="o">&lt;</span><span class="n">VALUE_1</span><span class="o">&gt;</span> <span class="o">:</span> <span class="o">&lt;</span><span class="n">DO</span><span class="o">&gt;</span><span class="p">;</span>
                      <span class="o">&lt;</span><span class="n">SOMETHING</span><span class="o">&gt;</span><span class="p">;</span>
                      <span class="o">&lt;</span><span class="n">HERE</span><span class="o">&gt;</span><span class="p">;</span>
@@ -658,7 +667,7 @@ of a variable. If a switch condition is met, it is a good idea to a
 </pre></div>
 </div>
 <p>Example:</p>
-<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">number_of_forks</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">number_of_forks</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
 <span class="k">switch</span><span class="p">(</span><span class="n">number_of_forks</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">case</span> <span class="mi">1</span> <span class="o">:</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;There is one fork.&quot;</span><span class="p">;</span>
   <span class="k">case</span> <span class="mi">2</span> <span class="o">:</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;There are two forks.&quot;</span><span class="p">;</span>
@@ -675,13 +684,13 @@ of a variable. If a switch condition is met, it is a good idea to a
 is true, and then increments the initialized variable. This is useful
 for running a loop a specific number of times.</p>
 <p>Syntax:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span> <span class="o">&lt;</span><span class="n">INITIALIZE</span><span class="o">&gt;</span><span class="p">;</span> <span class="o">&lt;</span><span class="n">COMPAIRISON</span><span class="o">&gt;</span><span class="p">;</span> <span class="o">&lt;</span><span class="n">INCREMENT</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span> <span class="o">&lt;</span><span class="n">INITIALIZE</span><span class="o">&gt;</span><span class="p">;</span> <span class="o">&lt;</span><span class="n">COMPARISON</span><span class="o">&gt;</span><span class="p">;</span> <span class="o">&lt;</span><span class="n">INCREMENT</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// &lt;DO_SOMETHING&gt;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>Example:</p>
-<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The countdown started.&quot;</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The countdown started.&quot;</span><span class="p">;</span>
 
 <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">count</span> <span class="p">;</span> <span class="o">--</span><span class="n">count</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">count</span><span class="p">;</span>
@@ -696,18 +705,18 @@ for running a loop a specific number of times.</p>
 is true. A “do-while” statement uses the same concept and guarantees
 that the tasks will be run at least once.</p>
 <p>Syntax:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">EXPRESSION</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">EXPRESSION</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// &lt;DO_SOMETHING&gt;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="k">do</span> <span class="p">{</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">do</span> <span class="p">{</span>
     <span class="c1">// &lt;DO_SOMETHING&gt;</span>
 <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">EXPRESSION</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Example:</p>
-<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">every_fruit</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;apples&quot;</span><span class="p">,</span> <span class="s">&quot;bananas&quot;</span><span class="p">,</span> <span class="s">&quot;oranges&quot;</span><span class="p">}</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">every_fruit</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;apples&quot;</span><span class="p">,</span> <span class="s">&quot;bananas&quot;</span><span class="p">,</span> <span class="s">&quot;oranges&quot;</span><span class="p">}</span>
 <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">fruit</span> <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">();</span>
 
 <span class="k">while</span> <span class="p">(</span><span class="n">fruit</span> <span class="o">!=</span> <span class="s">&quot;orange&quot;</span><span class="p">)</span> <span class="p">{</span>
@@ -719,10 +728,40 @@ that the tasks will be run at least once.</p>
 <p>[17]</p>
 </div>
 </div>
+<div class="section" id="libraries">
+<h2><a class="toc-backref" href="#id16">Libraries</a><a class="headerlink" href="#libraries" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="stdlib">
+<h3><a class="toc-backref" href="#id17">stdlib</a><a class="headerlink" href="#stdlib" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>abort = End the current program immediately without running cleanup tasks defined by <cite>atexit</cite>.</li>
+<li>abs = Find the absolute (positive) value of an integer.</li>
+<li>atof = Convert a string to a float number.</li>
+<li>atoi = Convert a string into an integer number.</li>
+<li>atol = Convert a string into a long number.</li>
+<li>calloc = Initialize the memory to 0, as a placeholder, and expand it if this function is executed.</li>
+<li>delay = Pause the program for a specified number of seconds.</li>
+<li>div = A division math function.</li>
+<li>exit = End the current program immediately.</li>
+<li>free = Free memory that was manually allocated by calloc, malloc, and/or realloc.</li>
+<li>getenv = Lookup a given environment variable from the shell.</li>
+<li>malloc = Manually allocate memory if this function is executed.</li>
+<li>perror = Display the last error that occurred.</li>
+<li>putenv = Modify an existing environment variable’s value.</li>
+<li>rand = Generate a random number, based on the <cite>srand</cite> seed.</li>
+<li>realloc = Reallocate memory to a new position in RAM so that it can either be increased or decreased in size.</li>
+<li>setenv = Set an environment variable for the shell.</li>
+<li>srand = Seed the random number generator. This number will affect what pseudo random numbers that are generated by <cite>rand</cite>.</li>
+<li>strtod = Convert a string to a double number.</li>
+<li>strtol = Convert a string to a long number.</li>
+<li>system = Execute other system programs.</li>
+</ul>
+<p>[22]</p>
+</div>
+</div>
 <div class="section" id="input-and-output">
-<h2><a class="toc-backref" href="#id16">Input and Output</a><a class="headerlink" href="#input-and-output" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id18">Input and Output</a><a class="headerlink" href="#input-and-output" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="terminal">
-<h3><a class="toc-backref" href="#id17">Terminal</a><a class="headerlink" href="#terminal" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id19">Terminal</a><a class="headerlink" href="#terminal" title="Permalink to this headline">¶</a></h3>
 <p>Text from a terminal can either be displayed (standard output) and/or
 saved as a variable (standard input). C++ can even use C standard
 input/output functions since they are compatible.</p>
@@ -758,29 +797,29 @@ input/output functions since they are compatible.</p>
 </tbody>
 </table>
 <p>Syntax:</p>
-<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;&lt;TEXT&gt;&quot;</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;&lt;TEXT&gt;&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;&lt;TEXT&gt;&quot;</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;&lt;TEXT&gt;&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;&lt;FORMATER&gt;&quot;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">VARIABLE</span><span class="o">&gt;</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;&lt;FORMATER&gt;&quot;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">VARIABLE</span><span class="o">&gt;</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="o">&lt;</span><span class="n">VARIABLE</span><span class="o">&gt;</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="o">&lt;</span><span class="n">VARIABLE</span><span class="o">&gt;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Example:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="n">w</span> <span class="o">=</span> <span class="s">&quot;world&quot;</span><span class="p">;</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="n">w</span> <span class="o">=</span> <span class="s">&quot;world&quot;</span><span class="p">;</span>
 <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">string</span> <span class="n">w</span>  <span class="p">);</span>
 </pre></div>
 </div>
 <p>[18]</p>
 <div class="section" id="argument-parsing">
-<h4><a class="toc-backref" href="#id18">Argument Parsing</a><a class="headerlink" href="#argument-parsing" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id20">Argument Parsing</a><a class="headerlink" href="#argument-parsing" title="Permalink to this headline">¶</a></h4>
 <p>Command-line arguments, given to a compiled program, are stored into two variables: an int <cite>argc</cite> and a char array <cite>argv</cite>. The “argc” variable contains the number of command line arguments that were given to the program, including itself. The “argv” variable contains an array of strings that are the actual arguments. These two variables have to be defined as function arguments for the “main” function. [19]</p>
 <p>Example:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
 <span class="p">{</span>
@@ -790,7 +829,7 @@ input/output functions since they are compatible.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="highlight-sh"><div class="highlight"><pre><span></span>$ gcc example.c -o example
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ gcc example.c -o example
 $ ./example <span class="m">123</span>
 There are <span class="m">2</span> arguments.
 The program name is: ./example
@@ -800,7 +839,7 @@ The first command-line argument is: <span class="m">123</span>
 </div>
 </div>
 <div class="section" id="files">
-<h3><a class="toc-backref" href="#id19">Files</a><a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id21">Files</a><a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h3>
 <p>Files use the “FILE” data type. In C, there are 9 different functions that can be used for reading and writing contents of a file.</p>
 <ul class="simple">
 <li>fgetc/fputc</li>
@@ -819,16 +858,16 @@ The first command-line argument is: <span class="m">123</span>
 <li>w+ = Read and then remove the contents of the file before writing.</li>
 </ul>
 <p>Syntax:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">fopen</span><span class="p">(</span><span class="s">&quot;&lt;FILE_NAME&gt;&quot;</span><span class="p">,</span> <span class="s">&quot;&lt;MODE&gt;&quot;</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">fopen</span><span class="p">(</span><span class="s">&quot;&lt;FILE_NAME&gt;&quot;</span><span class="p">,</span> <span class="s">&quot;&lt;MODE&gt;&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>When a file is done being read and/or written to then it needs to be closed to prevent a memory leak.</p>
 <p>Syntax:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">fclose</span><span class="p">(</span><span class="o">&lt;</span><span class="n">FILE_VARIABLE</span><span class="o">&gt;</span><span class="p">);</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">fclose</span><span class="p">(</span><span class="o">&lt;</span><span class="n">FILE_VARIABLE</span><span class="o">&gt;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>fgetc example:</p>
-<div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="kt">FILE</span> <span class="o">*</span><span class="n">file_to_read</span><span class="p">;</span>
@@ -852,8 +891,11 @@ The first command-line argument is: <span class="m">123</span>
 </div>
 </div>
 </div>
+<div class="section" id="errata">
+<h2><a class="reference external" href="https://github.com/ekultails/rootpages/commits/master/src/c_and_c++.rst">Errata</a><a class="headerlink" href="#errata" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="bibliography">
-<h2><a class="toc-backref" href="#id20">Bibliography</a><a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id23">Bibliography</a><a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>“The C Programming Language.” University of Michigan. December 7, 1992. Accessed November 2, 2017. <a class="reference external" href="http://groups.engin.umd.umich.edu/CIS/course.des/cis400/c/c.html">http://groups.engin.umd.umich.edu/CIS/course.des/cis400/c/c.html</a></li>
 <li>“Features of C++.” Sitesbay. Accessed November 2, 2017. <a class="reference external" href="https://www.sitesbay.com/cpp/features-of-cpp">https://www.sitesbay.com/cpp/features-of-cpp</a></li>
@@ -876,6 +918,7 @@ The first command-line argument is: <span class="m">123</span>
 <li>“C Tutorial – More on Functions.” CodingUnit Programming Tutorials. Accessed January 11, 2018. <a class="reference external" href="https://www.codingunit.com/c-tutorial-more-on-c-functions">https://www.codingunit.com/c-tutorial-more-on-c-functions</a></li>
 <li>“Disk I/O in C – avoid fgetc/fputc.” Left 404. March 17, 2011. Accessed January 12, 2018. <a class="reference external" href="http://left404.com/2011/03/17/disk-io-in-c-avoid-fgetcfputc/">http://left404.com/2011/03/17/disk-io-in-c-avoid-fgetcfputc/</a></li>
 <li>“File Handling in C with Examples (fopen, fread, fwrite, fseek).” The Geek Stuff. July 9, 2012. Accessed January 13, 2018. <a class="reference external" href="https://www.thegeekstuff.com/2012/07/c-file-handling">https://www.thegeekstuff.com/2012/07/c-file-handling</a></li>
+<li>“C – stdlib.h library functions.” Fresh2Refresh. Accessed January 31, 2018. <a class="reference external" href="https://fresh2refresh.com/c-programming/c-function/c-stdlib-h-library-functions/">https://fresh2refresh.com/c-programming/c-function/c-stdlib-h-library-functions/</a></li>
 </ol>
 </div>
 </div>
@@ -890,7 +933,7 @@ The first command-line argument is: <span class="m">123</span>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="clustering.html" class="btn btn-neutral float-right" title="Clustering and High Availability" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="databases.html" class="btn btn-neutral float-right" title="Databases" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="bootloaders.html" class="btn btn-neutral" title="Bootloaders" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -902,7 +945,7 @@ The first command-line argument is: <span class="m">123</span>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Luke Short.
+        &copy; Copyright 2018, Luke Short. Documents licensed under GPLv3.
 
     </p>
   </div>
@@ -924,7 +967,7 @@ The first command-line argument is: <span class="m">123</span>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'2018.01.26',
+            VERSION:'2018.04.01',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

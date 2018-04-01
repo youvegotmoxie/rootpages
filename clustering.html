@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Clustering and High Availability &mdash; Root Pages 2018.01.26 documentation</title>
+  <title>Clustering and High Availability &mdash; Root Pages 2018.04.01 documentation</title>
   
 
   
@@ -35,9 +35,9 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Root Pages 2018.01.26 documentation" href="index.html"/>
+    <link rel="top" title="Root Pages 2018.04.01 documentation" href="index.html"/>
         <link rel="next" title="DNS" href="dns_servers.html"/>
-        <link rel="prev" title="C and C++" href="c_and_c++.html"/> 
+        <link rel="prev" title="Databases" href="databases.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2018.01.26
+                2018.04.01
               </div>
             
           
@@ -96,9 +96,12 @@
 <li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bootloaders.html">Bootloaders</a></li>
 <li class="toctree-l1"><a class="reference internal" href="c_and_c++.html">C and C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="databases.html">Databases</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Clustering and High Availability</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ip-virtual-server">IP Virtual Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#errata">Errata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bibliography">Bibliography</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="dns_servers.html">DNS</a></li>
@@ -108,13 +111,11 @@
 <li class="toctree-l1"><a class="reference internal" href="mail_servers.html">Mail Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="monitoring.html">Monitoring</a></li>
 <li class="toctree-l1"><a class="reference internal" href="networking.html">Networking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nosql.html">NoSQL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="openstack.html">OpenStack Ocata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openstack.html">OpenStack Queens</a></li>
 <li class="toctree-l1"><a class="reference internal" href="operating_systems.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages.html">Packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="security.html">Security</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sql.html">SQL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="virtualization.html">Virtualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="wine.html">Wine</a></li>
 </ul>
@@ -181,16 +182,21 @@
            <div itemprop="articleBody">
             
   <div class="section" id="clustering-and-high-availability">
-<h1>Clustering and High Availability<a class="headerlink" href="#clustering-and-high-availability" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id1">Clustering and High Availability</a><a class="headerlink" href="#clustering-and-high-availability" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
 <ul class="simple">
-<li><a class="reference external" href="#introduction">Introduction</a></li>
-<li>HAProxy</li>
-<li><a class="reference external" href="#ip-virtual-server">IP Virtual Server</a></li>
-<li>Nginx</li>
-<li>Keepalived</li>
+<li><a class="reference internal" href="#clustering-and-high-availability" id="id1">Clustering and High Availability</a><ul>
+<li><a class="reference internal" href="#introduction" id="id2">Introduction</a></li>
+<li><a class="reference internal" href="#ip-virtual-server" id="id3">IP Virtual Server</a></li>
+<li><a class="reference internal" href="#errata" id="id4">Errata</a></li>
+<li><a class="reference internal" href="#bibliography" id="id5">Bibliography</a></li>
 </ul>
+</li>
+</ul>
+</div>
 <div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>Clustering is the concept of using a load balancer to distribute
 connections to multiple destinations. Three of the most common load
 balancing methods used in clustering are:</p>
@@ -203,49 +209,44 @@ server.</li>
 </ul>
 <p>Ideally, high availability of services should also be of high importance
 to keep services working 100% of the time. [1]</p>
-<p>Source:</p>
-<ol class="arabic simple">
-<li>“Nginx Load Balancing.” Nginx. Accessed July 9, 2016.
-<a class="reference external" href="https://www.nginx.com/resources/admin-guide/load-balancer/">https://www.nginx.com/resources/admin-guide/load-balancer/</a></li>
-</ol>
 </div>
 <div class="section" id="ip-virtual-server">
-<h2>IP Virtual Server<a class="headerlink" href="#ip-virtual-server" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">IP Virtual Server</a><a class="headerlink" href="#ip-virtual-server" title="Permalink to this headline">¶</a></h2>
 <p>The IP Virtual Server (IPVS) service utilizes the Linux kernel directly
 for load balancing. It is designed to be a simple load balancer for
-internal/private networks. [1]</p>
+internal/private networks. [2]</p>
 <p>The only prerequisite for IPVS is that it requires the Linux system to
 be configured as a router (masquerading). This is an example of using
 the internal network 10.0.0.0/24 on the interface eth1 and forward
 requests to/from the public interface eth0.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># iptables -F</span>
-<span class="c1"># iptables -t nat -F</span>
-<span class="c1"># iptables -P INPUT ACCEPT</span>
-<span class="c1"># iptables -P OUTPUT ACCEPT</span>
-<span class="c1"># iptables -P FORWARD ACCEPT</span>
-<span class="c1"># iptables -A FORWARD -i eth1 -s 10.0.0.0/255.255.255.0 -j ACCEPT</span>
-<span class="c1"># iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo iptables -F
+$ sudo iptables -t nat -F
+$ sudo iptables -P INPUT ACCEPT
+$ sudo iptables -P OUTPUT ACCEPT
+$ sudo iptables -P FORWARD ACCEPT
+$ sudo iptables -A FORWARD -i eth1 -s <span class="m">10</span>.0.0.0/255.255.255.0 -j ACCEPT
+$ sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 </pre></div>
 </div>
 <p>IPVS is easily managed via the “ipvsadm” command.</p>
 <ul>
 <li><p class="first">View the current configuration.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ipvsadm -l</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo ipvsadm -l
 </pre></div>
 </div>
 </li>
-<li><p class="first">View more verbose information about current connections. [2]</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ipvsadm -l -n --stats</span>
+<li><p class="first">View more verbose information about current connections. [3]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo ipvsadm -l -n --stats
 </pre></div>
 </div>
 </li>
 <li><p class="first">Define the public IP address of the IPVS server (ex., 192.168.1.10),
 port (ex., :80 for HTTP), and then the type of load balancing (ex.,
 “rr”).</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ipvsadm -A -t &lt;BALANCERIP&gt;:&lt;PORT&gt; -s &lt;SCHEDULER&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo ipvsadm -A -t &lt;BALANCERIP&gt;:&lt;PORT&gt; -s &lt;SCHEDULER&gt;
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ipvsadm -A -t 192.168.1.10:80 -s rr</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo ipvsadm -A -t 192.168.1.10:80 -s rr
 </pre></div>
 </div>
 <ul class="simple">
@@ -261,37 +262,40 @@ port (ex., :80 for HTTP), and then the type of load balancing (ex.,
 specified public balancer IP and port, sending requests to the real
 back-end server’s IP address (-r), and masquerade/NAT the requests
 (-m).</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ipvsadm -a -t &lt;BALANCERIP&gt;:&lt;PORT&gt; -r &lt;DESTINATIONIP&gt; -m</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo ipvsadm -a -t &lt;BALANCERIP&gt;:&lt;PORT&gt; -r &lt;DESTINATIONIP&gt; -m
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ipvsadm -a -t 192.168.1.10:80 -r 10.0.0.11 -m</span>
-<span class="c1"># ipvsadm -a -t 192.168.1.10:80 -r 10.0.0.12 -m</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo ipvsadm -a -t 192.168.1.10:80 -r 10.0.0.11 -m
+$ sudo ipvsadm -a -t 192.168.1.10:80 -r 10.0.0.12 -m
 </pre></div>
 </div>
 </li>
 <li><p class="first">The configuration rules are automatically saved, but they can viewed
 in standard output. These rules can then be migrated or restored to
 an IPVS server.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ipvsadm {-S|--save}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo ipvsadm {-S|--save}
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ipvsadm {-R|--restore}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo ipvsadm {-R|--restore}
 </pre></div>
 </div>
 </li>
-<li><p class="first">The entire configuration can be cleared at any time. [1]</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ipvsadm {-C|--clear}</span>
+<li><p class="first">The entire configuration can be cleared at any time. [2]</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo ipvsadm {-C|--clear}
 </pre></div>
 </div>
 </li>
 </ul>
-<p>Sources:</p>
+</div>
+<div class="section" id="errata">
+<h2><a class="reference external" href="https://github.com/ekultails/rootpages/commits/master/src/clustering.rst">Errata</a><a class="headerlink" href="#errata" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="bibliography">
+<h2><a class="toc-backref" href="#id5">Bibliography</a><a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>“LVS-mini-HOWTO.” Austintek. March, 2012. Accessed July 9, 2016.
-<a class="reference external" href="http://www.austintek.com/LVS/LVS-HOWTO/mini-HOWTO/LVS-mini-HOWTO.html">http://www.austintek.com/LVS/LVS-HOWTO/mini-HOWTO/LVS-mini-HOWTO.html</a></li>
-<li>“Building a Load Balancer with LVS - Linux Virtual Server.” Linux
-Admins. January, 2013. Accessed July 9, 2016.
-<a class="reference external" href="http://www.linux-admins.net/2013/01/building-load-balancer-with-lvs-linux.html">http://www.linux-admins.net/2013/01/building-load-balancer-with-lvs-linux.html</a></li>
+<li>“Nginx Load Balancing.” Nginx. Accessed July 9, 2016. <a class="reference external" href="https://www.nginx.com/resources/admin-guide/load-balancer/">https://www.nginx.com/resources/admin-guide/load-balancer/</a></li>
+<li>“LVS-mini-HOWTO.” Austintek. March, 2012. Accessed July 9, 2016. <a class="reference external" href="http://www.austintek.com/LVS/LVS-HOWTO/mini-HOWTO/LVS-mini-HOWTO.html">http://www.austintek.com/LVS/LVS-HOWTO/mini-HOWTO/LVS-mini-HOWTO.html</a></li>
+<li>“Building a Load Balancer with LVS - Linux Virtual Server.” Linux Admins. January, 2013. Accessed July 9, 2016. <a class="reference external" href="http://www.linux-admins.net/2013/01/building-load-balancer-with-lvs-linux.html">http://www.linux-admins.net/2013/01/building-load-balancer-with-lvs-linux.html</a></li>
 </ol>
 </div>
 </div>
@@ -309,7 +313,7 @@ Admins. January, 2013. Accessed July 9, 2016.
         <a href="dns_servers.html" class="btn btn-neutral float-right" title="DNS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="c_and_c++.html" class="btn btn-neutral" title="C and C++" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="databases.html" class="btn btn-neutral" title="Databases" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -318,7 +322,7 @@ Admins. January, 2013. Accessed July 9, 2016.
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Luke Short.
+        &copy; Copyright 2018, Luke Short. Documents licensed under GPLv3.
 
     </p>
   </div>
@@ -340,7 +344,7 @@ Admins. January, 2013. Accessed July 9, 2016.
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'2018.01.26',
+            VERSION:'2018.04.01',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

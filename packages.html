@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Packages &mdash; Root Pages 2018.01.26 documentation</title>
+  <title>Packages &mdash; Root Pages 2018.04.01 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Root Pages 2018.01.26 documentation" href="index.html"/>
+    <link rel="top" title="Root Pages 2018.04.01 documentation" href="index.html"/>
         <link rel="next" title="Python 3" href="python.html"/>
         <link rel="prev" title="Operating Systems" href="operating_systems.html"/> 
 
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                2018.01.26
+                2018.04.01
               </div>
             
           
@@ -96,6 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bootloaders.html">Bootloaders</a></li>
 <li class="toctree-l1"><a class="reference internal" href="c_and_c++.html">C and C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="databases.html">Databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="clustering.html">Clustering and High Availability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dns_servers.html">DNS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="file_systems.html">File Systems</a></li>
@@ -104,46 +105,47 @@
 <li class="toctree-l1"><a class="reference internal" href="mail_servers.html">Mail Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="monitoring.html">Monitoring</a></li>
 <li class="toctree-l1"><a class="reference internal" href="networking.html">Networking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nosql.html">NoSQL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="openstack.html">OpenStack Ocata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openstack.html">OpenStack Queens</a></li>
 <li class="toctree-l1"><a class="reference internal" href="operating_systems.html">Operating Systems</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Packages</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#deb">DEB</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#deb-repositories">DEB - Repositories</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#deb-repositories-adding-a-repository">DEB - Repositories - Adding a Repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#repositories">Repositories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#adding-a-repository">Adding a Repository</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#deb-packaging">DEB - Packaging</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#deb-packaging-macros">DEB - Packaging - Macros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#packaging">Packaging</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#macros">Macros</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#rpm">RPM</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#rpm-repositories">RPM - Repositories</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#rpm-repositories-adding-a-repository">RPM - Repositories - Adding a Repository</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#rpm-repositories-creating-a-repository">RPM - Repositories - Creating a Repository</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#rpm-repositories-common-repositories">RPM - Repositories - Common Repositories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Repositories</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Adding a Repository</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#creating-a-repository">Creating a Repository</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#common-repositories">Common Repositories</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#rpm-packaging">RPM - Packaging</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#rpm-packaging-macros">RPM - Packaging - Macros</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#rpm-packaging-users-and-groups">RPM - Packaging - Users and Groups</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#rpm-packaging-patches">RPM - Packaging - Patches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#red-hat-repositories">Red Hat Repositories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Packaging</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Macros</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#users-and-groups">Users and Groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#patches">Patches</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#pkgbuild">PKGBUILD</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#pkgbuild-packaging">PKGBUILD - Packaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Packaging</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#flatpak">Flatpak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#errata">Errata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bibliography">Bibliography</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="security.html">Security</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sql.html">SQL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="virtualization.html">Virtualization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="wine.html">Wine</a></li>
 </ul>
@@ -210,63 +212,63 @@
            <div itemprop="articleBody">
             
   <div class="section" id="packages">
-<h1>Packages<a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id6">Packages</a><a class="headerlink" href="#packages" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
 <ul class="simple">
-<li>Source Code<ul>
-<li>Makefile</li>
+<li><a class="reference internal" href="#packages" id="id6">Packages</a><ul>
+<li><a class="reference internal" href="#deb" id="id7">DEB</a><ul>
+<li><a class="reference internal" href="#repositories" id="id8">Repositories</a><ul>
+<li><a class="reference internal" href="#adding-a-repository" id="id9">Adding a Repository</a></li>
 </ul>
 </li>
-<li><a class="reference external" href="#deb">DEB (Debian)</a><ul>
-<li><a class="reference external" href="#deb---repositories">Repositories</a><ul>
-<li><a class="reference external" href="#deb---repositories---adding-a-repository">Adding a
-Repository</a></li>
-</ul>
-</li>
-<li><a class="reference external" href="#deb---packaging">Packaging</a><ul>
-<li><a class="reference external" href="#deb---packaging---macros">Macros</a></li>
+<li><a class="reference internal" href="#packaging" id="id10">Packaging</a><ul>
+<li><a class="reference internal" href="#macros" id="id11">Macros</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference external" href="#rpm">RPM (RHEL)</a><ul>
-<li><a class="reference external" href="#rpm---repositories">Repositories</a><ul>
-<li><a class="reference external" href="#rpm---repositories---adding-a-repository">Adding a
-Repository</a></li>
-<li><a class="reference external" href="#rpm---repositories---creating-a-repository">Creating a
-Repository</a></li>
-<li><a class="reference external" href="#rpm---repositories---common-repositories">Common
-Repositories</a></li>
+<li><a class="reference internal" href="#rpm" id="id12">RPM</a><ul>
+<li><a class="reference internal" href="#id1" id="id13">Repositories</a><ul>
+<li><a class="reference internal" href="#id2" id="id14">Adding a Repository</a></li>
+<li><a class="reference internal" href="#creating-a-repository" id="id15">Creating a Repository</a></li>
+<li><a class="reference internal" href="#common-repositories" id="id16">Common Repositories</a></li>
 </ul>
 </li>
-<li><a class="reference external" href="#rpm---packaging">Packaging</a><ul>
-<li><a class="reference external" href="#rpm---packaging---macros">Macros</a><ul>
-<li><a class="reference external" href="#rpm---packaging---macros---directories">Directories</a></li>
+<li><a class="reference internal" href="#red-hat-repositories" id="id17">Red Hat Repositories</a></li>
+<li><a class="reference internal" href="#id3" id="id18">Packaging</a><ul>
+<li><a class="reference internal" href="#id4" id="id19">Macros</a><ul>
+<li><a class="reference internal" href="#directories" id="id20">Directories</a></li>
 </ul>
 </li>
-<li><a class="reference external" href="#rpm---packaging---users-and-groups">Users and Groups</a></li>
-<li><a class="reference external" href="#rpm---packaging---patches">Patches</a></li>
+<li><a class="reference internal" href="#users-and-groups" id="id21">Users and Groups</a></li>
+<li><a class="reference internal" href="#patches" id="id22">Patches</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference external" href="#pkgbuild">PKGBUILD (Arch)</a><ul>
-<li><a class="reference external" href="#pkgbuild---packaging">Packaging</a></li>
+<li><a class="reference internal" href="#pkgbuild" id="id23">PKGBUILD</a><ul>
+<li><a class="reference internal" href="#id5" id="id24">Packaging</a></li>
 </ul>
 </li>
-<li><a class="reference external" href="#flatpak">Flatpak</a></li>
-<li>Snap</li>
+<li><a class="reference internal" href="#flatpak" id="id25">Flatpak</a></li>
+<li><a class="reference internal" href="#errata" id="id26">Errata</a></li>
+<li><a class="reference internal" href="#bibliography" id="id27">Bibliography</a></li>
 </ul>
+</li>
+</ul>
+</div>
 <div class="section" id="deb">
-<h2>DEB<a class="headerlink" href="#deb" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="deb-repositories">
-<h3>DEB - Repositories<a class="headerlink" href="#deb-repositories" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="deb-repositories-adding-a-repository">
-<h4>DEB - Repositories - Adding a Repository<a class="headerlink" href="#deb-repositories-adding-a-repository" title="Permalink to this headline">¶</a></h4>
+<h2><a class="toc-backref" href="#id7">DEB</a><a class="headerlink" href="#deb" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="repositories">
+<h3><a class="toc-backref" href="#id8">Repositories</a><a class="headerlink" href="#repositories" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="adding-a-repository">
+<h4><a class="toc-backref" href="#id9">Adding a Repository</a><a class="headerlink" href="#adding-a-repository" title="Permalink to this headline">¶</a></h4>
 <p>Debian repositories can be managed by editing the primary file
-<code class="docutils literal"><span class="pre">/etc/apt/sources.list</span></code> or by adding new files to the
-<code class="docutils literal"><span class="pre">/etc/apt/sources.list.d/</span></code> directory.</p>
+<code class="docutils literal notranslate"><span class="pre">/etc/apt/sources.list</span></code> or by adding new files to the
+<code class="docutils literal notranslate"><span class="pre">/etc/apt/sources.list.d/</span></code> directory.</p>
 <p>The syntax is:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">SOURCE</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">URL</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">DEBIAN_RELEASE</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">COMPONENT1</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">COMPONENT2</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">COMPONENT3</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">SOURCE</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">URL</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">DEBIAN_RELEASE</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">COMPONENT1</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">COMPONENT2</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">COMPONENT3</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>Sources:</p>
@@ -275,38 +277,33 @@ Repositories</a></li>
 <li>deb-src = Source packages.</li>
 </ul>
 <p>The URL is assumed to have the path
-<code class="docutils literal"><span class="pre">http://&lt;DOMAIN&gt;/&lt;PATH_TO&gt;/dists/&lt;DEBIAN_RELEASE&gt;</span></code> available. The only
-part of the URL required is the location where the top-level <code class="docutils literal"><span class="pre">dists</span></code>
+<code class="docutils literal notranslate"><span class="pre">http://&lt;DOMAIN&gt;/&lt;PATH_TO&gt;/dists/&lt;DEBIAN_RELEASE&gt;</span></code> available. The only
+part of the URL required is the location where the top-level <code class="docutils literal notranslate"><span class="pre">dists</span></code>
 directory resides.</p>
 <p>URL:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">http://ftp.debian.org/debian/</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">http://ftp.debian.org/debian/</span></code></li>
 </ul>
 <p>Debian releases (as of 2017-03):</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">oldstable</span></code> or <code class="docutils literal"><span class="pre">wheezy</span></code></li>
-<li><code class="docutils literal"><span class="pre">stable</span></code> or <code class="docutils literal"><span class="pre">jessie</span></code></li>
-<li><code class="docutils literal"><span class="pre">testing</span></code> or <code class="docutils literal"><span class="pre">stretch</span></code></li>
-<li><code class="docutils literal"><span class="pre">unstable</span></code> or <code class="docutils literal"><span class="pre">sid</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">oldstable</span></code> or <code class="docutils literal notranslate"><span class="pre">wheezy</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">stable</span></code> or <code class="docutils literal notranslate"><span class="pre">jessie</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">testing</span></code> or <code class="docutils literal notranslate"><span class="pre">stretch</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">unstable</span></code> or <code class="docutils literal notranslate"><span class="pre">sid</span></code></li>
 </ul>
 <p>Components:</p>
 <ul class="simple">
 <li>main = The primary packages of Debian.</li>
 <li>contrib = These packages require dependencies that are not in the
-<code class="docutils literal"><span class="pre">main</span></code> section.</li>
+<code class="docutils literal notranslate"><span class="pre">main</span></code> section.</li>
 <li>non-free = These packages are proprietary packages that are unable to
 be shipped with Debian due to license conflicts.</li>
 </ul>
 <p>[1]</p>
-<p>Source:</p>
-<ol class="arabic simple">
-<li>“SourcesList.” Debian Wiki. March 22, 2017. Accessed March 28, 2017.
-<a class="reference external" href="https://wiki.debian.org/SourcesList">https://wiki.debian.org/SourcesList</a></li>
-</ol>
 </div>
 </div>
-<div class="section" id="deb-packaging">
-<h3>DEB - Packaging<a class="headerlink" href="#deb-packaging" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="packaging">
+<h3><a class="toc-backref" href="#id10">Packaging</a><a class="headerlink" href="#packaging" title="Permalink to this headline">¶</a></h3>
 <p>Official guides for building Debian packages:</p>
 <ul class="simple">
 <li><a class="reference external" href="https://wiki.debian.org/BuildingTutorial">https://wiki.debian.org/BuildingTutorial</a></li>
@@ -324,58 +321,58 @@ maintainer, dependencies, and more.</li>
 <li><strong>copyright</strong> = Required. The licenses used for the package and
 source code.</li>
 <li>install = Optional. A text file listing extra files (not installed
-by <code class="docutils literal"><span class="pre">make</span> <span class="pre">install</span></code>) that should be copied into the package.</li>
+by <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code>) that should be copied into the package.</li>
 <li><strong>rules</strong> = Required. A Makefile that explains how to build and
 install the program before being packaged. In a default
-environment setup by the <code class="docutils literal"><span class="pre">dh_make</span></code> command this essentially runs
-<code class="docutils literal"><span class="pre">./configure;</span> <span class="pre">make;</span> <span class="pre">make</span> <span class="pre">install</span></code> in the directory that contains
-the <code class="docutils literal"><span class="pre">debian/</span></code> directory. The shebang at the top of the file
-should normally be <code class="docutils literal"><span class="pre">#!/usr/bin/make</span> <span class="pre">-f</span></code>.</li>
+environment setup by the <code class="docutils literal notranslate"><span class="pre">dh_make</span></code> command this essentially runs
+<code class="docutils literal notranslate"><span class="pre">./configure;</span> <span class="pre">make;</span> <span class="pre">make</span> <span class="pre">install</span></code> in the directory that contains
+the <code class="docutils literal notranslate"><span class="pre">debian/</span></code> directory. The shebang at the top of the file
+should normally be <code class="docutils literal notranslate"><span class="pre">#!/usr/bin/make</span> <span class="pre">-f</span></code>.</li>
 <li>patches/ = Optional. Files for patching the source code.</li>
 <li>{preinst|postinst|prerm|postrm} = Optional. These are
 executable scripts that run before installation, after
-installation, before removable, or after removable. [1]</li>
+installation, before removable, or after removable. [2]</li>
 </ul>
 </li>
 </ul>
 <p>Install the required packaging dependencies.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># apt-get update</span>
-<span class="c1"># apt-get install devscripts dh-make dpkg-dev</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get update
+$ sudo apt-get install devscripts dh-make dpkg-dev
 </pre></div>
 </div>
 <p>Create a working build directory, download the source code, and then run
-<code class="docutils literal"><span class="pre">dh_make</span></code>.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ mkdir build
-$ cd build
+<code class="docutils literal notranslate"><span class="pre">dh_make</span></code>.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ mkdir build
+$ <span class="nb">cd</span> build
 $ curl -O http://&lt;URL_TO_SOURCE_CODE&gt;
 $ tar -v -x -z -f &lt;PROGRAM_NAME&gt;-&lt;VERSION&gt;.tar.gz
-$ cd &lt;PROGRAM_NAME&gt;-&lt;VERSION&gt;
+$ <span class="nb">cd</span> &lt;PROGRAM_NAME&gt;-&lt;VERSION&gt;
 $ dh_make -f ../&lt;PROGRAM_NAME&gt;-&lt;VERSION&gt;.tar.gz
 </pre></div>
 </div>
-<p>This will create a <code class="docutils literal"><span class="pre">debian/</span></code> directory inside of the source code
+<p>This will create a <code class="docutils literal notranslate"><span class="pre">debian/</span></code> directory inside of the source code
 directory. With a template of all of the files required to build the
 source code. A copy tarball of the source code is also created as
-<code class="docutils literal"><span class="pre">&lt;PROGRAM_NAME&gt;_&lt;VERSION&gt;.orig.tar.gz</span></code> in the <code class="docutils literal"><span class="pre">build</span></code> directory.</p>
+<code class="docutils literal notranslate"><span class="pre">&lt;PROGRAM_NAME&gt;_&lt;VERSION&gt;.orig.tar.gz</span></code> in the <code class="docutils literal notranslate"><span class="pre">build</span></code> directory.</p>
 <p>The DEB package can now be built.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ dpkg-buildpackage
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ dpkg-buildpackage
 </pre></div>
 </div>
 <p>After building the package, a new source tarball will be created
-containing the <code class="docutils literal"><span class="pre">debian</span></code> directory:
-<code class="docutils literal"><span class="pre">&lt;PROGRAM_NAME&gt;_&lt;VERSION&gt;-&lt;DEB_PACKAGE_RELEASE&gt;.debian.tar.gz</span></code>. The
+containing the <code class="docutils literal notranslate"><span class="pre">debian</span></code> directory:
+<code class="docutils literal notranslate"><span class="pre">&lt;PROGRAM_NAME&gt;_&lt;VERSION&gt;-&lt;DEB_PACKAGE_RELEASE&gt;.debian.tar.gz</span></code>. The
 actual package will be named
-<code class="docutils literal"><span class="pre">&lt;PACKAGE_NAME&gt;_&lt;VERSION&gt;-&lt;DEB_PACKAGE_RELEASE&gt;_&lt;ARCHITECTURE&gt;.deb</span></code>.</p>
-<p><code class="docutils literal"><span class="pre">changelog</span></code> File Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">PACKAGE_NAME</span><span class="o">&gt;</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">PROGRAM_VERSION</span><span class="o">&gt;-&lt;</span><span class="n">PACKAGE_REVISION</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">;</span> <span class="n">urgency</span><span class="o">=&lt;</span><span class="n">URGENCY_LEVEL</span><span class="o">&gt;</span>
+<code class="docutils literal notranslate"><span class="pre">&lt;PACKAGE_NAME&gt;_&lt;VERSION&gt;-&lt;DEB_PACKAGE_RELEASE&gt;_&lt;ARCHITECTURE&gt;.deb</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">changelog</span></code> File Syntax:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">PACKAGE_NAME</span><span class="o">&gt;</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">PROGRAM_VERSION</span><span class="o">&gt;-&lt;</span><span class="n">PACKAGE_REVISION</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">;</span> <span class="n">urgency</span><span class="o">=&lt;</span><span class="n">URGENCY_LEVEL</span><span class="o">&gt;</span>
 
   <span class="o">*</span> <span class="o">&lt;</span><span class="n">PACKAGE_REVISION_NOTES</span><span class="o">&gt;</span>
 
  <span class="o">--</span> <span class="o">&lt;</span><span class="n">AUTHOR_FIRST_NAME</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">AUTHOR_LAST_NAME</span><span class="o">&gt;</span> <span class="o">&lt;&lt;</span><span class="n">EMAIL</span><span class="o">&gt;&gt;</span>  <span class="o">&lt;</span><span class="n">DAY</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">DAY_NUMBER</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">MONTH</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">YEAR</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">HH</span><span class="o">&gt;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">MM</span><span class="o">&gt;</span><span class="p">:</span><span class="o">&lt;</span><span class="n">SS</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">UTC_HOUR_OFFSET</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">changelog</span></code> File Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">apache</span> <span class="p">(</span><span class="mf">2.4</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="n">stable</span><span class="p">;</span> <span class="n">urgency</span><span class="o">=</span><span class="n">low</span>
+<p><code class="docutils literal notranslate"><span class="pre">changelog</span></code> File Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">apache</span> <span class="p">(</span><span class="mf">2.4</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="n">stable</span><span class="p">;</span> <span class="n">urgency</span><span class="o">=</span><span class="n">low</span>
 
   <span class="o">*</span> <span class="n">Second</span> <span class="n">release</span>
 
@@ -388,8 +385,8 @@ actual package will be named
  <span class="o">--</span> <span class="n">Bob</span> <span class="n">Smith</span> <span class="o">&lt;</span><span class="n">bob</span><span class="nd">@smith</span><span class="o">.</span><span class="n">tld</span><span class="o">&gt;</span>  <span class="n">Mon</span><span class="p">,</span> <span class="mi">22</span> <span class="n">Mar</span> <span class="mi">2017</span> <span class="mi">23</span><span class="p">:</span><span class="mi">12</span><span class="p">:</span><span class="mi">12</span> <span class="o">+</span><span class="mi">0100</span>
 </pre></div>
 </div>
-<p><code class="docutils literal"><span class="pre">control</span></code> File Example [2]:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>Source: hello-debian
+<p><code class="docutils literal notranslate"><span class="pre">control</span></code> File Example [3]:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Source: hello-debian
 Section: utils
 Priority: extra
 Maintainer: Full Name &lt;yourname@example.com&gt;
@@ -408,148 +405,112 @@ Description: Example package maintenance (under 60 chars)
  package in a long-format under 80 characters per line.
 </pre></div>
 </div>
-<p>Sources:</p>
-<ol class="arabic simple">
-<li>“Chapter 7 - Basics of the Debian package management system.” The
-Debian GNU/Linux FAQ. August 28, 2016. Accessed March 25, 2017.
-<a class="reference external" href="https://www.debian.org/doc/manuals/debian-faq/ch-pkg_basics.en.html">https://www.debian.org/doc/manuals/debian-faq/ch-pkg_basics.en.html</a></li>
-<li>“hello-debian README.md.” streadway/hello-debian GitHub. March 24,
-2014. Accessed May 8, 2017. <a class="reference external" href="https://github.com/streadway/hello-debian">https://github.com/streadway/hello-debian</a></li>
-</ol>
-<div class="section" id="deb-packaging-macros">
-<h4>DEB - Packaging - Macros<a class="headerlink" href="#deb-packaging-macros" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="macros">
+<h4><a class="toc-backref" href="#id11">Macros</a><a class="headerlink" href="#macros" title="Permalink to this headline">¶</a></h4>
 <p>Many macros exist for helping to build and install Debian packages.</p>
-<p><code class="docutils literal"><span class="pre">rule</span></code> macros:</p>
+<p><code class="docutils literal notranslate"><span class="pre">rule</span></code> macros:</p>
 <ul>
-<li><p class="first">dh_auto_clean = <code class="docutils literal"><span class="pre">make</span> <span class="pre">distclean</span></code></p>
+<li><p class="first">dh_auto_clean = <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">distclean</span></code></p>
 </li>
-<li><p class="first">dh_auto_configure = <code class="docutils literal"><span class="pre">./configure</span></code> with directory options for the
+<li><p class="first">dh_auto_configure = <code class="docutils literal notranslate"><span class="pre">./configure</span></code> with directory options for the
 specific Debian release.</p>
 </li>
-<li><p class="first">dh_auto_build = <code class="docutils literal"><span class="pre">make</span></code></p>
+<li><p class="first">dh_auto_build = <code class="docutils literal notranslate"><span class="pre">make</span></code></p>
 </li>
-<li><p class="first">dh_auto_test = <code class="docutils literal"><span class="pre">make</span> <span class="pre">test</span></code></p>
+<li><p class="first">dh_auto_test = <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">test</span></code></p>
 </li>
 <li><p class="first">dh_auto_install =</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">install</span> <span class="n">DESTDIR</span><span class="o">=/&lt;</span><span class="n">PATH_TO_</span><span class="o">&gt;/&lt;</span><span class="n">PACKAGE</span><span class="o">&gt;-&lt;</span><span class="n">VERSION</span><span class="o">&gt;-</span><span class="n">revision</span><span class="o">/</span><span class="n">debian</span><span class="o">/&lt;</span><span class="n">PACKAGE</span><span class="o">&gt;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>make install <span class="nv">DESTDIR</span><span class="o">=</span>/&lt;PATH_TO_&gt;/&lt;PACKAGE&gt;-&lt;VERSION&gt;-revision/debian/&lt;PACKAGE&gt;
 </pre></div>
 </div>
 </li>
 </ul>
-<p>[1]</p>
-<p>Source:</p>
-<ol class="arabic simple">
-<li>“Chapter 4. Required files under the debian directory.” Debian New
-Maintainers’ Guide. February 25, 2017. Accessed March 24, 2017.
-<a class="reference external" href="https://www.debian.org/doc/manuals/maint-guide/dreq.en.html">https://www.debian.org/doc/manuals/maint-guide/dreq.en.html</a></li>
-</ol>
+<p>[4]</p>
 </div>
 </div>
 </div>
 <div class="section" id="rpm">
-<h2>RPM<a class="headerlink" href="#rpm" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="rpm-repositories">
-<h3>RPM - Repositories<a class="headerlink" href="#rpm-repositories" title="Permalink to this headline">¶</a></h3>
+<h2><a class="toc-backref" href="#id12">RPM</a><a class="headerlink" href="#rpm" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3><a class="toc-backref" href="#id13">Repositories</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Repositories (sometimes called “repos”) are a central location where
 packages can easily be found and installed from.</p>
-<div class="section" id="rpm-repositories-adding-a-repository">
-<h4>RPM - Repositories - Adding a Repository<a class="headerlink" href="#rpm-repositories-adding-a-repository" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id2">
+<h4><a class="toc-backref" href="#id14">Adding a Repository</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <p>On Red Hat based systems, the repositories are all defined as text files
 with the “.repo” extension in this directory.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># ls /etc/yum.repos.d/</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo ls /etc/yum.repos.d/
 </pre></div>
 </div>
-<p>Here are some common options for repository files: * [] = This should
-be the first part of a repository, with the name being inside the
-brackets. * name = This should be similar to the name from the
-brackets. However, this friendly name can be different and is usually
-ignored. * baseurl = The location of the repository. Valid location
-types include “<a class="reference external" href="http://">http://</a>”, “<a class="reference external" href="ftp://">ftp://</a>”, and “<a class="reference external" href="file://">file://</a>” for using the local
-file system. * mirrorlist = Instead of a baseurl, a link to a list of
-repository mirrors can be given. * enabled = Enable or disable a
-repository with a “1” or “0”. The default is value is “1”. [1] *
-gpgcheck = Force a GPG encryption check against signed packages. Enable
-or disable with a “1” or “0”. * gpgkey = Specify the path to the GPG
-key.</p>
-<p>Variables for repository files: * $releasever = The RHEL release
-version. This is typically the major operating system versioning number
-such as “5” or “6”. * $basearch = The CPU architecture. For most modern
-PCs this is typically either automatically filled in as “x86_64” for
-64-bit operating systems or “i386” for 32-bit. [2]</p>
+<p>Common options for repository files:</p>
+<ul class="simple">
+<li>[] = This should be the first part of a repository, with the name being inside the brackets.</li>
+<li>name = This should be similar to the name from the brackets. However, this friendly name can be different and is usually ignored.</li>
+<li>baseurl = The location of the repository. Valid location types include “<a class="reference external" href="http://">http://</a>”, “<a class="reference external" href="ftp://">ftp://</a>”, and “<a class="reference external" href="file://">file://</a>” for using the local file system.</li>
+<li>mirrorlist = Instead of a baseurl, a link to a list of repository mirrors can be given.</li>
+<li>enabled = Enable or disable a repository with a “1” or “0”. The default is value is “1”. [5]</li>
+<li>gpgcheck = Force a GPG encryption check against signed packages. Enable or disable with a “1” or “0”.</li>
+<li>gpgkey = Specify the path to the GPG key.</li>
+</ul>
+<p>Variables for repository files:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">$releasever</span></code> = The RHEL release version. This is typically the major operating system versioning number such as “6” or “7”.</li>
+<li><code class="docutils literal notranslate"><span class="pre">$basearch</span></code> = The CPU architecture. For most modern PCs this is typically either automatically filled in as “x86_64” for 64-bit operating systems or “i386” for 32-bit. [6]</li>
+</ul>
 <p>At the bare minimum, a repository file needs to include a name and a
 baseurl.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">example</span><span class="o">-</span><span class="n">repo</span><span class="p">]</span>
-<span class="n">name</span><span class="o">=</span><span class="n">example</span><span class="o">-</span><span class="n">repo</span>
-<span class="n">baseurl</span><span class="o">=</span><span class="n">file</span><span class="p">:</span><span class="o">///</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">example</span><span class="o">-</span><span class="n">repo</span><span class="o">/</span>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[example-repo]</span>
+<span class="na">name</span><span class="o">=</span><span class="s">example-repo</span>
+<span class="na">baseurl</span><span class="o">=</span><span class="s">file:///var/www/html/example-repo/</span>
 </pre></div>
 </div>
 <p>Here is an example repository file for the official CentOS 7 repository
 using a mirrorlist.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>[base]
-name=CentOS-$releasever - Base
-mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os&amp;infra=$infra
-#baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/
-gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[base]</span>
+<span class="na">name</span><span class="o">=</span><span class="s">CentOS-$releasever - Base</span>
+<span class="na">mirrorlist</span><span class="o">=</span><span class="s">http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os&amp;infra=$infra</span>
+<span class="c1">#baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/</span>
+<span class="na">gpgcheck</span><span class="o">=</span><span class="s">1</span>
+<span class="na">gpgkey</span><span class="o">=</span><span class="s">file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span>
 </pre></div>
 </div>
-<p>Sources:</p>
-<ol class="arabic simple">
-<li>“Fedora 24 System Administrator’s Guide” Fedora Documentation. 2016.
-Accessed June 28, 2016.
-<a class="reference external" href="https://docs.fedoraproject.org/en-US/Fedora/24/html/System_Administrators_Guide/sec-Setting_repository_Options.html">https://docs.fedoraproject.org/en-US/Fedora/24/html/System_Administrators_Guide/sec-Setting_repository_Options.html</a></li>
-<li>“yum.conf - Configuration file for yum(8).” Die. Accessed June 28,
-2016. <a class="reference external" href="http://linux.die.net/man/5/yum.conf">http://linux.die.net/man/5/yum.conf</a></li>
-</ol>
 </div>
-<div class="section" id="rpm-repositories-creating-a-repository">
-<h4>RPM - Repositories - Creating a Repository<a class="headerlink" href="#rpm-repositories-creating-a-repository" title="Permalink to this headline">¶</a></h4>
-<p>Any directory can be used as a repository to host RPMs. The standard
-naming convention used for RHEL based operating systems is
-“centos/basearch/” where $releasever is the release
-version and $basearch is the CPU architecture. However, any directory
-can be used.</p>
+<div class="section" id="creating-a-repository">
+<h4><a class="toc-backref" href="#id15">Creating a Repository</a><a class="headerlink" href="#creating-a-repository" title="Permalink to this headline">¶</a></h4>
+<p>Any directory can be used as a repository to host RPMs. The standard naming convention used for RHEL based operating systems is <code class="docutils literal notranslate"><span class="pre">el/$releasever/$basearch/</span></code> where <code class="docutils literal notranslate"><span class="pre">$releasever</span></code> is the release version and <code class="docutils literal notranslate"><span class="pre">$basearch</span></code> is the CPU architecture. However, any directory can be used.</p>
 <p>In this example, a default Apache web server will have the repository
-access via the URL “<a class="reference external" href="http://localhost/centos/7/x86_64/">http://localhost/centos/7/x86_64/</a>.” Be sure to
+access via the URL “<a class="reference external" href="http://localhost/el/7/x86_64/">http://localhost/el/7/x86_64/</a>.” Be sure to
 place your RPMs in this directory. [1]</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># yum install createrepo</span>
-<span class="c1"># mkdir -p /var/www/html/centos/7/x86_64/</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo yum install createrepo
+$ sudo mkdir -p /var/www/html/el/7/x86_64/
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># createrepo /var/www/html/centos/7/x86_64/</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo createrepo /var/www/html/el/7/x86_64/
 </pre></div>
 </div>
-<p>The “createrepo” command will create 4 or 5 files. * repomd.xml = An
-index for the other repository metadata files. * primary.xml = Contains
-metadata for all packages including the name, version, architecture,
-file sizes, checksums, dependencies, etc. * filelists.xml = Contains
-the full listing of every directory and file. * other.xml = Holds a
-changelog of all the packages. * groups.xml = If a repository has a
-“group” that should install multiple packages, the group is specified
-here. By default, this file is not created when running “createrepo”
-without any arguments. [2]</p>
+<p>The “createrepo” command will create 4 or 5 files.</p>
+<ul class="simple">
+<li>repomd.xml = An index for the other repository metadata files.</li>
+<li>primary.xml = Contains metadata for all packages including the name, version, architecture, file sizes, checksums, dependencies, etc.</li>
+<li>filelists.xml = Contains the full listing of every directory and file.</li>
+<li>other.xml = Holds a changelog of all the packages.</li>
+<li>groups.xml = If a repository has a “group” that should install multiple packages, the group is specified here. By default, this file is not created when running “createrepo”without any arguments. [8]</li>
+</ul>
 <p>If new packages are added and/or signed via a GPG key then the
-repository cache needs to be updated again. [1]</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># createrepo --update /var/www/html/centos/7/x86_64/</span>
+repository cache needs to be updated again. [7]</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo createrepo --update /var/www/html/el/7/x86_64/
 </pre></div>
 </div>
-<p>Sources:</p>
-<ol class="arabic simple">
-<li>“createrepo(8) - Linux man page.” Die. Accessed June 28, 2016.
-<a class="reference external" href="http://linux.die.net/man/8/createrepo">http://linux.die.net/man/8/createrepo</a></li>
-<li>“createrepo/rpm metadata.” createrepo. Accessed June 28 2016.
-<a class="reference external" href="http://createrepo.baseurl.org/">http://createrepo.baseurl.org/</a></li>
-</ol>
 </div>
-<div class="section" id="rpm-repositories-common-repositories">
-<h4>RPM - Repositories - Common Repositories<a class="headerlink" href="#rpm-repositories-common-repositories" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="common-repositories">
+<h4><a class="toc-backref" href="#id16">Common Repositories</a><a class="headerlink" href="#common-repositories" title="Permalink to this headline">¶</a></h4>
 <table border="1" class="docutils">
 <colgroup>
-<col width="11%" />
-<col width="7%" />
+<col width="9%" />
+<col width="6%" />
 <col width="2%" />
-<col width="54%" />
-<col width="26%" />
+<col width="46%" />
+<col width="37%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Repository Name</th>
@@ -563,21 +524,21 @@ repository cache needs to be updated again. [1]</p>
 <tr class="row-even"><td>Enterprise Linux Repository (ELRepo)</td>
 <td>RHEL</td>
 <td>No</td>
-<td>The latest hardware drivers and Linux kernels. [3]</td>
-<td><a class="reference external" href="http://www.elrepo.org/elrepo-release-6-6.el6.elrepo.noarch.rpm">RHEL6</a>,
-<a class="reference external" href="http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm">RHEL7</a></td>
+<td>The latest hardware drivers and Linux kernels. [11]</td>
+<td><a class="reference external" href="http://www.elrepo.org/elrepo-release-6-8.el6.elrepo.noarch.rpm">RHEL6</a>,
+<a class="reference external" href="http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm">RHEL7</a></td>
 </tr>
 <tr class="row-odd"><td>Extra Packages for Enterprise Linux (EPEL)</td>
 <td>RHEL</td>
 <td>Yes</td>
-<td>Packages from Fedora built for Red Hat Enterprise Linux (RHEL) based operating systems. [1]</td>
+<td>Packages from Fedora built for Red Hat Enterprise Linux (RHEL) based operating systems. [9]</td>
 <td><a class="reference external" href="https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm">RHEL6</a>,
 <a class="reference external" href="https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm">RHEL7</a></td>
 </tr>
 <tr class="row-even"><td>Inline with Upstream (IUS)</td>
 <td>RHEL</td>
 <td>No</td>
-<td>The latest upstream software that is built for RHEL. IUS packages that can safely replace system packages will. IUS packages known to cause conflicts with operating system packages are installed in a separate location. [2]</td>
+<td>The latest upstream software that is built for RHEL. IUS packages that can safely replace system packages will. IUS packages known to cause conflicts with operating system packages are installed in a separate location. [10]</td>
 <td><a class="reference external" href="https://rhel6.iuscommunity.org/ius-release.rpm">RHEL 6</a>,
 <a class="reference external" href="https://rhel7.iuscommunity.org/ius-release.rpm">RHEL 7</a>,
 <a class="reference external" href="https://centos6.iuscommunity.org/ius-release.rpm">CentOS 6</a>,
@@ -586,23 +547,23 @@ repository cache needs to be updated again. [1]</p>
 <tr class="row-odd"><td>Kernel Vanilla</td>
 <td>Fedora</td>
 <td>Yes</td>
-<td>Kernel packages for the latest stable and mainline Linux kernels. [6]</td>
+<td>Kernel packages for the latest stable and mainline Linux kernels. [14]</td>
 <td><a class="reference external" href="https://repos.fedorapeople.org/repos/thl/kernel-vanilla.repo">Fedora</a></td>
 </tr>
 <tr class="row-even"><td>RPM Fusion</td>
 <td>Fedora, RHEL</td>
 <td>No</td>
-<td>Packages that Fedora does not ship by default (primarily due to license conflicts). [4]</td>
-<td><a class="reference external" href="https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-26.noarch.rpm">Fedora26</a>,
-<a class="reference external" href="https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-27.noarch.rpm">Fedora27</a>,
-<a class="reference external" href="https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-6.noarch.rpm">RHEL6</a>,
-<a class="reference external" href="https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-7.noarch.rpm">RHEL7</a></td>
+<td>Packages that Fedora does not ship by default (primarily due to license conflicts). [12]</td>
+<td><a class="reference external" href="https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-26.noarch.rpm">Fedora 26</a>,
+<a class="reference external" href="https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-27.noarch.rpm">Fedora 27</a>,
+<a class="reference external" href="https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-6.noarch.rpm">RHEL 6</a>,
+<a class="reference external" href="https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-7.noarch.rpm">RHEL 7</a></td>
 </tr>
 <tr class="row-odd"><td>RPM Sphere</td>
 <td>Fedora</td>
 <td>No</td>
-<td>openSUSE packages that are not available in Fedora. [5]</td>
-<td><a class="reference external" href="http://download.opensuse.org/repositories/home:/zhonghuaren/Fedora_26/home:zhonghuaren.repo">Fedora26</a></td>
+<td>openSUSE packages that are not available in Fedora. [13]</td>
+<td><a class="reference external" href="http://download.opensuse.org/repositories/home:/zhonghuaren/Fedora_26/home:zhonghuaren.repo">Fedora 26</a></td>
 </tr>
 <tr class="row-even"><td>Wine</td>
 <td>Fedora</td>
@@ -610,41 +571,44 @@ repository cache needs to be updated again. [1]</p>
 <td>The latest stable, development, and staging packages for Wine.</td>
 <td><a class="reference external" href="https://dl.winehq.org/wine-builds/fedora/26/winehq.repo">Fedora 26</a></td>
 </tr>
+<tr class="row-odd"><td>Wine-Staging</td>
+<td>Fedora</td>
+<td>No</td>
+<td>Unofficial Wine-Staging packages from the <a class="reference external" href="https://github.com/wine-staging/wine-staging">upstream fork</a>.</td>
+<td><a class="reference external" href="https://repos.wine-staging.com/alesliehughes/fedora/26/alistairs-wine.repo">Fedora 26</a>, <a class="reference external" href="https://repos.wine-staging.com/alesliehughes/fedora/27/alistairs-wine.repo">Fedora 27</a></td>
+</tr>
 </tbody>
 </table>
-<p>Sources:</p>
-<ol class="arabic simple">
-<li>“EPEL.” Fedora Project. March 1, 2017. Accessed May 14, 2017.
-<a class="reference external" href="https://fedoraproject.org/wiki/EPEL">https://fedoraproject.org/wiki/EPEL</a></li>
-<li>“IUS Community Project.” IUS. May 5, 2017. Accessed May 14, 2017.
-<a class="reference external" href="https://ius.io/">https://ius.io/</a></li>
-<li>“Welcome to the ELRepo Project.” ELRepo. April 4, 2017. Accessed May
-14, 2017. <a class="reference external" href="http://elrepo.org/tiki/tiki-index.php">http://elrepo.org/tiki/tiki-index.php</a></li>
-<li>“RPM Fusion.” RPM Fusion. March 31, 2017. Accessed May 14, 2017.
-<a class="reference external" href="https://rpmfusion.org/RPM%20Fusion">https://rpmfusion.org/RPM%20Fusion</a></li>
-<li>“RPM Sphere.” openSUSE Build Service. Accessed September 4, 2017.
-<a class="reference external" href="https://build.opensuse.org/project/show/home:zhonghuaren">https://build.opensuse.org/project/show/home:zhonghuaren</a></li>
-<li>“Kernel Vanilla Repositories.” Fedora Project Wiki. February 28,
-2017. Accessed September 8, 2017.
-<a class="reference external" href="https://fedoraproject.org/wiki/Kernel_Vanilla_Repositories">https://fedoraproject.org/wiki/Kernel_Vanilla_Repositories</a></li>
-</ol>
 </div>
 </div>
-<div class="section" id="rpm-packaging">
-<h3>RPM - Packaging<a class="headerlink" href="#rpm-packaging" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="red-hat-repositories">
+<h3><a class="toc-backref" href="#id17">Red Hat Repositories</a><a class="headerlink" href="#red-hat-repositories" title="Permalink to this headline">¶</a></h3>
+<p>Red Hat provides different repositories for Red Hat Enterprise Linux operating systems. Many of these provide access to licensed downstream software maintained by the company and obtained through subscriptions.</p>
+<p>The “subscription-manager” command is used to manage these repositories.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo subscription-manager repos --enable &lt;RED_HAT_REPOSITORY&gt;
+</pre></div>
+</div>
+<p>Repositories:</p>
+<ul class="simple">
+<li>rhel-7-server-devtools-rpms = Developer Tools. Useful packages for software developers. The subscriptions that can enable this are listed <a class="reference external" href="https://access.redhat.com/documentation/en-US/Red_Hat_Developer_Toolset/1/html/User_Guide/sect-Red_Hat_Developer_Toolset-Subscribe.html">here</a>.</li>
+<li>rhel-server-rhscl-7-rpms = Software Collections. Newer versions of software, usually aligning with upstream, are provided. They are installed into a prefix directory that is separate from the operating system libraries. [25]</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#id18">Packaging</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>An RPM is built from a “spec” file. This modified shell script contains
 all of the information about the program and on how to install and
 uninstall it. It is used to build the RPM.</p>
 <p>Common variables:</p>
 <ul class="simple">
 <li>Name = The name of the program.<ul>
-<li><code class="docutils literal"><span class="pre">%{name}</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">%{name}</span></code></li>
 </ul>
 </li>
 <li>Version = The version of the package. Typically this is in the format
 of X.Y.Z (major.minor.bugfix) or ISO date format (for example,
 “2016-01-01”).<ul>
-<li><code class="docutils literal"><span class="pre">%{version}</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">%{version}</span></code></li>
 </ul>
 </li>
 <li>Release = Start with “1%{?dist}” for the first build of the RPM.
@@ -666,10 +630,10 @@ your program to work.</li>
 <li>URL = A URL link to the program’s or, if that is not available, the
 developer’s website.</li>
 <li>Source = A tarball of the source code. It should follow the naming
-standard of <code class="docutils literal"><span class="pre">&lt;RPM_NAME&gt;-&lt;RPM_PROGRAM_VERSION&gt;.tar.gz</span></code>.</li>
+standard of <code class="docutils literal notranslate"><span class="pre">&lt;RPM_NAME&gt;-&lt;RPM_PROGRAM_VERSION&gt;.tar.gz</span></code>.</li>
 </ul>
 <p>Sample SPEC file:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>Name: my-first-rpm
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Name: my-first-rpm
 Version: 1.0.0
 Release: 1%{?dist}
 Summary: This is my first RPM
@@ -678,91 +642,77 @@ URL: http://example.tld/
 </pre></div>
 </div>
 <p>If you want to build the RPM, simply run:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># rpmbuild -bb &lt;SPECFILE&gt;.spec</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo rpmbuild -bb &lt;SPECFILE&gt;.spec
 </pre></div>
 </div>
 <p>In case you also want to build a source RPM (SRPM) run:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># rpmbuild -ba &lt;SPECFILE&gt;.spec</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo rpmbuild -ba &lt;SPECFILE&gt;.spec
 </pre></div>
 </div>
 <p>Sections:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">%description</span></code> = Provide a description of the program.</li>
-<li><code class="docutils literal"><span class="pre">%prep</span></code> = Define how to extract the source code for building.</li>
-<li><code class="docutils literal"><span class="pre">%setup</span></code> =</li>
-<li><code class="docutils literal"><span class="pre">%build</span></code> = This is where the program is built from the source code.</li>
-<li><code class="docutils literal"><span class="pre">%install</span></code> = Copy files to a directory structure under
-<code class="docutils literal"><span class="pre">%{buildroot}</span></code> that mirrors where their installed location. The
-<code class="docutils literal"><span class="pre">%{buildroot}</span></code> is the top-level directory of a typical Linux file
+<li><code class="docutils literal notranslate"><span class="pre">%description</span></code> = Provide a description of the program.</li>
+<li><code class="docutils literal notranslate"><span class="pre">%prep</span></code> = Define how to extract the source code for building.</li>
+<li><code class="docutils literal notranslate"><span class="pre">%setup</span></code> =</li>
+<li><code class="docutils literal notranslate"><span class="pre">%build</span></code> = This is where the program is built from the source code.</li>
+<li><code class="docutils literal notranslate"><span class="pre">%install</span></code> = Copy files to a directory structure under
+<code class="docutils literal notranslate"><span class="pre">%{buildroot}</span></code> that mirrors where their installed location. The
+<code class="docutils literal notranslate"><span class="pre">%{buildroot}</span></code> is the top-level directory of a typical Linux file
 system hierarchy.</li>
-<li><code class="docutils literal"><span class="pre">%file</span></code> = These are the files that should be copied over during
+<li><code class="docutils literal notranslate"><span class="pre">%file</span></code> = These are the files that should be copied over during
 installation. Permissions can also be set.<ul>
-<li><code class="docutils literal"><span class="pre">%attr(&lt;MODE&gt;,</span> <span class="pre">&lt;USER&gt;,</span> <span class="pre">&lt;GROUP&gt;)</span></code> = Define this in front of a
+<li><code class="docutils literal notranslate"><span class="pre">%attr(&lt;MODE&gt;,</span> <span class="pre">&lt;USER&gt;,</span> <span class="pre">&lt;GROUP&gt;)</span></code> = Define this in front of a
 file or folder to give it custom permissions.</li>
 </ul>
 </li>
 </ul>
-<p>Source:</p>
-<ol class="arabic simple">
-<li>“How to create an RPM package.” Fedora Project. June 22, 2016.
-Accessed June 28, 2016.
-<a class="reference external" href="http://fedoraproject.org/wiki/How_to_create_an_RPM_package">http://fedoraproject.org/wiki/How_to_create_an_RPM_package</a></li>
-</ol>
-<div class="section" id="rpm-packaging-macros">
-<h4>RPM - Packaging - Macros<a class="headerlink" href="#rpm-packaging-macros" title="Permalink to this headline">¶</a></h4>
+<p>[15]</p>
+<div class="section" id="id4">
+<h4><a class="toc-backref" href="#id19">Macros</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <p>Macros are variables in the RPM spec file that are expanded upon
 compilation of the RPM.</p>
 <p>Some useful macros include:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">%{patches}</span></code> = An array of all of the defined patch files.</li>
-<li><code class="docutils literal"><span class="pre">%{sources}</span></code> = An array of all of the defined source files.</li>
+<li><code class="docutils literal notranslate"><span class="pre">%{patches}</span></code> = An array of all of the defined patch files.</li>
+<li><code class="docutils literal notranslate"><span class="pre">%{sources}</span></code> = An array of all of the defined source files.</li>
 </ul>
-<p>Source:</p>
-<ol class="arabic simple">
-<li><a class="reference external" href="https://fedoraproject.org/wiki/How_to_create_an_RPM_package">https://fedoraproject.org/wiki/How_to_create_an_RPM_package</a></li>
-</ol>
-<div class="section" id="rpm-packaging-macros-directories">
-<h5>RPM - Packaging - Macros - Directories<a class="headerlink" href="#rpm-packaging-macros-directories" title="Permalink to this headline">¶</a></h5>
+<p>[16]</p>
+<div class="section" id="directories">
+<h5><a class="toc-backref" href="#id20">Directories</a><a class="headerlink" href="#directories" title="Permalink to this headline">¶</a></h5>
 <p>During the creation of an RPM there are a few important directories that
-can and will be refereneced.</p>
+can and will be referenced.</p>
 <ul class="simple">
 <li>%{topdir} = The directory that the RPM related files should be
-located. By default this is set to <code class="docutils literal"><span class="pre">%{getenv:HOME}/rpmbuild</span></code>.</li>
-<li>%{builddir} = The <code class="docutils literal"><span class="pre">%{_topdir}/BUILD</span></code> directory. This is where the
+located. By default this is set to <code class="docutils literal notranslate"><span class="pre">%{getenv:HOME}/rpmbuild</span></code>.</li>
+<li>%{builddir} = The <code class="docutils literal notranslate"><span class="pre">%{_topdir}/BUILD</span></code> directory. This is where the
 compilation of the program should take place.</li>
-<li>%{_sourcedir} = The <code class="docutils literal"><span class="pre">%{_topdir}/SOURCES</span></code> directory. This is where
+<li>%{_sourcedir} = The <code class="docutils literal notranslate"><span class="pre">%{_topdir}/SOURCES</span></code> directory. This is where
 patches, service files, and source code can be stored.</li>
-<li>%{_specdir} = The <code class="docutils literal"><span class="pre">%{_topdir}/SPECS</span></code> directory. This is where the
+<li>%{_specdir} = The <code class="docutils literal notranslate"><span class="pre">%{_topdir}/SPECS</span></code> directory. This is where the
 SPEC file for the RPM should be stored.</li>
-<li>%{_srcrpmdir} = The <code class="docutils literal"><span class="pre">%{_topdir}/SRPMS</span></code> directory. This is where
+<li>%{_srcrpmdir} = The <code class="docutils literal notranslate"><span class="pre">%{_topdir}/SRPMS</span></code> directory. This is where
 the optional source RPM will be compiled and stored to.</li>
-<li>%{buildroot} = The <code class="docutils literal"><span class="pre">%{_topdir}/BUILDROOT</span></code> directory. This is the
+<li>%{buildroot} = The <code class="docutils literal notranslate"><span class="pre">%{_topdir}/BUILDROOT</span></code> directory. This is the
 file system hierarchy of where the RPM files will actually be
-installed to. This is also set to the <code class="docutils literal"><span class="pre">$RPM_BUILD_ROOT</span></code> shell
+installed to. This is also set to the <code class="docutils literal notranslate"><span class="pre">$RPM_BUILD_ROOT</span></code> shell
 variable.</li>
 </ul>
-<p>[1]</p>
-<p>Source:</p>
-<ol class="arabic simple">
-<li>“Packaging:RPMMacros.” Fedora Project Wiki. December 1, 2016.
-Accessed March 13, 2017.
-https://fedoraproject.org/wiki/Packaging:RPMMacros?rd=Packaging/RPMMacros</li>
-</ol>
+<p>[17]</p>
 </div>
 </div>
-<div class="section" id="rpm-packaging-users-and-groups">
-<h4>RPM - Packaging - Users and Groups<a class="headerlink" href="#rpm-packaging-users-and-groups" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="users-and-groups">
+<h4><a class="toc-backref" href="#id21">Users and Groups</a><a class="headerlink" href="#users-and-groups" title="Permalink to this headline">¶</a></h4>
 <p>Creating a user or group can be done one of two ways.</p>
 <ul class="simple">
-<li>Dynamically = Let the system deciede what user identification number
+<li>Dynamically = Let the system decide what user identification number
 (UID) and group ID (GID) to use.</li>
 <li>Static = Specify a specific UID or GID number to use. This is useful
 for keeping permissions identical on multiple platforms.</li>
 </ul>
 <p>The Fedora Project recommends using these standardized blocks of code to
-accomplish these methods. [1]</p>
+accomplish these methods. [18]</p>
 <p>Dynamic:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Requires</span><span class="p">(</span><span class="n">pre</span><span class="p">):</span> <span class="n">shadow</span><span class="o">-</span><span class="n">utils</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Requires</span><span class="p">(</span><span class="n">pre</span><span class="p">):</span> <span class="n">shadow</span><span class="o">-</span><span class="n">utils</span>
 <span class="p">[</span><span class="o">...</span><span class="p">]</span>
 <span class="o">%</span><span class="n">pre</span>
 <span class="n">getent</span> <span class="n">group</span> <span class="o">&lt;</span><span class="n">GROUP_NAME</span><span class="o">&gt;</span> <span class="o">&gt;/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span> <span class="o">||</span> <span class="n">groupadd</span> <span class="o">-</span><span class="n">r</span> <span class="o">&lt;</span><span class="n">GROUP_NAME</span><span class="o">&gt;</span>
@@ -773,7 +723,7 @@ accomplish these methods. [1]</p>
 </pre></div>
 </div>
 <p>Static:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>Requires(pre): shadow-utils
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Requires(pre): shadow-utils
 &lt;OMITTED&gt;
 %pre
 getent group &lt;GROUP_NAME&gt; &gt;/dev/null || groupadd -f -g &lt;GID&gt; -r &lt;GROUP_NAME&gt;
@@ -787,73 +737,61 @@ fi
 exit 0
 </pre></div>
 </div>
-<p>Source:</p>
-<ol class="arabic simple">
-<li>“Packaging: Users and Groups” Fedora Project. September 14, 2016.
-Accessed February 25, 2017.
-<a class="reference external" href="https://fedoraproject.org/wiki/Packaging:UsersAndGroups">https://fedoraproject.org/wiki/Packaging:UsersAndGroups</a></li>
-</ol>
 </div>
-<div class="section" id="rpm-packaging-patches">
-<h4>RPM - Packaging - Patches<a class="headerlink" href="#rpm-packaging-patches" title="Permalink to this headline">¶</a></h4>
-<p>Some applications may require patches to work properly. Pathces should
-be stored in the <code class="docutils literal"><span class="pre">SOURCES</span></code> directories. At the beginning of the spec
+<div class="section" id="patches">
+<h4><a class="toc-backref" href="#id22">Patches</a><a class="headerlink" href="#patches" title="Permalink to this headline">¶</a></h4>
+<p>Some applications may require patches to work properly. Patches should
+be stored in the <code class="docutils literal notranslate"><span class="pre">SOURCES</span></code> directories. At the beginning of the spec
 file, where the name and version information is defined, patch file
 names can also be defined.</p>
 <p>Usage:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Patch</span><span class="o">&lt;</span><span class="n">NUMBER</span><span class="o">&gt;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">PATCH_FILE</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Patch</span><span class="o">&lt;</span><span class="n">NUMBER</span><span class="o">&gt;</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">PATCH_FILE</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Patch0</span><span class="p">:</span> <span class="n">php</span><span class="o">-</span><span class="n">fpm_listen_port</span><span class="o">.</span><span class="n">patch</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Patch0</span><span class="p">:</span> <span class="n">php</span><span class="o">-</span><span class="n">fpm_listen_port</span><span class="o">.</span><span class="n">patch</span>
 <span class="n">Patch1</span><span class="p">:</span> <span class="n">php_memory_limit</span><span class="o">.</span><span class="n">patch</span>
 </pre></div>
 </div>
-<p>These patches can then be referenced in the <code class="docutils literal"><span class="pre">%setup</span></code> phase (after
-<code class="docutils literal"><span class="pre">%prep</span></code> and before <code class="docutils literal"><span class="pre">%build%</span></code>).</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">setup</span> <span class="o">-</span><span class="n">q</span>
+<p>These patches can then be referenced in the <code class="docutils literal notranslate"><span class="pre">%setup</span></code> phase (after
+<code class="docutils literal notranslate"><span class="pre">%prep</span></code> and before <code class="docutils literal notranslate"><span class="pre">%build%</span></code>).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">setup</span> <span class="o">-</span><span class="n">q</span>
 </pre></div>
 </div>
-<p>A patched file can be created using the <code class="docutils literal"><span class="pre">diff</span></code> command.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ diff -u &lt;ORIGINAL_FILE&gt; &lt;PATCHED_FILE&gt; &gt; &lt;PATCH_NAME&gt;.patch
+<p>A patched file can be created using the <code class="docutils literal notranslate"><span class="pre">diff</span></code> command.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ diff -u &lt;ORIGINAL_FILE&gt; &lt;PATCHED_FILE&gt; &gt; &lt;PATCH_NAME&gt;.patch
 </pre></div>
 </div>
-<p>If multiple files in a directory have been patched, a more comphrensive
+<p>If multiple files in a directory have been patched, a more comprehensive
 patch file can be made.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ diff -urN &lt;ORIGINAL_SOURCE_DIRECTORY&gt;/ &lt;PATCHED_SOURCE_DIRECTORY&gt;/ &gt; &lt;PATCH_NAME&gt;.patch
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ diff -urN &lt;ORIGINAL_SOURCE_DIRECTORY&gt;/ &lt;PATCHED_SOURCE_DIRECTORY&gt;/ &gt; &lt;PATCH_NAME&gt;.patch
 </pre></div>
 </div>
-<p>In the spec file, the <code class="docutils literal"><span class="pre">%patch</span></code> macro can be used. The <code class="docutils literal"><span class="pre">-p1</span></code> argument
+<p>In the spec file, the <code class="docutils literal notranslate"><span class="pre">%patch</span></code> macro can be used. The <code class="docutils literal notranslate"><span class="pre">-p1</span></code> argument
 strips off the top-level directory of the patch’s path.</p>
 <p>Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">patch0</span> <span class="o">-</span><span class="n">p1</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">patch0</span> <span class="o">-</span><span class="n">p1</span>
 <span class="o">%</span><span class="n">patch1</span> <span class="o">-</span><span class="n">p1</span>
 </pre></div>
 </div>
 <p>Example patch file:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">---</span> <span class="n">d20</span><span class="o">-</span><span class="mf">1.0</span><span class="o">.</span><span class="mi">0</span><span class="n">_patched</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">dice</span><span class="o">.</span><span class="n">h</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---</span> <span class="n">d20</span><span class="o">-</span><span class="mf">1.0</span><span class="o">.</span><span class="mi">0</span><span class="n">_patched</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">dice</span><span class="o">.</span><span class="n">h</span>
 <span class="o">+++</span> <span class="n">d20</span><span class="o">-</span><span class="mf">1.0</span><span class="o">.</span><span class="mi">0</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">dice</span><span class="o">.</span><span class="n">h</span>
 </pre></div>
 </div>
-<p>A patch can also be made without the <code class="docutils literal"><span class="pre">%patch</span></code> macro by specifying the
+<p>A patch can also be made without the <code class="docutils literal notranslate"><span class="pre">%patch</span></code> macro by specifying the
 location of the patch file.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">patch</span> <span class="o">&lt;</span> <span class="o">%</span><span class="p">{</span><span class="n">_sourcedir</span><span class="p">}</span><span class="o">/&lt;</span><span class="n">FILE_NAME</span><span class="o">&gt;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>patch &lt; %<span class="o">{</span>_sourcedir<span class="o">}</span>/&lt;FILE_NAME&gt;
 </pre></div>
 </div>
-<p>[1]</p>
-<p>Source:</p>
-<ol class="arabic simple">
-<li>“How to Create and Use Patch Files for RPM Packages.” Bob Cromwell.
-March 20, 2017. Accessed March 20, 2017.
-<a class="reference external" href="http://cromwell-intl.com/linux/rpm-patch.html">http://cromwell-intl.com/linux/rpm-patch.html</a></li>
-</ol>
+<p>[19]</p>
 </div>
 </div>
 </div>
 <div class="section" id="pkgbuild">
-<h2>PKGBUILD<a class="headerlink" href="#pkgbuild" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="pkgbuild-packaging">
-<h3>PKGBUILD - Packaging<a class="headerlink" href="#pkgbuild-packaging" title="Permalink to this headline">¶</a></h3>
+<h2><a class="toc-backref" href="#id23">PKGBUILD</a><a class="headerlink" href="#pkgbuild" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id24">Packaging</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>Arch Linux packages are design to be simple and easy to create. A
 PKGBUILD file is compressed with a software’s contents into a XZ
 tarball. This can contain either the source code or compiled program.</p>
@@ -882,7 +820,7 @@ necessarily have file names.</li>
 <li>conflicts = List any conflicting packages.</li>
 <li>replaces = List packages that this software should replace.</li>
 </ul>
-<p>[1]</p>
+<p>[20]</p>
 <p>Functions</p>
 <p>Required:</p>
 <ul>
@@ -893,11 +831,11 @@ directory that the XZ tarball was extracted to. This is
 automatically generated as the “srcdir” variable. In most
 situations this should be the package name and version separated
 by a dash.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ cd &quot;${srcdir}&quot;
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">srcdir</span><span class="si">}</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 <p>OR</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ cd &quot;${pkgname}-${pkgver}&quot;
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">pkgname</span><span class="si">}</span><span class="s2">-</span><span class="si">${</span><span class="nv">pkgver</span><span class="si">}</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 </li>
@@ -909,41 +847,56 @@ by a dash.</p>
 to be placed in the “pkgdir” to represent where they will be
 installed on an end-user’s system. This acts as the top-level
 directory of a Linux file system hierarchy.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ cd &quot;${pkgdir}&quot;
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">pkgdir</span><span class="si">}</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">An example of installing compiled source code using a Make file.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ make DESTDIR=&quot;${pkgdir}&quot; install
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ make <span class="nv">DESTDIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">pkgdir</span><span class="si">}</span><span class="s2">&quot;</span> install
 </pre></div>
 </div>
-<p>[2][3]</p>
 </li>
 </ul>
 </li>
 </ul>
-<p>Sources:</p>
-<ol class="arabic simple">
-<li>“PKGBUILD.” Arch Linux Wiki. October 26, 2016. Accessed November 19,
-2016. <a class="reference external" href="https://wiki.archlinux.org/index.php/PKGBUILD">https://wiki.archlinux.org/index.php/PKGBUILD</a></li>
-<li>“Creating packages.” Arch Linux Wiki. July 30, 2016. Accessed
-November 19, 2016.
-<a class="reference external" href="https://wiki.archlinux.org/index.php/creating_packages">https://wiki.archlinux.org/index.php/creating_packages</a></li>
-<li>“PKGBUILD(5) Manual Page.” Arch Linux Man Pages. February 26, 2016.
-Accessed November 19, 2016.
-<a class="reference external" href="https://www.archlinux.org/pacman/PKGBUILD.5.html">https://www.archlinux.org/pacman/PKGBUILD.5.html</a></li>
-</ol>
+<p>[21][22]</p>
 </div>
 </div>
 <div class="section" id="flatpak">
-<h2>Flatpak<a class="headerlink" href="#flatpak" title="Permalink to this headline">¶</a></h2>
-<p>Flatpak is a sandbox solution that provides a universal application packaging format. It was first started by an employee from Red Hat in their spare time. Flatpak has a strong focus on portability, security, and effective space usage. [1] This package manager is available for most modern Linux distributions. [2]</p>
-<p>Source:</p>
+<h2><a class="toc-backref" href="#id25">Flatpak</a><a class="headerlink" href="#flatpak" title="Permalink to this headline">¶</a></h2>
+<p>Flatpak is a sandbox solution that provides a universal application packaging format. It was first started by an employee from Red Hat in their spare time. Flatpak has a strong focus on portability, security, and effective space usage. [23] This package manager is available for most modern Linux distributions. [24]</p>
+</div>
+<div class="section" id="errata">
+<h2><a class="reference external" href="https://github.com/ekultails/rootpages/commits/master/src/packages.rst">Errata</a><a class="headerlink" href="#errata" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="bibliography">
+<h2><a class="toc-backref" href="#id27">Bibliography</a><a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li>“About <a class="reference external" href="#flatpak">Flatpak</a>.” Flatpak. March 18, 2017. Accessed
-March 19, 2017. <a class="reference external" href="http://flatpak.org/">http://flatpak.org/</a></li>
-<li>“Getting Flatpak.” Flatpak. March 18, 2017. Accessed March 19, 2017.
-<a class="reference external" href="http://flatpak.org/getting.html">http://flatpak.org/getting.html</a></li>
+<li>“SourcesList.” Debian Wiki. March 22, 2017. Accessed March 28, 2017. <a class="reference external" href="https://wiki.debian.org/SourcesList">https://wiki.debian.org/SourcesList</a></li>
+<li>“Chapter 7 - Basics of the Debian package management system.” The Debian GNU/Linux FAQ. August 28, 2016. Accessed March 25, 2017. <a class="reference external" href="https://www.debian.org/doc/manuals/debian-faq/ch-pkg_basics.en.html">https://www.debian.org/doc/manuals/debian-faq/ch-pkg_basics.en.html</a></li>
+<li>“hello-debian README.md.” streadway/hello-debian GitHub. March 24, 2014. Accessed May 8, 2017. <a class="reference external" href="https://github.com/streadway/hello-debian">https://github.com/streadway/hello-debian</a></li>
+<li>“Chapter 4. Required files under the debian directory.” Debian New Maintainers’ Guide. February 25, 2017. Accessed March 24, 2017. <a class="reference external" href="https://www.debian.org/doc/manuals/maint-guide/dreq.en.html">https://www.debian.org/doc/manuals/maint-guide/dreq.en.html</a></li>
+<li>“Fedora 24 System Administrator’s Guide” Fedora Documentation. 2016. Accessed June 28, 2016. <a class="reference external" href="https://docs.fedoraproject.org/en-US/Fedora/24/html/System_Administrators_Guide/sec-Setting_repository_Options.html">https://docs.fedoraproject.org/en-US/Fedora/24/html/System_Administrators_Guide/sec-Setting_repository_Options.html</a></li>
+<li>“yum.conf - Configuration file for yum(8).” Die. Accessed June 28, 2016. <a class="reference external" href="http://linux.die.net/man/5/yum.conf">http://linux.die.net/man/5/yum.conf</a></li>
+<li>“createrepo(8) - Linux man page.” Die. Accessed June 28, 2016. <a class="reference external" href="http://linux.die.net/man/8/createrepo">http://linux.die.net/man/8/createrepo</a></li>
+<li>“createrepo/rpm metadata.” createrepo. Accessed June 28 2016. <a class="reference external" href="http://createrepo.baseurl.org/">http://createrepo.baseurl.org/</a></li>
+<li>“EPEL.” Fedora Project. March 1, 2017. Accessed May 14, 2017. <a class="reference external" href="https://fedoraproject.org/wiki/EPEL">https://fedoraproject.org/wiki/EPEL</a></li>
+<li>“IUS Community Project.” IUS. May 5, 2017. Accessed May 14, 2017. <a class="reference external" href="https://ius.io/">https://ius.io/</a></li>
+<li>“Welcome to the ELRepo Project.” ELRepo. April 4, 2017. Accessed May 14, 2017. <a class="reference external" href="http://elrepo.org/tiki/tiki-index.php">http://elrepo.org/tiki/tiki-index.php</a></li>
+<li>“RPM Fusion.” RPM Fusion. March 31, 2017. Accessed May 14, 2017. <a class="reference external" href="https://rpmfusion.org/RPM%20Fusion">https://rpmfusion.org/RPM%20Fusion</a></li>
+<li>“RPM Sphere.” openSUSE Build Service. Accessed September 4, 2017. <a class="reference external" href="https://build.opensuse.org/project/show/home:zhonghuaren">https://build.opensuse.org/project/show/home:zhonghuaren</a></li>
+<li>“Kernel Vanilla Repositories.” Fedora Project Wiki. February 28, 2017. Accessed September 8, 2017. <a class="reference external" href="https://fedoraproject.org/wiki/Kernel_Vanilla_Repositories">https://fedoraproject.org/wiki/Kernel_Vanilla_Repositories</a></li>
+<li>“How to create an RPM package.” Fedora Project. June 22, 2016. Accessed June 28, 2016. <a class="reference external" href="http://fedoraproject.org/wiki/How_to_create_an_RPM_package">http://fedoraproject.org/wiki/How_to_create_an_RPM_package</a></li>
+<li><a class="reference external" href="https://fedoraproject.org/wiki/How_to_create_an_RPM_package">https://fedoraproject.org/wiki/How_to_create_an_RPM_package</a></li>
+<li>“Packaging:RPMMacros.” Fedora Project Wiki. December 1, 2016. Accessed March 13, 2017. https://fedoraproject.org/wiki/Packaging:RPMMacros?rd=Packaging/RPMMacros</li>
+<li>“Packaging: Users and Groups” Fedora Project. September 14, 2016. Accessed February 25, 2017. <a class="reference external" href="https://fedoraproject.org/wiki/Packaging:UsersAndGroups">https://fedoraproject.org/wiki/Packaging:UsersAndGroups</a></li>
+<li>“How to Create and Use Patch Files for RPM Packages.” Bob Cromwell. March 20, 2017. Accessed March 20, 2017. <a class="reference external" href="http://cromwell-intl.com/linux/rpm-patch.html">http://cromwell-intl.com/linux/rpm-patch.html</a></li>
+<li>“PKGBUILD.” Arch Linux Wiki. October 26, 2016. Accessed November 19, 2016. <a class="reference external" href="https://wiki.archlinux.org/index.php/PKGBUILD">https://wiki.archlinux.org/index.php/PKGBUILD</a></li>
+<li>“Creating packages.” Arch Linux Wiki. July 30, 2016. Accessed November 19, 2016. <a class="reference external" href="https://wiki.archlinux.org/index.php/creating_packages">https://wiki.archlinux.org/index.php/creating_packages</a></li>
+<li>“PKGBUILD(5) Manual Page.” Arch Linux Man Pages. February 26, 2016. Accessed November 19, 2016. <a class="reference external" href="https://www.archlinux.org/pacman/PKGBUILD.5.html">https://www.archlinux.org/pacman/PKGBUILD.5.html</a></li>
+<li>“About <a class="reference external" href="#flatpak">Flatpak</a>.” Flatpak. March 18, 2017. Accessed March 19, 2017. <a class="reference external" href="http://flatpak.org/">http://flatpak.org/</a></li>
+<li>“Getting Flatpak.” Flatpak. March 18, 2017. Accessed March 19, 2017. <a class="reference external" href="http://flatpak.org/getting.html">http://flatpak.org/getting.html</a></li>
+<li>“Red Hat Developer Tools software repository not available.” Red Hat Community Discussions. November 14, 2017. Accessed February 26, 2018. <a class="reference external" href="https://access.redhat.com/discussions/3155021">https://access.redhat.com/discussions/3155021</a></li>
 </ol>
 </div>
 </div>
@@ -970,7 +923,7 @@ March 19, 2017. <a class="reference external" href="http://flatpak.org/">http://
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Luke Short.
+        &copy; Copyright 2018, Luke Short. Documents licensed under GPLv3.
 
     </p>
   </div>
@@ -992,7 +945,7 @@ March 19, 2017. <a class="reference external" href="http://flatpak.org/">http://
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'2018.01.26',
+            VERSION:'2018.04.01',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

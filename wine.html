@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Wine &mdash; Root Pages 2018.01.26 documentation</title>
+  <title>Wine &mdash; Root Pages 2018.04.01 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Root Pages 2018.01.26 documentation" href="index.html"/>
+    <link rel="top" title="Root Pages 2018.04.01 documentation" href="index.html"/>
         <link rel="prev" title="Virtualization" href="virtualization.html"/> 
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                2018.01.26
+                2018.04.01
               </div>
             
           
@@ -95,6 +95,7 @@
 <li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bootloaders.html">Bootloaders</a></li>
 <li class="toctree-l1"><a class="reference internal" href="c_and_c++.html">C and C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="databases.html">Databases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="clustering.html">Clustering and High Availability</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dns_servers.html">DNS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="file_systems.html">File Systems</a></li>
@@ -103,19 +104,19 @@
 <li class="toctree-l1"><a class="reference internal" href="mail_servers.html">Mail Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="monitoring.html">Monitoring</a></li>
 <li class="toctree-l1"><a class="reference internal" href="networking.html">Networking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="nosql.html">NoSQL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="openstack.html">OpenStack Ocata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="openstack.html">OpenStack Queens</a></li>
 <li class="toctree-l1"><a class="reference internal" href="operating_systems.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages.html">Packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="security.html">Security</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sql.html">SQL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="virtualization.html">Virtualization</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Wine</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#user">User</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#user-environment-variables">User - Environment Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#environment-variables">Environment Variables</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#errata">Errata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bibliography">Bibliography</a></li>
 </ul>
 </li>
 </ul>
@@ -183,25 +184,20 @@
             
   <div class="section" id="wine">
 <h1><a class="reference external" href="#wine">Wine</a><a class="headerlink" href="#wine" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents</p>
 <ul class="simple">
-<li><a class="reference external" href="#user">User</a><ul>
-<li>Commands</li>
-<li><a class="reference external" href="#user---environment---variables">Environment Variables</a></li>
-<li>Registry</li>
+<li><a class="reference internal" href="#wine" id="id1">Wine</a><ul>
+<li><a class="reference internal" href="#user" id="id2">User</a><ul>
+<li><a class="reference internal" href="#environment-variables" id="id3">Environment Variables</a></li>
 </ul>
 </li>
-<li>Developer<ul>
-<li>Mailing Lists</li>
-<li>Resources</li>
-<li>Winetricks</li>
-</ul>
-</li>
-<li>Frameworks<ul>
-<li>Ansible Playgames</li>
-<li>PlayOnLinux</li>
+<li><a class="reference internal" href="#errata" id="id4">Errata</a></li>
+<li><a class="reference internal" href="#bibliography" id="id5">Bibliography</a></li>
 </ul>
 </li>
 </ul>
+</div>
 <p>Wine Is Not an Emulator (Wine) is a compatibility layer that translates
 Windows systems calls into native POSIX system calls. This provides a
 fast way to run Windows programs natively on UNIX-like systems. [1]</p>
@@ -211,29 +207,20 @@ systems. Work on recreating Windows libraries (DLLs) is shared between
 ReactOS and the Wine project. [2]</p>
 <p>Both projects are clean-room reversed engineered to prevent legal
 issues. [3]</p>
-<p>Source:</p>
-<ol class="arabic simple">
-<li>“WineHQ.” WineHQ. October 20, 2017. Accessed October 29, 2017.
-<a class="reference external" href="https://www.winehq.org/">https://www.winehq.org/</a></li>
-<li>“Wine.” ReactOS Wiki. April 28, 2017. Accessed October 29, 2017.
-<a class="reference external" href="https://www.reactos.org/wiki/WINE">https://www.reactos.org/wiki/WINE</a></li>
-<li>“Clean Room Guidelines.” WineHQ. February 13, 2016. Accessed October
-29, 2017. <a class="reference external" href="https://wiki.winehq.org/Clean_Room_Guidelines">https://wiki.winehq.org/Clean_Room_Guidelines</a></li>
-</ol>
 <div class="section" id="user">
-<h2>User<a class="headerlink" href="#user" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">User</a><a class="headerlink" href="#user" title="Permalink to this headline">¶</a></h2>
 <p>This user guide is aimed at explaining how to use Wine, and related
 tools, to run Windows programs on Linux.</p>
-<div class="section" id="user-environment-variables">
-<h3>User - Environment Variables<a class="headerlink" href="#user-environment-variables" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="environment-variables">
+<h3><a class="toc-backref" href="#id3">Environment Variables</a><a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h3>
 <p>Environment variables can be set by using the “export” Linux shell
 command or specifying the variables before a Wine command.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ export WINEPREFIX=&quot;/home/windowsguy/wine_prefix&quot;
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">WINEPREFIX</span><span class="o">=</span><span class="s2">&quot;/home/user/wine_prefix&quot;</span>
 $ winecfg
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span>$ WINEPATH=&quot;c:/program_dir&quot; wine setup.exe
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ <span class="nv">WINEPATH</span><span class="o">=</span><span class="s2">&quot;c:/program_dir&quot;</span> wine setup.exe
 </pre></div>
 </div>
 <table border="1" class="docutils">
@@ -303,16 +290,16 @@ $ winecfg
 </tr>
 </tbody>
 </table>
-<p>[1]</p>
+<p>[4]</p>
 <p>WINEDEBUG can be configured to log, or not log, specific information.
 Specify the log level class, if it should be added “+” or removed “-“,
 and the channel to use.</p>
 <p>Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">WINEDEBUG</span><span class="o">=&lt;</span><span class="n">CLASS1</span><span class="o">&gt;</span><span class="p">[</span><span class="o">+|-</span><span class="p">]</span><span class="o">&lt;</span><span class="n">CHANNEL1</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="n">CLASS2</span><span class="o">&gt;</span><span class="p">[</span><span class="o">+|-</span><span class="p">]</span><span class="o">&lt;</span><span class="n">CHANNEL2</span><span class="o">&gt;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">WINEDEBUG</span><span class="o">=</span>&lt;CLASS1&gt;<span class="o">[</span>+<span class="p">|</span>-<span class="o">]</span>&lt;CHANNEL1&gt;,&lt;CLASS2&gt;<span class="o">[</span>+<span class="p">|</span>-<span class="o">]</span>&lt;CHANNEL2&gt;
 </pre></div>
 </div>
 <p>Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">WINEDEBUG</span><span class="o">=</span><span class="n">warn</span><span class="o">+</span><span class="nb">all</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">WINEDEBUG</span><span class="o">=</span>warn+all
 </pre></div>
 </div>
 <p>Classes:</p>
@@ -347,24 +334,30 @@ Windows DLLs. There are two different types of DLLs in Wine:</p>
 <li>n = Native Windows DLLs.</li>
 </ul>
 <p>Syntax:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">WINEDLLOVERRIDES</span><span class="o">=</span><span class="s2">&quot;&lt;DLL1_OR_PATH_TO_DLL1&gt;=[n|b],[b|n];&lt;DLL2_OR_PATH_TO_DLL2&gt;=[n|b],[b|n]&quot;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">WINEDLLOVERRIDES</span><span class="o">=</span><span class="s2">&quot;&lt;DLL1_OR_PATH_TO_DLL1&gt;=[n|b],[b|n];&lt;DLL2_OR_PATH_TO_DLL2&gt;=[n|b],[b|n]&quot;</span>
 </pre></div>
 </div>
 <p>Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">WINEDLLOVERRIDES</span><span class="o">=</span><span class="s2">&quot;shell32=n,b&quot;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nv">WINEDLLOVERRIDES</span><span class="o">=</span><span class="s2">&quot;shell32=n,b&quot;</span>
 </pre></div>
 </div>
 <p>The override can set to only run native, native then builtin, or builtin
 then native DLLs.</p>
-<p>[2]</p>
-<p>Sources:</p>
-<ol class="arabic simple">
-<li>“Wine User’s Guide.” WineHQ. September 15, 2017. Accessed October 29,
-2017. <a class="reference external" href="https://wiki.winehq.org/Wine_User%27s_Guide">https://wiki.winehq.org/Wine_User%27s_Guide</a></li>
-<li>“Debug Channels.” WineHQ. November 13, 2016. Accessed October 29,
-2017. <a class="reference external" href="https://wiki.winehq.org/Debug_Channels">https://wiki.winehq.org/Debug_Channels</a></li>
-</ol>
+<p>[5]</p>
 </div>
+</div>
+<div class="section" id="errata">
+<h2><a class="reference external" href="https://github.com/ekultails/rootpages/commits/master/src/wine.rst">Errata</a><a class="headerlink" href="#errata" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="bibliography">
+<h2><a class="toc-backref" href="#id5">Bibliography</a><a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>“WineHQ.” WineHQ. October 20, 2017. Accessed October 29, 2017. <a class="reference external" href="https://www.winehq.org/">https://www.winehq.org/</a></li>
+<li>“Wine.” ReactOS Wiki. April 28, 2017. Accessed October 29, 2017. <a class="reference external" href="https://www.reactos.org/wiki/WINE">https://www.reactos.org/wiki/WINE</a></li>
+<li>“Clean Room Guidelines.” WineHQ. February 13, 2016. Accessed October 29, 2017. <a class="reference external" href="https://wiki.winehq.org/Clean_Room_Guidelines">https://wiki.winehq.org/Clean_Room_Guidelines</a></li>
+<li>“Wine User’s Guide.” WineHQ. September 15, 2017. Accessed October 29, 2017. <a class="reference external" href="https://wiki.winehq.org/Wine_User%27s_Guide">https://wiki.winehq.org/Wine_User%27s_Guide</a></li>
+<li>“Debug Channels.” WineHQ. November 13, 2016. Accessed October 29, 2017. <a class="reference external" href="https://wiki.winehq.org/Debug_Channels">https://wiki.winehq.org/Debug_Channels</a></li>
+</ol>
 </div>
 </div>
 
@@ -388,7 +381,7 @@ then native DLLs.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Luke Short.
+        &copy; Copyright 2018, Luke Short. Documents licensed under GPLv3.
 
     </p>
   </div>
@@ -410,7 +403,7 @@ then native DLLs.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'2018.01.26',
+            VERSION:'2018.04.01',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

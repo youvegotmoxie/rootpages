@@ -1,16 +1,7 @@
 DNS
 ===
 
--  `Introduction to DNS <#introduction-to-dns>`__
--  BIND
--  Dnsmasq
--  `PowerDNS <#powerdns>`__
--  `PowerAdmin <#powerdns---poweradmin>`__
--  `gmysql <#powerdns---gmysql>`__
-
-   -  `Records <#powerdns---gmysql---records>`__
-
--  Unbound
+.. contents:: Table of Contents
 
 Introduction to DNS
 -------------------
@@ -33,8 +24,8 @@ PowerDNS
 --------
 
 The pdns service can be both an authoritative and recursive DNS server.
-It supports a large number of backends that can be used for it's
-authoritative server. [1] A few of the most popular backends are "bind"
+It supports a large number of back-ends that can be used for it's
+authoritative server. [1] A few of the most popular back-ends are "bind"
 (BIND) due to it's large usage in the Linux community and "gmysql"
 (MySQL) due to it's scalability.
 
@@ -51,7 +42,7 @@ SOA options:
    This value should normally mirror one of the NS records used for the
    zone (if applicable).
 -  email = The administrator's e-mail.
--  serial = 0 for automatic serial creation (default). Not all backends
+-  serial = 0 for automatic serial creation (default). Not all back-ends
    support automatic serials, such as bind. gmysql supports it. If using
    automatic serial numbers, place the number here. If any records are
    updated, the serial should also be updated.
@@ -64,18 +55,18 @@ SOA options:
 -  ttl = How long (in seconds) a record is allowed to be cached by
    another DNS server. [5]
 
-PowerDNS - PowerAdmin
-~~~~~~~~~~~~~~~~~~~~~
+PowerAdmin
+~~~~~~~~~~
 
 PowerAdmin is the graphic control panel that can be installed and
 accessed via a web browser.
 
-PowerDNS - gmysql
-~~~~~~~~~~~~~~~~~
+gmysql
+~~~~~~
 
-The generic MySQL backend (gmysql) was created to allow any MySQL server
+The generic MySQL back-end (gmysql) was created to allow any MySQL server
 to store and serve records. [2] This is not to be confused with using
-the MyDNS backend. [1]
+the MyDNS back-end. [1]
 
 This is the recommend InnoDB table schema to use. [2]
 
@@ -172,7 +163,7 @@ This is the recommend InnoDB table schema to use. [2]
 Then make sure that the pdns service is configured via the ``pdns.conf``
 file to connect to the MySQL server.
 
-::
+.. code-block:: ini
 
     launch=gmysql
     gmysql-host=<MYSQL_HOST>
@@ -180,8 +171,8 @@ file to connect to the MySQL server.
     gmysql-dbname=pdns
     gmysql-password=<MYSQL_PASS>
 
-PowerDNS - gmysql - Records
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Records
+^^^^^^^
 
 After pdns is configured to use gmysql, a domain zones can be added.
 This requires that a information about the domain is added to the
@@ -240,20 +231,18 @@ Here is an example of converting addresses to nibble.
    -  nibble address =
       a.a.a.7.b.9.2.1.a.7.c.c.6.5.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.e.f.ip6.arpa.
 
-      ::
+      .. code-block:: sh
 
           $ ipv6calc --out revnibbles.arp FE8::56:CC7A:129B:7AAA
 
-Sources:
+`Errata <https://github.com/ekultails/rootpages/commits/master/src/dns_servers.rst>`__
+--------------------------------------------------------------------------------------
 
-1. "PowerDNS." PowerDNS Docs. Accessed July 7, 2016.
-   https://doc.powerdns.com/md/
-2. "PowerDNS Generic MySQL backend." PowerDNS Docs. Accessed July 7,
-   2016.
-   https://doc.powerdns.com/md/authoritative/backend-generic-mysql/
-3. "PowerDNS How To's" PowerDNS Docs. Accessed July 7, 2016.
-   https://doc.powerdns.com/md/authoritative/howtos/
-4. "Supported Record Types. PowerDNS Docs. Accessed July 7, 2016.
-   https://doc.powerdns.com/md/types/
-5. "Start of Authority Resource Record (SOA RR)." zytrax open. Accessed
-   July 7, 2016. http://www.zytrax.com/books/dns/ch8/soa.html
+Bibliography
+------------
+
+1. "PowerDNS." PowerDNS Docs. Accessed July 7, 2016. https://doc.powerdns.com/md/
+2. "PowerDNS Generic MySQL backend." PowerDNS Docs. Accessed July 7, 2016. https://doc.powerdns.com/md/authoritative/backend-generic-mysql/
+3. "PowerDNS How To's" PowerDNS Docs. Accessed July 7, 2016. https://doc.powerdns.com/md/authoritative/howtos/
+4. "Supported Record Types. PowerDNS Docs. Accessed July 7, 2016. https://doc.powerdns.com/md/types/
+5. "Start of Authority Resource Record (SOA RR)." zytrax open. Accessed July 7, 2016. http://www.zytrax.com/books/dns/ch8/soa.html

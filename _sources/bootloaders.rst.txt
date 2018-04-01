@@ -1,16 +1,7 @@
 Bootloaders
 ===========
 
--  `GRUB 1 <#grub-1>`__
-
-   -  `Installation <#grub-1---installation>`__
-   -  `Recovery <#grub-1---recovery>`__
-
--  `GRUB 2 <#grub-2>`__
-
-   -  `Installation <#grub-2---installation>`__
-   -  `Configuration <#grub-2---configuration>`__
-   -  `Recovery <#grub-2---recovery>`__
+.. contents:: Table of Contents
 
 GRUB 1
 ------
@@ -19,36 +10,32 @@ GRUB 1 is a legacy version of GRUB that is no longer supported. The last
 version made available was 0.97 in 2008. GRUB 2 should be used for newer
 Linux distributions.
 
-GRUB 1 - Installation
-~~~~~~~~~~~~~~~~~~~~~
+Installation
+~~~~~~~~~~~~
 
 Install GRUB to the primary drive. This will use the MSDOS partition
 scheme on the first 512 bytes as GPT was not supported until GRUB 2.
 
-::
+.. code-block:: sh
 
-    # grub-install --root-directory=/ /dev/<DEVICE>
+    $ sudo grub-install --root-directory=/ /dev/<DEVICE>
 
 A basic boot menu must be configured to specify the boot partition, the
 kernel to use, the root partition to mount, and the initrd/initramfs to
 load.
 
+File: /boot/grub/menu.lst
+
 ::
 
-    # vim /boot/grub/menu.lst
     root   (hd0,0)
     kernel /vmlinuz-linux root=/dev/sda2 ro
     initrd /initramfs-linux.img
 
 [1]
 
-Source:
-
-1. "GRUB Legacy." Arch Linux Wiki. January 11, 2017. Accessed February
-   8, 2017. https://wiki.archlinux.org/index.php/GRUB\_Legacy
-
-GRUB 1 - Recovery
-~~~~~~~~~~~~~~~~~
+Recovery
+~~~~~~~~
 
 When GRUB fails to boot, or if the boot settings need to be modified,
 the GRUB recovery shell can be used.
@@ -72,29 +59,24 @@ Common options:
 
 Example of manually booting a server:
 
-::
+.. code-block:: sh
 
     grub> root hd(0,0)
     grub> kernel /vmzlinuz-4.0.img root=/dev/sda2 ro
     grub> initrd /initramfs-4.0.img
     grub> boot
 
-[1]
-
-Source:
-
-1. "GNU GRUB Manual 0.97." GNU. Accessed February 8, 2017.
-   https://www.gnu.org/software/grub/manual/legacy/grub.html
+[2]
 
 GRUB 2
 ------
 
 GRUB stands for the GRand Unified Bootloader. It was designed to be
 cross platform compatible with most operating systems including BSD,
-Linux, and Windows variants.
+Linux, and Windows variants. [7]
 
-GRUB 2 - Installation
-~~~~~~~~~~~~~~~~~~~~~
+Installation
+~~~~~~~~~~~~
 
 GRUB must be installed onto the start of the entire drive, not a
 partition, to avoid issues in the case of partitions needing to be
@@ -108,37 +90,31 @@ Install GRUB to a drive (replace "X") and then generate a boot menu
 configuration file. This will create the menu file that loads up to the
 end-user upon boot.
 
-::
+.. code-block:: sh
 
-    # grub-install /dev/sdX
-    # grub-mkconfig -o /boot/grub/grub.cfg
+    $ sudo grub-install /dev/sdX
+    $ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 If any changes are made to GRUB's settings and/or it's various scripts,
-run this command to update the changes. [1]
+run this command to update the changes. [3]
 
-::
+.. code-block:: sh
 
-    # update-grub
+    $ sudo update-grub
 
-Common "grub-install" options: \* compress = Compress GRUB-related
-files. Valid options are: \* no (default), xz, gz, lzo \* --modules =
-List kernel modules that are required for boot. Depending on the
-end-user's setup, "lvm", "raid" (for mdadm), and/or "encrypt" (for LUKS)
-may be required. \* --force = Install despite any warnings. \* --recheck
-= Remove the original /boot/grub/device.map file (if it exists) and then
-review the current mapping of partitions. \* --boot-directory = The
-directory that the "grub/" folder should exist in. This is typically
-"/boot". [2]
+Common "grub-install" options:
 
-Sources:
+-  compress = Compress GRUB-related files. Valid options are:
 
-1. "GRUB." Arch Linux Wiki. May 27, 2016.
-   https://wiki.archlinux.org/index.php/GRUB
-2. "GRUB2-INSTALL MAN PAGE." Mankier. February 26, 2014.
-   https://www.mankier.com/8/grub2-install
+    -  no (default), xz, gz, lzo
 
-GRUB 2 - Configuration
-~~~~~~~~~~~~~~~~~~~~~~
+-  --modules = List kernel modules that are required for boot. Depending on the end-user's setup, "lvm", "raid" (for mdadm), and/or "encrypt" (for LUKS) may be required.
+-  --force = Install despite any warnings.
+-  --recheck = Remove the original /boot/grub/device.map file (if it exists) and then review the current mapping of partitions.
+-  --boot-directory = The directory that the "grub/" folder should exist in. This is typically "/boot". [4]
+
+Configuration
+~~~~~~~~~~~~~
 
 Important files:
 
@@ -152,24 +128,20 @@ Important files:
 | /boot/grub/grub.cfg | This is automatically generated using the settings from /etc/default/grub and the scripts in /etc/grub.d/ . Manual changes may get overwritten. |
 +---------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Common Options: \* /etc/default/grub \* GRUB\_DEFAULT = The default menu
-entry to autoboot into. \* saved = Boot from the last option selected.
-This is cached in the /boot/grub/grubenv file. \* Alternatively, this
-can either be the number of the "menuentry" section, in order from top
-to bottom, starting at 0. \* Or the menu entry title can be explicitly
-specified. For example, "CentOS Linux (3.10.0-327.13.1.el7.x86\_64) 7
-(Core)."
+Common options:
 
-::
+-  /etc/default/grub
 
-    # grep ^menuentry /boot/grub2/grub.cfg
+    -   GRUB\_DEFAULT = The default menu entry to autoboot into.
 
-::
+        -  saved = Boot from the last option selected. This is cached in the /boot/grub/grubenv file.
+        -  Alternatively, this can either be the number of the "menuentry" section, in order from top to bottom, starting at 0.
+        -  Or the menu entry title can be explicitly specified. For example, "CentOS Linux (3.10.0-327.13.1.el7.x86\_64) 7 (Core)."
 
+.. code-block:: sh
+
+    $ sudo grep ^menuentry /boot/grub2/grub.cfg
     menuentry 'CentOS Linux (3.10.0-327.18.2.el7.x86_64) 7 (Core)' --class centos --class gnu-linux --class gnu --class os --unrestricted $menuentry_id_option 'gnulinux-3.10.0-327.18.2.el7.x86_64-advanced-d2e5b723-0055-4157-9197-e7d715937e8b' {
-
-::
-
     menuentry 'CentOS Linux (3.10.0-327.13.1.el7.x86_64) 7 (Core)' --class centos --class gnu-linux --class gnu --class os --unrestricted $menuentry_id_option 'gnulinux-3.10.0-327.13.1.el7.x86_64-advanced-d2e5b723-0055-4157-9197-e7d715937e8b' {
 
 -  GRUB\_TIMEOUT = Set the timeout (in seconds) before booting into the
@@ -186,15 +158,10 @@ specified. For example, "CentOS Linux (3.10.0-327.13.1.el7.x86\_64) 7
 -  GRUB\_BACKGROUND = Specify the full path to a custom image for GRUB's
    menu background.
 
-[1]
+[5]
 
-Source:
-
-1. "GRUB2/Setup." Ubuntu Documentation. November 29, 2015.
-   https://help.ubuntu.com/community/Grub2/Setup
-
-GRUB 2 - Recovery
-~~~~~~~~~~~~~~~~~
+Recovery
+~~~~~~~~
 
 In cases where GRUB fails (because it was installed incorrectly), the
 end-user is automatically switched into GRUB's rescue shell.
@@ -212,13 +179,13 @@ Common options:
 
 The rescue prompt will look similar to this.
 
-::
+.. code-block:: sh
 
     grub rescue>
 
 Example of using these commands to do a custom rescue boot.
 
-::
+.. code-block:: sh
 
     grub rescue> ls
     (hd0) (hd0,msdos1)
@@ -234,7 +201,7 @@ Example of using these commands to do a custom rescue boot.
 Alternatively, you can switch back to the graphical GRUB menu and make
 changes there.
 
-::
+.. code-block:: sh
 
     grub rescue> insmod normal
     grub rescue> normal
@@ -245,36 +212,46 @@ modify configuration files and re-install GRUB using the same commands
 used during the installation.
 
 In this example, /dev/sda2 is the root partition and /dev/sda1 is the
-boot partition. [1]
+boot partition. [6]
 
-::
+.. code-block:: sh
 
-    # mount /dev/sda2 /mnt
-    # mount /dev/sda1 /mnt/boot
-    # mount --bind /dev /mnt/dev
-    # mount --bind /run /mnt/run
-    # mount --bind /sys /mnt/sys
-    # chroot /mnt
-    # /bin/bash
-    # export PATH="$PATH:/sbin:/bin"
+    $ sudo mount /dev/sda2 /mnt
+    $ sudo mount /dev/sda1 /mnt/boot
+    $ sudo mount --bind /dev /mnt/dev
+    $ sudo mount -t proc proc /mnt/proc
+    $ sudo mount --bind /run /mnt/run
+    $ sudo mount -t sysfs sys /mnt/sys
+    $ chroot /mnt
+    $ /bin/bash
+    $ export PATH="$PATH:/sbin:/bin"
 
 If you need to recover GRUB from a chroot that is based on a LVM on the
 host node, make sure that LVM tools are installed on the guest. This way
 it can properly see the logical volume as a block device.
 
-::
+Debian:
 
-    Debian/Ubuntu
-    # apt-get install lvm2
+.. code-block:: sh
 
-::
+    $ sudo apt-get install lvm2
 
-    RHEL/Fedora
-    # yum install lvm2
+Fedora:
 
-Sources:
+.. code-block:: sh
 
-1. "Grub2/Installing." Ubuntu Documentation. March 6, 2015.
-   https://help.ubuntu.com/community/Grub2/Installing
-2. "GNU GRUB Manual 2.00." GNU. Accessed June 27, 2016.
-   https://www.gnu.org/software/grub/manual/grub.html
+    $ sudo yum install lvm2
+
+`Errata <https://github.com/ekultails/rootpages/commits/master/src/bootloaders.rst>`__
+--------------------------------------------------------------------------------------
+
+Bibliography
+------------
+
+1. "GRUB Legacy." Arch Linux Wiki. January 11, 2017. Accessed February 8, 2017. https://wiki.archlinux.org/index.php/GRUB\_Legacy
+2. "GNU GRUB Manual 0.97." GNU. Accessed February 8, 2017. https://www.gnu.org/software/grub/manual/legacy/grub.html
+3. "GRUB." Arch Linux Wiki. May 27, 2016. https://wiki.archlinux.org/index.php/GRUB
+4. "GRUB2-INSTALL MAN PAGE." Mankier. February 26, 2014. https://www.mankier.com/8/grub2-install
+5. "GRUB2/Setup." Ubuntu Documentation. November 29, 2015. https://help.ubuntu.com/community/Grub2/Setup
+6. "Grub2/Installing." Ubuntu Documentation. March 6, 2015. https://help.ubuntu.com/community/Grub2/Installing
+7. "GNU GRUB Manual 2.00." GNU. Accessed June 27, 2016. https://www.gnu.org/software/grub/manual/grub.html
